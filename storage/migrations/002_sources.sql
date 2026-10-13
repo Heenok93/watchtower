@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS sources (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    name TEXT NOT NULL,
+
+    source_type TEXT NOT NULL,
+
+    url TEXT,
+
+    active INTEGER DEFAULT 1,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

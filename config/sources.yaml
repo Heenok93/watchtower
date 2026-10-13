@@ -1,0 +1,10 @@
+rss:
+
+  - name: pubmed_agents
+    url: https://pubmed.ncbi.nlm.nih.gov/rss/search/...
+
+  - name: pubmed_llm
+    url: https://pubmed.ncbi.nlm.nih.gov/rss/search/...
+
+  - name: arxiv_ai_health
+    url: https://rss.arxiv.org/rss/cs.AI

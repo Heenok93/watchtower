@@ -1,0 +1,31 @@
+id: agentic_epidemiology
+
+name: Agents IA en épidémiologie
+
+objective: >
+  Identifier les architectures agentiques,
+  LLM agents et systèmes multi-agents
+  appliqués à l'épidémiologie.
+
+include:
+
+  concepts:
+    - llm agent
+    - autonomous agent
+    - agentic ai
+    - multi-agent system
+
+  applications:
+    - epidemiology
+    - public health
+    - disease surveillance
+
+exclude:
+  - infectious agent
+  - therapeutic agent
+  - contrast agent
+
+thresholds:
+  include: 80
+  manual_review: 60
+  archive: 0
