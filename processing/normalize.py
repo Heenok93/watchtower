@@ -1,7 +1,7 @@
 import re
 
 
-def normalize_doi(doi: str | None):
+def normalize_doi(doi: str | None) -> str | None:
 
     if not doi:
         return None
@@ -15,4 +15,3 @@ def normalize_doi(doi: str | None):
     )
 
     return doi
-`

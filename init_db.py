@@ -1,22 +1,44 @@
-from pathlib import Path
-import sqlite3
+from storage.database import get_connection
 
-DB_FILE = "watchtower.db"
-MIGRATIONS_DIR = Path("storage/migrations")
 
-conn = sqlite3.connect(DB_FILE)
+conn = get_connection()
 
-for migration in sorted(MIGRATIONS_DIR.glob("*.sql")):
+cur = conn.cursor()
 
-    print(f"Applying {migration.name}")
+cur.execute(
+    """
+    CREATE TABLE IF NOT EXISTS articles (
 
-    sql = migration.read_text(
-        encoding="utf-8"
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+        title TEXT NOT NULL,
+
+        abstract TEXT,
+
+        doi TEXT,
+
+        pmid TEXT,
+
+        source TEXT,
+
+        source_url TEXT,
+
+        publication_date TEXT,
+
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
+    """
+)
 
-    conn.executescript(sql)
+cur.execute(
+    """
+    CREATE INDEX IF NOT EXISTS idx_articles_doi
+    ON articles(doi)
+    """
+)
 
 conn.commit()
+
 conn.close()
 
-print("Database initialized")
+print("Database initialized.")
