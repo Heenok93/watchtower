@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtualenv
+.venv/
+venv/
+
+# Logs
+logs/
+
+# Database
+*.db
+*.sqlite
+
+# Secrets
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Ollama cache éventuel
+models/
