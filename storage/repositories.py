@@ -1,78 +1,163 @@
+import json
+
+from models.schemas import Article
+from processing.normalize import normalize_doi
 from storage.database import get_connection
 
 
-def save_article(article):
+def article_exists_by_doi(
+    doi: str | None,
+) -> bool:
 
-    conn = get_connection()
+    if not doi:
+        return False
 
-    cur = conn.cursor()
-
-    cur.execute(
-        """
-        INSERT INTO articles (
-            title,
-            abstract,
-            doi,
-            pmid,
-            source,
-            source_url,
-            publication_date
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """,
-        (
-            article.title,
-            article.abstract,
-            article.doi,
-            article.pmid,
-            article.source,
-            article.source_url,
-            article.publication_date
-        )
-    )
-
-    conn.commit()
-    conn.close()
-
-
-def article_exists_by_doi(doi: str) -> bool:
-
-    conn = get_connection()
-
-    cur = conn.cursor()
-
-    cur.execute(
-        """
-        SELECT id
-        FROM articles
-        WHERE doi = ?
-        LIMIT 1
-        """,
-        (doi,)
-    )
-
-    row = cur.fetchone()
-
-    conn.close()
+    with get_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT 1
+            FROM articles
+            WHERE doi = ?
+            LIMIT 1
+            """,
+            (doi,),
+        ).fetchone()
 
     return row is not None
 
 
-def count_articles():
+def article_exists_by_pmid(
+    pmid: str | None,
+) -> bool:
 
-    conn = get_connection()
+    if not pmid:
+        return False
 
-    cur = conn.cursor()
+    with get_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT 1
+            FROM articles
+            WHERE pmid = ?
+            LIMIT 1
+            """,
+            (pmid,),
+        ).fetchone()
 
-    cur.execute(
-        """
-        SELECT COUNT(*)
-        FROM articles
-        """
+    return row is not None
+
+
+def article_exists_by_source_url(
+    source_url: str | None,
+) -> bool:
+
+    if not source_url:
+        return False
+
+    with get_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT 1
+            FROM articles
+            WHERE source_url = ?
+            LIMIT 1
+            """,
+            (source_url,),
+        ).fetchone()
+
+    return row is not None
+
+
+def article_exists_by_fingerprint(
+    fingerprint: str | None,
+) -> bool:
+
+    if not fingerprint:
+        return False
+
+    with get_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT 1
+            FROM articles
+            WHERE fingerprint = ?
+            LIMIT 1
+            """,
+            (fingerprint,),
+        ).fetchone()
+
+    return row is not None
+
+
+def save_article(
+    article: Article,
+    fingerprint: str | None = None,
+) -> int:
+
+    article.doi = normalize_doi(
+        article.doi
     )
 
-    result = cur.fetchone()[0]
+    publication_date = (
+        article.publication_date.isoformat()
+        if article.publication_date
+        else None
+    )
 
-    conn.close()
+    collected_at = (
+        article.collected_at.isoformat()
+    )
 
-    return result
+    authors_json = json.dumps(
+        article.authors,
+        ensure_ascii=False,
+    )
+
+    with get_connection() as conn:
+        cursor = conn.execute(
+            """
+            INSERT INTO articles (
+                title,
+                abstract,
+                authors,
+                publication_date,
+                doi,
+                pmid,
+                source,
+                source_url,
+                journal,
+                collected_at,
+                fingerprint
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                article.title,
+                article.abstract,
+                authors_json,
+                publication_date,
+                article.doi,
+                article.pmid,
+                article.source,
+                article.source_url,
+                article.journal,
+                collected_at,
+                fingerprint,
+            ),
+        )
+
+        conn.commit()
+
+        return cursor.lastrowid
+
+
+def count_articles() -> int:
+    with get_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT COUNT(*) AS count
+            FROM articles
+            """
+        ).fetchone()
+
+    return row["count"]
