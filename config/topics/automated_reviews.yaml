@@ -1,0 +1,128 @@
+id: automated_reviews
+
+name: Automated Evidence Reviews
+
+description: >
+  Methods and applications using artificial intelligence,
+  machine learning, large language models, foundation models,
+  or other computational approaches to automate or assist
+  systematic reviews, evidence synthesis, literature screening,
+  study selection, and data extraction.
+
+required_groups:
+
+  review:
+    terms:
+      - systematic review
+      - systematic reviews
+      - scoping review
+      - scoping reviews
+      - literature review
+      - literature reviews
+      - evidence synthesis
+      - meta-analysis
+      - meta-analyses
+      - rapid review
+      - rapid reviews
+      - living systematic review
+      - screening
+      - literature screening
+      - abstract screening
+      - study selection
+      - citation screening
+      - data extraction
+      - evidence extraction
+      - literature search
+      - evidence retrieval
+
+  automation:
+    terms:
+      - automated
+      - automation
+      - artificial intelligence
+      - machine learning
+      - deep learning
+      - neural network
+      - neural networks
+      - large language model
+      - large language models
+      - llm
+      - llms
+      - foundation model
+      - foundation models
+      - generative ai
+      - generative artificial intelligence
+      - agentic ai
+      - ai agent
+      - ai agents
+      - transformer
+      - transformers
+
+include:
+  any:
+    - automated systematic review
+    - automated literature review
+    - automated evidence synthesis
+    - systematic review automation
+    - literature review automation
+    - evidence synthesis automation
+    - automated screening
+    - literature screening
+    - abstract screening
+    - title and abstract screening
+    - study screening
+    - study selection
+    - citation screening
+    - automated data extraction
+    - evidence extraction
+
+  context:
+    - systematic review
+    - scoping review
+    - literature review
+    - evidence review
+    - evidence synthesis
+    - meta-analysis
+    - rapid review
+    - living systematic review
+    - screening
+    - study selection
+    - data extraction
+    - literature search
+    - evidence retrieval
+
+exclude:
+  any:
+    - book review
+    - peer review
+    - performance review
+    - product review
+    - narrative review
+
+  context: []
+
+priority:
+  high:
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - foundation model
+    - foundation models
+    - generative ai
+    - generative artificial intelligence
+    - agentic ai
+    - ai agent
+    - ai agents
+    - deep learning
+    - transformer
+
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+
+thresholds:
+  reject_below: 2
+  llm_review_below: 6

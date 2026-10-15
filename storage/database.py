@@ -5,13 +5,14 @@ import sqlite3
 DB_PATH = Path(__file__).resolve().parent / "watchtower.db"
 
 
-def get_connection() -> sqlite3.Connection:
+def get_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
 
-def init_database() -> None:
+def init_database():
     with get_connection() as conn:
         conn.execute(
             """
@@ -106,6 +107,57 @@ def init_database() -> None:
             """
             CREATE INDEX IF NOT EXISTS idx_processing_runs_started_at
             ON processing_runs(started_at)
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS article_topic_results (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                article_id INTEGER NOT NULL,
+                topic_id TEXT NOT NULL,
+
+                score INTEGER NOT NULL,
+                decision TEXT NOT NULL,
+
+                required_groups_satisfied INTEGER NOT NULL DEFAULT 0,
+
+                matched_include TEXT NOT NULL DEFAULT '[]',
+                matched_context TEXT NOT NULL DEFAULT '[]',
+                matched_priority TEXT NOT NULL DEFAULT '[]',
+                matched_exclude TEXT NOT NULL DEFAULT '[]',
+                matched_required_groups TEXT NOT NULL DEFAULT '{}',
+
+                processed_at TEXT NOT NULL,
+
+                FOREIGN KEY (article_id)
+                    REFERENCES articles(id)
+                    ON DELETE CASCADE,
+
+                UNIQUE (article_id, topic_id)
+            )
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE INDEX IF NOT EXISTS idx_topic_results_topic
+            ON article_topic_results(topic_id)
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE INDEX IF NOT EXISTS idx_topic_results_decision
+            ON article_topic_results(decision)
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE INDEX IF NOT EXISTS idx_topic_results_article
+            ON article_topic_results(article_id)
             """
         )
 
