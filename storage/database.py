@@ -31,6 +31,7 @@ def init_database():
                 source TEXT NOT NULL,
                 source_url TEXT,
                 journal TEXT,
+                content_type TEXT NOT NULL DEFAULT 'unknown',
 
                 collected_at TEXT NOT NULL,
 
@@ -68,6 +69,13 @@ def init_database():
             """
             CREATE INDEX IF NOT EXISTS idx_articles_fingerprint
             ON articles(fingerprint)
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE INDEX IF NOT EXISTS idx_articles_content_type
+            ON articles(content_type)
             """
         )
 
@@ -130,6 +138,14 @@ def init_database():
                 matched_required_groups TEXT NOT NULL DEFAULT '{}',
 
                 processed_at TEXT NOT NULL,
+
+                llm_decision TEXT,
+                llm_confidence REAL,
+                llm_reason TEXT,
+                llm_summary TEXT,
+                llm_provider TEXT,
+                llm_model TEXT,
+                llm_processed_at TEXT,
 
                 FOREIGN KEY (article_id)
                     REFERENCES articles(id)

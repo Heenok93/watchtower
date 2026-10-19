@@ -1,4 +1,156 @@
 rss:
 
-  - name: nature
+  # ------------------------------------------------------------------
+  # General scientific monitoring
+  # ------------------------------------------------------------------
+
+  - id: nature_general
+    name: nature
     url: https://www.nature.com/nature.rss
+    content_type: mixed
+    journal: Nature
+    enabled: true
+
+  - id: nejm
+    name: nejm
+    url: https://www.nejm.org/action/showFeed?jc=nejm&type=etoc&feed=rss
+    content_type: mixed
+    journal: New England Journal of Medicine
+    enabled: false
+
+
+  # ------------------------------------------------------------------
+  # AI research labs and industry
+  # ------------------------------------------------------------------
+
+  - id: google_deepmind
+    name: google_deepmind
+    url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/
+    content_type: blog
+    journal: null
+    enabled: false
+
+  - id: google_research
+    name: google_research
+    url: https://blog.google/innovation-and-ai/models-and-research/google-research/rss/
+    content_type: blog
+    journal: null
+    enabled: true
+
+  - id: google_health
+    name: google_health
+    url: https://blog.google/innovation-and-ai/technology/health/rss/
+    content_type: blog
+    journal: null
+    enabled: false
+
+  - id: nvidia_news
+    name: nvidia_news
+    url: https://nvidianews.nvidia.com/releases.xml
+    content_type: news
+    journal: null
+    enabled: false
+
+  - id: allen_ai_news
+    name: allen_ai_news
+    url: https://raw.githubusercontent.com/alan-turing-institute/ai-rss-feeds/refs/heads/main/feeds/allenai-news.xml
+    content_type: news
+    journal: null
+    enabled: false
+
+
+  # ------------------------------------------------------------------
+  # Preprints
+  # ------------------------------------------------------------------
+
+  - id: arxiv_ai
+    name: arxiv_ai
+    url: https://rss.arxiv.org/rss/cs.AI
+    content_type: preprint
+    journal: arXiv
+    enabled: true
+
+  - id: arxiv_machine_learning
+    name: arxiv_machine_learning
+    url: https://rss.arxiv.org/rss/cs.LG
+    content_type: preprint
+    journal: arXiv
+    enabled: false
+
+  - id: biorxiv_epidemiology
+    name: biorxiv_epidemiology
+    url: https://connect.biorxiv.org/biorxiv_xml.php?subject=epidemiology
+    content_type: preprint
+    journal: bioRxiv
+    enabled: true
+
+
+  # ------------------------------------------------------------------
+  # Digital medicine / AI in health
+  # ------------------------------------------------------------------
+
+  - id: npj_digital_medicine
+    name: npj_digital_medicine
+    url: https://www.nature.com/npjdigitalmed.rss
+    content_type: mixed
+    journal: npj Digital Medicine
+    enabled: true
+
+  - id: lancet_digital_health
+    name: lancet_digital_health
+    url: https://www.thelancet.com/rssfeed/landig_online.xml
+    content_type: mixed
+    journal: The Lancet Digital Health
+    enabled: false
+
+  - id: jmir_ai
+    name: jmir_ai
+    url: https://ai.jmir.org/feed/atom
+    content_type: mixed
+    journal: JMIR AI
+    enabled: false
+
+
+  # ------------------------------------------------------------------
+  # AI / data science journals
+  # ------------------------------------------------------------------
+
+  - id: ai_open
+    name: ai_open
+    url: https://rss.sciencedirect.com/publication/science/26666510
+    content_type: mixed
+    journal: AI Open
+    enabled: true
+
+  - id: patterns
+    name: patterns
+    url: https://rss.sciencedirect.com/publication/science/26663899
+    content_type: mixed
+    journal: Patterns
+    enabled: true
+
+
+  # ------------------------------------------------------------------
+  # Epidemiology
+  # ------------------------------------------------------------------
+
+  - id: spatial_temporal_epidemiology
+    name: spatial_temporal_epidemiology
+    url: https://rss.sciencedirect.com/publication/science/18775845
+    content_type: mixed
+    journal: Spatial and Spatio-temporal Epidemiology
+    enabled: false
+
+  - id: journal_clinical_epidemiology
+    name: journal_clinical_epidemiology
+    url: https://rss.sciencedirect.com/publication/science/08954356
+    content_type: mixed
+    journal: Journal of Clinical Epidemiology
+    enabled: false
+
+  - id: journal_epidemiology_population_health
+    name: journal_epidemiology_population_health
+    url: https://rss.sciencedirect.com/publication/science/29504333
+    content_type: mixed
+    journal: Journal of Epidemiology and Population Health
+    enabled: false

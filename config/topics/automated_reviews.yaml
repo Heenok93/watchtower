@@ -98,6 +98,8 @@ exclude:
     - performance review
     - product review
     - narrative review
+    - travel agent
+    - travel agents
 
   context: []
 

@@ -126,10 +126,11 @@ def save_article(
                 source,
                 source_url,
                 journal,
+                content_type,
                 collected_at,
                 fingerprint
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 article.title,
@@ -141,6 +142,7 @@ def save_article(
                 article.source,
                 article.source_url,
                 article.journal,
+                article.content_type,
                 collected_at,
                 fingerprint,
             ),

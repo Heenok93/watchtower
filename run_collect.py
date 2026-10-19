@@ -28,13 +28,53 @@ def main():
     total_skipped = 0
     total_errors = 0
 
-    rss_sources = sources.get("rss", [])
+    rss_sources = sources.get(
+        "rss",
+        [],
+    )
 
-    for source in rss_sources:
+    enabled_sources = [
+        source
+        for source in rss_sources
+        if source.get("enabled", True)
+    ]
+
+    print("=" * 80)
+    print("WATCHTOWER RSS COLLECTION")
+    print("=" * 80)
+    print(
+        f"Enabled RSS sources: "
+        f"{len(enabled_sources)}"
+    )
+
+    for source in enabled_sources:
+        source_id = source.get(
+            "id",
+            source["name"],
+        )
+
         source_name = source["name"]
         source_url = source["url"]
 
-        print(f"\nCollecting: {source_name}")
+        content_type = source.get(
+            "content_type",
+            "unknown",
+        )
+
+        journal = source.get(
+            "journal"
+        )
+
+        print()
+        print("-" * 80)
+        print(f"Collecting: {source_name}")
+        print(f"Source ID: {source_id}")
+        print(f"Content type: {content_type}")
+
+        if journal:
+            print(f"Journal: {journal}")
+
+        print("-" * 80)
 
         run_id = start_processing_run(
             source=source_name,
@@ -56,6 +96,8 @@ def main():
             articles = collect_rss_feed(
                 url=source_url,
                 source_name=source_name,
+                content_type=content_type,
+                journal=journal,
             )
 
             found = len(articles)
@@ -69,14 +111,18 @@ def main():
                     )
 
                     duplicate_reason = (
-                        get_duplicate_reason(article)
+                        get_duplicate_reason(
+                            article
+                        )
                     )
 
                     if duplicate_reason:
                         skipped += 1
+
                         duplicate_reasons[
                             duplicate_reason
                         ] += 1
+
                         continue
 
                     fingerprint = (
@@ -133,20 +179,35 @@ def main():
         if skipped > 0:
             print("Duplicate reasons:")
 
-            for reason, count in duplicate_reasons.items():
+            for reason, count in (
+                duplicate_reasons.items()
+            ):
                 if count > 0:
-                    print(f"  {reason}: {count}")
+                    print(
+                        f"  {reason}: {count}"
+                    )
 
         print(f"Errors: {errors}")
         print(f"Status: {status}")
-        print(f"Processing run ID: {run_id}")
+        print(
+            f"Processing run ID: "
+            f"{run_id}"
+        )
 
-    print("\n==========")
-    print(f"Total found: {total_found}")
-    print(f"Total inserted: {total_inserted}")
+    print()
+    print("=" * 80)
+    print("COLLECTION SUMMARY")
+    print("=" * 80)
+    print(f"Sources:       {len(enabled_sources)}")
+    print(f"Total found:   {total_found}")
+    print(f"Total inserted:{total_inserted}")
     print(f"Total skipped: {total_skipped}")
-    print(f"Total errors: {total_errors}")
-    print(f"Total articles in DB: {count_articles()}")
+    print(f"Total errors:  {total_errors}")
+    print(
+        f"Articles in DB:"
+        f" {count_articles()}"
+    )
+    print("=" * 80)
 
 
 if __name__ == "__main__":

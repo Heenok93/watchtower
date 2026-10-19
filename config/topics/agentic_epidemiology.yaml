@@ -22,6 +22,7 @@ required_groups:
       - intelligent agents
       - autonomous agent
       - autonomous agents
+      - artificial intelligence
       - large language model
       - large language models
       - llm
@@ -110,7 +111,7 @@ exclude:
     - booking agent
     - booking agents
 
-context: []
+  context: []
 
 priority:
   high:
