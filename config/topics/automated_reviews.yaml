@@ -3,47 +3,112 @@ id: automated_reviews
 name: Automated Evidence Reviews
 
 description: >
-  Methods and applications using artificial intelligence,
-  machine learning, large language models, foundation models,
-  or other computational approaches to automate or assist
-  systematic reviews, evidence synthesis, literature screening,
-  study selection, and data extraction.
-
+  Methods and applications that use AI or computational approaches
+  to automate or assist scientific literature reviews and research
+  evidence synthesis. Eligible tasks include literature searching,
+  citation screening, study selection, extraction of data from
+  research studies, risk-of-bias assessment, synthesis, and review
+  updating. These tasks qualify only when explicitly applied to
+  scientific literature or research evidence synthesis.
+  Generic document annotation, data retrieval, fact-checking,
+  software verification, and dataset generation do not qualify
+  without an explicit application to this workflow.
+  
 required_groups:
 
   review:
     terms:
+      # Review types / evidence synthesis
       - systematic review
       - systematic reviews
+      - systematic literature review
+      - systematic literature reviews
       - scoping review
       - scoping reviews
-      - literature review
-      - literature reviews
       - evidence synthesis
-      - meta-analysis
-      - meta-analyses
+      - evidence syntheses
+      - research synthesis
       - rapid review
       - rapid reviews
       - living systematic review
-      - screening
+      - living systematic reviews
+      - living review
+      - living reviews
+      - umbrella review
+      - umbrella reviews
+      - evidence map
+      - evidence maps
+      - systematic map
+      - systematic maps
+      - meta-analysis
+      - meta-analyses
+      - meta analysis
+      - meta analyses
+
+      # Bibliographic screening / study selection
       - literature screening
-      - abstract screening
-      - study selection
       - citation screening
-      - data extraction
-      - evidence extraction
+      - reference screening
+      - study screening
+      - abstract screening
+      - title screening
+      - title and abstract screening
+      - title abstract screening
+      - full-text screening
+      - full text screening
+      - eligibility screening
+      - study selection
+      - citation selection
+
+      # Bibliographic search / retrieval
+      # Deliberately contextualised:
+      # generic "search strategy" produced false positives.
+      - systematic literature search
       - literature search
-      - evidence retrieval
+      - bibliographic search
+      - literature search strategy
+      - literature search strategies
+      - bibliographic search strategy
+      - bibliographic search strategies
+      - systematic review search strategy
+      - systematic review search strategies
+      - database search strategy
+      - database search strategies
+      - electronic search strategy
+      - electronic search strategies
+      - citation retrieval
+      - study retrieval
+      - literature retrieval
+
+      # Data extraction
+      - study data extraction
+      - evidence extraction
+      - outcome extraction
+      - outcome data extraction
+      - PICO extraction
+      - PICO element extraction
+      - study characteristic extraction
+      - study characteristics extraction
+
+      # Appraisal / synthesis / updating
+      - risk of bias
+      - risk-of-bias
+      - critical appraisal
+      - certainty of evidence
+      - evidence grading
+      - narrative synthesis
+      - quantitative synthesis
+      - review updating
+      - review update
 
   automation:
     terms:
-      - automated
-      - automation
+      # AI / ML methods
       - artificial intelligence
       - machine learning
-      - deep learning
-      - neural network
-      - neural networks
+      - natural language processing
+      - active learning
+      - text mining
       - large language model
       - large language models
       - llm
@@ -55,56 +120,285 @@ required_groups:
       - agentic ai
       - ai agent
       - ai agents
+
+      # Explicit automation / assistance
+      - automated
+      - automation
+      - automatic
+      - semi-automated
+      - semi automated
+      - ai-assisted
+      - ai assisted
+      - machine-assisted
+      - machine assisted
+      - computer-assisted
+      - computer assisted
+      - llm-assisted
+      - llm assisted
+      - llm-based
+      - llm based
+
+secondary_groups:
+
+  review:
+    terms:
+      # Weaker review/evidence signals.
+      # Used only when the strong automation group is present.
+      - literature review
+      - literature reviews
+      - evidence review
+      - evidence reviews
+      - knowledge synthesis
+      - literature synthesis
+      - review protocol
+      - systematic review protocol
+      - review process
+      - review workflow
+      - included studies
+      - excluded studies
+      - eligible studies
+      - study eligibility
+      - inclusion criteria
+      - exclusion criteria
+      - prisma
+      - pico
+      - peco
+      - picos
+      - deduplication
+      - citation deduplication
+      - reference deduplication
+      - data extraction
+      - information extraction
+      - evidence retrieval
+      - evidence table
+      - evidence tables
+
+      # Generic search-strategy terminology is secondary,
+      # because it is highly ambiguous outside evidence reviews.
+      - search strategy
+      - search strategies
+
+  automation:
+    terms:
+      # Weaker automation signals.
+      # Used only when the strong review group is present.
+      - deep learning
+      - neural network
+      - neural networks
       - transformer
       - transformers
+      - semantic search
+      - information retrieval
+      - vector search
+      - document classification
+      - citation classification
+      - relevance classification
+      - relevance ranking
+      - learning to rank
+      - weak supervision
+      - zero-shot classification
+      - zero shot classification
+      - few-shot classification
+      - few shot classification
 
 include:
+
   any:
+    # Direct review-automation formulations
     - automated systematic review
-    - automated literature review
-    - automated evidence synthesis
+    - automated systematic reviews
+    - automatic systematic review
     - systematic review automation
+    - automation of systematic reviews
+
+    - automated literature review
+    - automated literature reviews
     - literature review automation
+
+    - automated evidence synthesis
+    - automatic evidence synthesis
     - evidence synthesis automation
-    - automated screening
-    - literature screening
-    - abstract screening
-    - title and abstract screening
-    - study screening
-    - study selection
-    - citation screening
+
+    # Screening / selection automation
+    - automated citation screening
+    - automatic citation screening
+    - automated abstract screening
+    - automatic abstract screening
+    - automated title screening
+    - automated study screening
+    - automated study selection
+    - automatic study selection
+    - ai-assisted screening
+    - ai assisted screening
+    - llm-assisted screening
+    - llm assisted screening
+    - machine-assisted screening
+    - machine assisted screening
+    - screening prioritization
+    - screening prioritisation
+    - citation prioritization
+    - citation prioritisation
+
+    # Search / retrieval automation
+    - automated literature search
+    - automatic literature search
+    - automated literature searching
+    - automated search strategy
+    - automatic search strategy
+    - search strategy automation
+    - automated evidence retrieval
+    - automatic evidence retrieval
+    - automated study retrieval
+    - automated citation retrieval
+    - automated query generation
+    - search string generation
+
+    # Extraction automation
     - automated data extraction
-    - evidence extraction
+    - automatic data extraction
+    - semi-automated data extraction
+    - semi automated data extraction
+    - ai-assisted data extraction
+    - ai assisted data extraction
+    - llm-assisted data extraction
+    - llm assisted data extraction
+    - automated evidence extraction
+    - automatic evidence extraction
+    - automated information extraction
+    - automated pico extraction
+
+    # Appraisal / synthesis
+    - automated risk of bias
+    - automatic risk of bias
+    - risk of bias automation
+    - automated bias assessment
+    - automated critical appraisal
+    - automated quality assessment
+    - automated evidence grading
+    - automated meta-analysis
+    - automatic meta-analysis
+    - meta-analysis automation
+    - automated narrative synthesis
+
+    # Review maintenance
+    - automated review updating
+    - automatic review updating
+    - living review automation
+    - living systematic review automation
+
+    # Methods explicitly applied to reviews
+    - active learning for systematic reviews
+    - active learning for citation screening
+    - machine learning for systematic reviews
+    - machine learning for citation screening
+    - natural language processing for systematic reviews
+    - natural language processing for evidence synthesis
+    - deep learning for systematic reviews
+    - large language model for systematic reviews
+    - large language models for systematic reviews
+    - llm for systematic reviews
+    - llms for systematic reviews
+    - generative ai for systematic reviews
+    - artificial intelligence for systematic reviews
 
   context:
     - systematic review
+    - systematic reviews
+    - systematic literature review
     - scoping review
-    - literature review
+    - scoping reviews
     - evidence review
     - evidence synthesis
+    - research synthesis
     - meta-analysis
+    - meta-analyses
     - rapid review
+    - rapid reviews
     - living systematic review
-    - screening
+    - living review
+    - umbrella review
+    - systematic map
+    - evidence map
+
+    - literature screening
+    - citation screening
+    - reference screening
+    - study screening
+    - abstract screening
+    - title screening
+    - title and abstract screening
+    - full-text screening
+    - full text screening
+    - eligibility screening
     - study selection
-    - data extraction
+
     - literature search
-    - evidence retrieval
+    - systematic literature search
+    - bibliographic search
+    - literature search strategy
+    - bibliographic search strategy
+    - systematic review search strategy
+    - database search strategy
+    - electronic search strategy
+    - citation retrieval
+    - study retrieval
+    - literature retrieval
+
+    - data extraction
+    - study data extraction
+    - evidence extraction
+    - information extraction
+    - pico extraction
+    - outcome extraction
+
+    - risk of bias
+    - critical appraisal
+    - certainty of evidence
+    - evidence grading
+    - narrative synthesis
+    - review updating
 
 exclude:
+
   any:
+    # Other meanings of "review"
     - book review
     - peer review
+    - peer-review
     - performance review
     - product review
-    - narrative review
+    - code review
+    - software review
+    - design review
+    - security review
+    - manuscript review
+    - reviewer assignment
+    - reviewer matching
+
+    # Other meanings of "screening"
+    - cancer screening
+    - disease screening
+    - population screening
+    - newborn screening
+    - prenatal screening
+    - drug screening
+    - compound screening
+    - virtual screening
+    - high-throughput screening
+    - high throughput screening
+    - genetic screening
+    - diagnostic screening
+
+    # Clearly unrelated agent terminology
     - travel agent
     - travel agents
 
   context: []
 
 priority:
+
   high:
+    # Strongly relevant AI technologies
     - large language model
     - large language models
     - llm
@@ -113,11 +407,21 @@ priority:
     - foundation models
     - generative ai
     - generative artificial intelligence
-    - agentic ai
-    - ai agent
-    - ai agents
-    - deep learning
-    - transformer
+    - natural language processing
+    - active learning
+
+    # Particularly informative workflow concepts
+    - automated systematic review
+    - systematic review automation
+    - automated evidence synthesis
+    - automated citation screening
+    - automated abstract screening
+    - automated study selection
+    - automated literature search
+    - automated data extraction
+    - automated risk of bias
+    - llm-assisted screening
+    - ai-assisted screening
 
 scoring:
   include_match: 2

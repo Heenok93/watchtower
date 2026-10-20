@@ -1,28 +1,25 @@
 id: agentic_epidemiology
-
 name: Advanced AI in Epidemiology
 
-description: >
-  Applications of agentic AI, large language models,
-  foundation models, generative AI, machine learning,
-  and other advanced artificial intelligence methods
-  to epidemiology, public health, disease surveillance,
-  outbreak detection, epidemic intelligence, and
-  infectious disease research.
+description: >-
+  Veille sur les méthodes et applications d'intelligence artificielle
+  avancée en épidémiologie et en santé publique : surveillance,
+  analyse des populations, prévision et évaluation des interventions.
+  La pertinence exige une relation substantielle entre la dimension IA
+  et la dimension épidémiologique ou populationnelle.
+  Une application clinique individuelle, une simulation causale
+  classique ou une méthode IA généraliste ne suffit pas à elle seule.
 
 required_groups:
-
   advanced_ai:
     terms:
-      - agentic ai
-      - agentic artificial intelligence
-      - ai agent
-      - ai agents
-      - intelligent agent
-      - intelligent agents
-      - autonomous agent
-      - autonomous agents
       - artificial intelligence
+      - machine learning
+      - deep learning
+      - neural network
+      - neural networks
+      - transformer
+      - transformers
       - large language model
       - large language models
       - llm
@@ -30,97 +27,70 @@ required_groups:
       - foundation model
       - foundation models
       - generative ai
-      - generative artificial intelligence
-      - deep learning
-      - transformer
-      - transformers
-      - neural network
-      - neural networks
-      - machine learning
+      - agentic ai
+      - ai agent
+      - ai agents
+      - multi-agent system
+      - multi-agent systems
 
   epidemiology:
     terms:
       - epidemiology
       - epidemiological
+      - epidemiologic
       - public health
+      - population health
+      - population-level health
       - disease surveillance
-      - health surveillance
+      - epidemiological surveillance
       - public health surveillance
-      - infectious disease surveillance
       - outbreak
       - outbreaks
-      - outbreak detection
-      - outbreak response
       - epidemic
       - epidemics
-      - epidemic intelligence
       - pandemic
       - pandemics
-      - infectious disease
-      - infectious diseases
-      - early warning
-      - event-based surveillance
-      - indicator-based surveillance
+      - infectious disease modeling
+      - infectious disease modelling
+
+secondary_groups:
+  advanced_ai:
+    terms:
+      - world model
+      - world models
+      - representation learning
+
+  epidemiology:
+    terms: []
 
 include:
   any:
-    - ai for epidemiology
-    - artificial intelligence in epidemiology
-    - machine learning in epidemiology
-    - llm for epidemiology
-    - llms for epidemiology
-    - large language models in epidemiology
-    - ai for public health
-    - artificial intelligence in public health
-    - llm for public health
-    - large language models in public health
-    - ai for disease surveillance
-    - machine learning for disease surveillance
-    - llm for disease surveillance
-    - large language models for disease surveillance
-    - ai for outbreak detection
-    - machine learning for outbreak detection
-    - epidemic intelligence
     - agentic ai
     - ai agent
     - ai agents
+    - multi-agent system
+    - multi-agent systems
 
   context:
     - epidemiology
     - epidemiological
+    - epidemiologic
     - public health
+    - population health
+    - population-level health
     - disease surveillance
+    - epidemiological surveillance
     - public health surveillance
-    - infectious disease surveillance
-    - outbreak detection
-    - outbreak response
-    - epidemic intelligence
-    - infectious disease
-    - early warning
-
-exclude:
-  any:
-    - real estate agent
-    - real estate agents
-    - travel agent
-    - travel agents
-    - literary agent
-    - literary agents
-    - insurance agent
-    - insurance agents
-    - booking agent
-    - booking agents
-
-  context: []
+    - outbreak
+    - outbreaks
+    - pandemic
+    - pandemics
 
 priority:
   high:
     - agentic ai
-    - agentic artificial intelligence
     - ai agent
     - ai agents
-    - autonomous agent
-    - autonomous agents
     - large language model
     - large language models
     - llm
@@ -128,7 +98,10 @@ priority:
     - foundation model
     - foundation models
     - generative ai
-    - generative artificial intelligence
+
+exclude:
+  any: []
+  context: []
 
 scoring:
   include_match: 2
