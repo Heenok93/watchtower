@@ -112,3 +112,6 @@ benchmarks/comparison*/
 
 # Generated Watchtower outputs
 watchtower_digest.md
+
+outputs/
+storage/backups/
