@@ -133,29 +133,35 @@ Ollama pour la classification locale facultative.
 Le projet a été développé et testé sous Windows avec Git Bash.
 
 Cloner le dépôt
-Shell
+
+```bash
 git clone <URL_DU_DEPOT>
 cd watchtower
+```
+
 Installer les dépendances
 
 Si le projet contient un pyproject.toml et un fichier de verrouillage :
 
-Shell
+```bash
 uv sync
+```
 
 Pour exécuter les commandes dans l’environnement géré par uv :
 
-Shell
+```bash
 uv run python run_collect.py
+```
 
 Il est également possible d’activer l’environnement virtuel puis d’utiliser directement python.
 
 Vérifier l’installation
-Shell
+```bash
 python -m py_compile run_collect.py
 python -m py_compile run_filter.py
 python -m py_compile run_llm.py
 python -m py_compile generate_digest.py
+```
 
 ---
 
@@ -163,19 +169,22 @@ python -m py_compile generate_digest.py
 
 Watchtower utilise actuellement le modèle configuré dans run_llm.py :
 
-Python
+```python
 MODEL = "qwen3-light:latest"
 TEMPERATURE = 0.0
+```
 
 Vérifier qu’Ollama fonctionne :
 
-Shell
+```bash
 ollama list
+```
 
 Puis vérifier l’accès depuis Python :
 
-Shell
+```bash
 python -c "import ollama; print(ollama)"
+```
 
 Le modèle doit être présent dans la liste des modèles installés ou remplacé par un modèle disponible localement.
 
@@ -278,87 +287,51 @@ ce qui ne suffit pas à établir la pertinence.
 
 ---
 
-# 🚀 Utilisation
 
-Les commandes suivantes doivent être exécutées depuis la racine du projet.
+# 🧩 Commandes individuelles
 
-1. Collecter les articles
+Chaque étape peut toujours être lancée séparément.
 
-```Shell
+## Collecte
+
+```bash
 python run_collect.py
 ```
 
-Cette étape :
+## Filtre déterministe
 
-interroge les sources RSS actives ;
-normalise les articles ;
-recherche les doublons ;
-insère uniquement les nouveaux articles ;
-enregistre un audit dans processing_runs.
-
-La déduplication peut reposer sur :
-
-DOI ;
-PMID ;
-URL source normalisée ;
-empreinte calculée sur les métadonnées disponibles.
-
-Il est normal que plusieurs éléments d’un flux soient ignorés lorsqu’ils désignent le même article.
-
-2. Appliquer les filtres déterministes
-
-```Shell
+```bash
 python run_filter.py
 ```
 
-Chaque article est évalué contre chaque profil actif.
-
-Les résultats sont enregistrés dans article_topic_results.
-
-Les décisions possibles sont :
-
-candidate : correspondance déterministe suffisamment forte ;
-llm_review : cas intermédiaire nécessitant un examen sémantique ;
-reject : correspondance insuffisante ;
-error : erreur de traitement.
-
-Le filtre peut être relancé. La persistance utilise un comportement de mise à jour adapté aux couples article/topic existants.
-
-3. Examiner les cas ambigus avec le LLM
-
-```Shell
+## Classification LLM complète
+```bash
 python run_llm.py
 ```
 
-Cette étape ne traite que les lignes llm_review qui ne possèdent pas encore de résultat LLM exploitable.
+## Classification limitée
 
-Pour chaque couple article/topic :
+```bash
+python run_llm.py --limit 5
+```
 
-la qualité du titre et du résumé est évaluée ;
-un enrichissement léger peut être tenté si le résumé est insuffisant ;
-le titre, le résumé et le profil thématique sont fournis au modèle ;
-la réponse est validée avec le modèle Pydantic LLMResult ;
-le résultat est sauvegardé ;
-la tentative est enregistrée dans l’audit LLM.
+## Digest Markdown
 
-Le traitement peut être interrompu avec Ctrl+C. Les articles terminés avant l’interruption restent enregistrés et les autres restent en attente.
-
-4. Générer le digest
-
-```Shell
+```bash
 python generate_digest.py
 ```
 
-Le digest distingue explicitement :
+## Export CSV
 
-les candidats du filtre déterministe ;
-les articles retenus par le LLM ;
-les articles rejetés par le LLM ;
-les articles encore en attente d’examen.
+```bash
+python export_articles_csv.py
+```
 
-Un traitement LLM incomplet n’empêche pas la génération du digest.
+Avec les rejets LLM :
 
-Les cas en attente sont signalés et ne sont pas présentés comme validés.
+```bash
+python export_articles_csv.py --include-llm-rejected
+```
 
 ---
 
@@ -418,12 +391,12 @@ erreur éventuelle.
 
 Avant de supprimer la base, créer une sauvegarde :
 
-```Shell
+```bash
 cp storage/watchtower.db storage/watchtower_backup.db
 ```
 Puis supprimer la base active :
 
-```Shell
+```bash
 rm storage/watchtower.db
 ```
 
@@ -431,7 +404,7 @@ Ne pas créer manuellement un fichier SQLite vide. Utiliser le mécanisme normal
 
 Vérifier ensuite les tables :
 
-```Shell
+```bash
 python -c "from storage.database import get_connection; c=get_connection(); print([r[0] for r in c.execute(\"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name\").fetchall()]); c.close()"
 ```
 
@@ -453,13 +426,13 @@ Résultat attendu pour le schéma actuel :
 
 Lancer l’ensemble des tests :
 
-```Shell
+```bash
 python -m unittest discover -s tests -v
 ```
 
 Exécuter uniquement les tests du patch LLM :
 
-```Shell
+```bash
 python -m unittest discover -s tests -p "test_llm_patch.py" -v
 ```
 
@@ -628,20 +601,20 @@ Ollama ne répond pas
 
 Vérifier qu’Ollama est démarré :
 
-```Shell
+```bash
 ollama list
 ```
 
 Vérifier ensuite l’import Python :
 
-```Shell
+```bash
 python -c "import ollama; print(ollama)"
 Le modèle configuré est absent
 ```
 
 Afficher les modèles installés :
 
-```Shell
+```bash
 ollama list
 ```
 
@@ -677,7 +650,7 @@ Aucun article n’est envoyé au LLM
 
 Vérifier les résultats du filtre :
 
-```Shell
+```bash
 python run_filter.py
 ```
 
@@ -706,7 +679,8 @@ filtre déterministe ;
 classification LLM facultative ;
 enrichissement léger ;
 audit ;
-digest.
+digest ;
+export CSV de revue manuelle.
 
 Les fonctions suivantes ne font pas partie du MVP Watchtower :
 
@@ -721,7 +695,7 @@ base vectorielle ;
 orchestration de modèles lourds ;
 accès systématique à Scopus, Mendeley ou d’autres APIs bibliographiques.
 
-Ces fonctions relèvent du projet séparé Research Workbench.
+Ces fonctions relèvent du projet séparé **Research Workbench**.
 
 ---
 
@@ -746,7 +720,7 @@ Les modèles plus lourds, les APIs bibliographiques avancées et les traitements
 
 Pipeline complet :
 
-```Shell
+```bash
 python run_collect.py
 python run_filter.py
 python run_llm.py
@@ -754,17 +728,17 @@ python generate_digest.py
 ```
 Tests :
 
-```Shell
+```bash
 python -m unittest discover -s tests -v
 ```
 Vérification des tables :
 
-Shell
-```python -c "from storage.database import get_connection; c=get_connection(); print([r[0] for r in c.execute(\"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name\").fetchall()]); c.close()"
+```bash
+python -c "from storage.database import get_connection; c=get_connection(); print([r[0] for r in c.execute(\"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name\").fetchall()]); c.close()"
 ```
 Vérification d’Ollama :
 
-```Shell
+```bash
 ollama list
 ```
 ---
@@ -782,6 +756,8 @@ la persistance des résultats ;
 la classification LLM partielle ;
 l’interruption du traitement LLM ;
 la génération d’un digest avec traitements en attente ;
-le second passage de collecte sans duplication.
+le second passage de collecte sans duplication ;
+l'export CSV de revue manuelle ;
+la sauvegarde et reconstruction contrôlée de la base.
 
 La principale limitation actuelle est la qualité du modèle local fortement quantifié. Cette limitation est isolée derrière une interface fournisseur et pourra être réévaluée ultérieurement avec d’autres modèles.
