@@ -1,4 +1,4 @@
-![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-blue)
 ![License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Heenok93/watchtower)

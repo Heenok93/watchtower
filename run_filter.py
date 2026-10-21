@@ -1,4 +1,5 @@
 import json
+from contextlib import closing
 from pathlib import Path
 
 import yaml
@@ -24,13 +25,36 @@ BASE_DIR = Path(__file__).resolve().parent
 TOPICS_DIR = BASE_DIR / "config" / "topics"
 
 
-PROFILE_FILES = [
-    "automated_reviews.yaml",
-    "agentic_epidemiology.yaml",
-]
+def discover_profile_files():
+    """
+    Discover all YAML topic profiles.
+
+    Adding a new .yaml file to config/topics is enough
+    to make it available to the deterministic filter.
+    """
+    if not TOPICS_DIR.exists():
+        raise FileNotFoundError(
+            f"Topics directory not found: {TOPICS_DIR}"
+        )
+
+    profile_files = sorted(
+        path.name
+        for path in TOPICS_DIR.glob("*.yaml")
+        if path.is_file()
+    )
+
+    if not profile_files:
+        raise RuntimeError(
+            f"No topic profiles found in {TOPICS_DIR}"
+        )
+
+    return profile_files
 
 
 def load_profile(filename):
+    """
+    Load and validate one scientific topic profile.
+    """
     profile_path = TOPICS_DIR / filename
 
     with open(
@@ -40,11 +64,25 @@ def load_profile(filename):
     ) as file:
         data = yaml.safe_load(file)
 
-    return TopicProfile.model_validate(data)
+    if not data:
+        raise ValueError(
+            f"Empty topic profile: {profile_path}"
+        )
+
+    profile = TopicProfile.model_validate(
+        data
+    )
+
+    return profile
 
 
 def load_articles():
-    with get_connection() as conn:
+    """
+    Load all collected articles from the database.
+    """
+    with closing(
+        get_connection()
+    ) as conn:
         rows = conn.execute(
             """
             SELECT
@@ -104,6 +142,10 @@ def process_profile(
     articles,
     profile,
 ):
+    """
+    Apply the deterministic filter to all articles
+    for one topic profile.
+    """
     counts = {
         "candidate": 0,
         "llm_review": 0,
@@ -123,6 +165,12 @@ def process_profile(
                 result=result,
             )
 
+            if result.decision not in counts:
+                raise ValueError(
+                    "Unexpected filter decision: "
+                    f"{result.decision}"
+                )
+
             counts[result.decision] += 1
 
         except Exception as exc:
@@ -130,7 +178,8 @@ def process_profile(
 
             print(
                 f"Error filtering article "
-                f"{article_id}: {exc}"
+                f"{article_id}: "
+                f"{type(exc).__name__}: {exc}"
             )
 
     return counts
@@ -141,29 +190,74 @@ def main():
     print("WATCHTOWER DETERMINISTIC FILTER")
     print("=" * 80)
 
+    profile_files = discover_profile_files()
+
+    print(
+        f"Topic profiles discovered: "
+        f"{len(profile_files)}"
+    )
+
+    for filename in profile_files:
+        print(f"  - {filename}")
+
     articles = load_articles()
 
-    print(f"Articles loaded: {len(articles)}")
+    print()
+    print(
+        f"Articles loaded: "
+        f"{len(articles)}"
+    )
 
     if not articles:
         print("No articles found in database.")
         return
 
-    for profile_filename in PROFILE_FILES:
-        profile = load_profile(
-            profile_filename
-        )
+    total_errors = 0
 
+    for profile_filename in profile_files:
         print()
         print("-" * 80)
-        print(f"Processing profile: {profile.name}")
-        print(f"Topic ID: {profile.id}")
+
+        try:
+            profile = load_profile(
+                profile_filename
+            )
+
+        except Exception as exc:
+            total_errors += 1
+
+            print(
+                f"PROFILE ERROR: "
+                f"{profile_filename}"
+            )
+
+            print(
+                f"{type(exc).__name__}: "
+                f"{exc}"
+            )
+
+            continue
+
+        print(
+            f"Processing profile: "
+            f"{profile.name}"
+        )
+
+        print(
+            f"Topic ID: "
+            f"{profile.id}"
+        )
+
         print("-" * 80)
 
         counts = process_profile(
             articles,
             profile,
         )
+
+        total_errors += counts[
+            "errors"
+        ]
 
         print(
             f"Candidates: "
@@ -192,6 +286,13 @@ def main():
         "Total persisted topic results: "
         f"{count_topic_results()}"
     )
+
+    print(
+        f"Total errors: "
+        f"{total_errors}"
+    )
+
+    print("=" * 80)
 
 
 if __name__ == "__main__":

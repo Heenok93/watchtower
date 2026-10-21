@@ -101,7 +101,7 @@ temp/
 # Local models
 # =============================================================================
 
-models/
+*.gguf
 
 
 # =============================================================================
@@ -112,6 +112,3 @@ benchmarks/comparison*/
 
 # Generated Watchtower outputs
 watchtower_digest.md
-
-# Local benchmark outputs
-benchmarks/comparison10_*/
