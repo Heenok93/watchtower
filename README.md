@@ -81,6 +81,7 @@ generate_digest.py
    │
    ▼
 Digest Markdown
+```
 
 ---
 
