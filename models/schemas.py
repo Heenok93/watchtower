@@ -84,6 +84,11 @@ class TopicProfile(BaseModel):
         default_factory=ThresholdConfig
     )
 
+    # Optional profile-local safeguards; defaults preserve existing profiles.
+    strip_editorial_prefixes: bool = False
+    min_candidate_score_for_candidate: int | None = None
+    low_score_candidate_decision: Literal["reject", "llm_review"] = "reject"
+
 
 class FilterResult(BaseModel):
     topic_id: str

@@ -1,0 +1,6 @@
+﻿article_id,selection_status,title,seconds,agentic_health_ai_score,digital_health_ai_score,input_tokens,error
+9877,deterministic_candidate,LongCAF: A longitudinal context-constructive agentic framework for LLM-supported hypertension self-management,54.55,0.9955520595444802,0.9888500260278951,819,
+5914,deterministic_candidate,A survey of LLM reasoning in healthcare and medicine: Individual modeling and collaborative agents,56.0,0.9813515402838064,0.9790731127626556,831,
+10184,deterministic_candidate,Audiologist-Guided Multimodal AI for Pure-Tone Audiometry and Tympanometry Interpretation and Reporting,107.55,0.9712536470586948,0.9930485954018575,1491,
+5620,pending_llm_review,A Zero-Shot Explainable Doctor Ranking Framework with Large Language Models,84.09,0.3267709813973919,0.9860979413749407,1275,
+6512,pending_llm_review,Using a large language model artificial intelligence agent to improve the efficiency of clinical quality measure evidence evaluation: a case study,99.67,0.9743931297758905,0.9294786704493045,1333,

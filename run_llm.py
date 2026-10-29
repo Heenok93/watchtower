@@ -21,6 +21,7 @@ Depuis main.py :
 from __future__ import annotations
 
 import argparse
+import os
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -36,7 +37,7 @@ from processing.llm_run_support import (
     AuditedProvider,
     prepare_article,
 )
-from providers.ollama_provider import OllamaProvider
+from providers.groq_provider import GroqProvider
 from storage.llm_audit_repository import (
     initialize_audit,
     update_attempt,
@@ -46,14 +47,18 @@ from storage.topic_result_repository import (
     save_llm_result,
 )
 
+from dotenv import load_dotenv
+load_dotenv()
 
-MODEL = "qwen3-light:latest"
+
+DEFAULT_OLLAMA_MODEL = "qwen3-light:latest"
+DEFAULT_GROQ_MODEL = "qwen/qwen3.8-27b"
 TEMPERATURE = 0.0
 
 # Étiquette humaine.
 # Les prompts réels sont également sauvegardés et hachés
 # dans la table d'audit.
-PROMPT_VERSION = "semantic_short_v1"
+PROMPT_VERSION = "semantic_scope_v2"
 
 BASE_DIR = Path(__file__).resolve().parent
 TOPICS_DIR = BASE_DIR / "config" / "topics"
@@ -390,6 +395,9 @@ def print_final_summary(
 
 def main(
     limit: int | None = None,
+    provider_name: str | None = None,
+    model: str | None = None,
+    ollama_host: str | None = None,
 ) -> dict[str, Any]:
     """
     Classify unprocessed LLM review results.
@@ -427,18 +435,34 @@ def main(
         uuid4()
     )
 
-    provider = OllamaProvider(
-        model=MODEL,
-        temperature=TEMPERATURE,
-    )
+    selected_provider = (provider_name or os.getenv("WATCHTOWER_LLM_PROVIDER", "ollama")).strip().lower()
+    if selected_provider not in {"ollama", "groq"}:
+        raise ValueError("LLM provider must be 'ollama' or 'groq'.")
 
-    provider_name = (
-        provider.get_provider_name()
-    )
+    if model is None:
+        model = os.getenv("WATCHTOWER_LLM_MODEL")
+    if not model:
+        model = DEFAULT_GROQ_MODEL if selected_provider == "groq" else DEFAULT_OLLAMA_MODEL
 
-    model_name = (
-        provider.get_model_name()
-    )
+    if selected_provider == "groq":
+        provider = GroqProvider(
+            model=model,
+            temperature=TEMPERATURE,
+        )
+    else:
+        host = ollama_host or os.getenv(
+            "WATCHTOWER_OLLAMA_HOST", "http://localhost:11434"
+        )
+        from providers.ollama_provider import OllamaProvider
+
+        provider = OllamaProvider(
+            model=model,
+            host=host,
+            temperature=TEMPERATURE,
+        )
+
+    provider_name = provider.get_provider_name()
+    model_name = provider.get_model_name()
 
     # Idempotent initialization of the audit table.
     initialize_audit()
@@ -979,6 +1003,23 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--provider",
+        choices=("ollama", "groq"),
+        default=None,
+        help="LLM provider (default: WATCHTOWER_LLM_PROVIDER or ollama).",
+    )
+    parser.add_argument(
+        "--model",
+        default=None,
+        help="Model ID; defaults to WATCHTOWER_LLM_MODEL or the provider default.",
+    )
+    parser.add_argument(
+        "--ollama-host",
+        default=None,
+        help="Ollama server URL (default: WATCHTOWER_OLLAMA_HOST or localhost).",
+    )
+
+    parser.add_argument(
         "--limit",
         type=int,
         default=None,
@@ -1005,7 +1046,10 @@ def cli() -> int:
 
     try:
         summary = main(
-            limit=args.limit
+            limit=args.limit,
+            provider_name=args.provider,
+            model=args.model,
+            ollama_host=args.ollama_host,
         )
 
     except Exception as exc:

@@ -108,7 +108,8 @@ temp/
 # Local benchmark / experimental outputs
 # =============================================================================
 
-benchmarks/comparison*/
+benchmarks/
+mnt/
 
 # Generated Watchtower outputs
 watchtower_digest.md

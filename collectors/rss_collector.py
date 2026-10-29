@@ -4,6 +4,7 @@ from datetime import date, datetime
 from time import struct_time
 
 import feedparser
+import requests
 
 from models.schemas import Article
 
@@ -217,41 +218,31 @@ def parse_publication_date(
 def extract_standard_authors(
     entry,
 ) -> list[str]:
-    """
-    Extract authors from standard feedparser fields.
-    """
-
-    authors = getattr(
-        entry,
-        "authors",
-        None,
-    )
-
+    """Extract author names across common feedparser representations."""
+    authors = getattr(entry, "authors", None)
     if authors:
-        names = []
-
+        if isinstance(authors, (str, dict)):
+            authors = [authors]
+        names: list[str] = []
         for author in authors:
-            name = author.get("name")
-
-            if name:
-                names.append(
-                    name.strip()
-                )
-
+            if isinstance(author, str):
+                name = author
+            elif isinstance(author, dict) or hasattr(author, "get"):
+                name = author.get("name")
+            else:
+                name = None
+            if isinstance(name, str):
+                name = name.strip()
+                if name and name not in names:
+                    names.append(name)
         if names:
             return names
 
-    author = getattr(
-        entry,
-        "author",
-        None,
-    )
-
-    if author:
-        return [
-            author.strip()
-        ]
-
+    author = getattr(entry, "author", None)
+    if isinstance(author, str):
+        author = author.strip()
+        if author:
+            return [author]
     return []
 
 
@@ -351,8 +342,124 @@ def collect_rss_feed(
     source_name: str = "rss",
     content_type: str = "unknown",
     journal: str | None = None,
+    diagnostics: dict | None = None,
 ) -> list[Article]:
-    feed = feedparser.parse(url)
+    """Fetch and parse a feed, recording diagnostics when requested."""
+    # Fetch explicitly so HTTP failures (403/404/410/429, etc.) are surfaced
+    # as transport/access errors rather than being confused with XML parse errors.
+    try:
+        response = requests.get(
+            url,
+            headers={
+                "User-Agent": "WatchtowerRSSCollector/1.0 (+RSS feed reader)",
+                "Accept": (
+                    "application/rss+xml, application/atom+xml, "
+                    "application/xml, text/xml, */*"
+                ),
+            },
+            timeout=30,
+            allow_redirects=True,
+        )
+    except requests.RequestException as exc:
+        # DNS, TLS, timeout and connection failures may have no HTTP response.
+        response = getattr(exc, "response", None)
+        if diagnostics is not None:
+            diagnostics.update({
+                "http_status": getattr(response, "status_code", None),
+                "response_url": getattr(response, "url", url),
+                "response_content_type": (
+                    response.headers.get("Content-Type")
+                    if response is not None else None
+                ),
+                "response_bytes": (
+                    len(response.content) if response is not None else None
+                ),
+                "fetch_error_type": type(exc).__name__,
+                "fetch_error": str(exc),
+            })
+        raise
+
+    # Record response metadata before raise_for_status(), including HTTP errors.
+    response_url = response.url
+    content_type_header = response.headers.get("Content-Type")
+    response_bytes = len(response.content)
+
+    if diagnostics is not None:
+        diagnostics.update({
+            "http_status": response.status_code,
+            "response_url": response_url,
+            "response_content_type": content_type_header,
+            "response_bytes": response_bytes,
+            "fetch_error_type": None,
+            "fetch_error": None,
+        })
+
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as exc:
+        message = (
+            f"HTTP {response.status_code} while fetching RSS feed "
+            f"{response.url} (Content-Type={content_type_header!r}, "
+            f"bytes={response_bytes})"
+        )
+        if diagnostics is not None:
+            diagnostics.update({
+                "fetch_error_type": type(exc).__name__,
+                "fetch_error": message,
+            })
+        raise
+
+    feed = feedparser.parse(response.content)
+
+    # Targeted recovery for Nature/NPJ RDF feeds that declare US-ASCII but
+    # contain UTF-8 characters. Only retry when parsing yielded no entries and
+    # the payload is valid UTF-8; do not repair arbitrary malformed XML.
+    entries = list(getattr(feed, "entries", []) or [])
+    exception_text = str(getattr(feed, "bozo_exception", "") or "").lower()
+    needs_encoding_retry = (
+        not entries
+        and bool(getattr(feed, "bozo", False))
+        and any(
+            token in exception_text
+            for token in ("not well-formed", "invalid token", "encoding", "ascii")
+        )
+    )
+    if needs_encoding_retry:
+        try:
+            response.content.decode("utf-8")
+            corrected = re.sub(
+                br'(?i)(encoding\s*=\s*["\\\'])us-ascii(["\\\'])',
+                br'\1utf-8\2',
+                response.content,
+                count=1,
+            )
+            retry_feed = feedparser.parse(corrected)
+            if getattr(retry_feed, "entries", None):
+                feed = retry_feed
+        except UnicodeDecodeError:
+            # Keep the original parser result if the response is not UTF-8.
+            pass
+
+    if diagnostics is not None:
+        diagnostics.update({
+            "bozo": bool(getattr(feed, "bozo", False)),
+            "bozo_exception": (
+                str(getattr(feed, "bozo_exception", None))
+                if getattr(feed, "bozo_exception", None) else None
+            ),
+            "http_status": response.status_code,
+            "feed_title": getattr(feed, "feed", {}).get("title"),
+            "feed_version": getattr(feed, "version", None),
+            "entries_received": len(getattr(feed, "entries", []) or []),
+            "entries_without_title": 0,
+            "encoding_retry_used": bool(
+                needs_encoding_retry and not getattr(feed, "bozo", False)
+            ),
+            "response_url": response_url,
+            "response_content_type": content_type_header,
+            "response_bytes": response_bytes,
+            "encoding_retry_error": None,
+        })
 
     if feed.bozo:
         print(
@@ -362,6 +469,7 @@ def collect_rss_feed(
         )
 
     records = []
+    entries_without_title = 0
 
     for entry in feed.entries:
         title = getattr(
@@ -371,6 +479,7 @@ def collect_rss_feed(
         )
 
         if not title:
+            entries_without_title += 1
             continue
 
         raw_summary = getattr(
@@ -427,5 +536,9 @@ def collect_rss_feed(
         )
 
         records.append(article)
+
+    if diagnostics is not None:
+        diagnostics["entries_without_title"] = entries_without_title
+        diagnostics["valid_entries"] = len(records)
 
     return records
