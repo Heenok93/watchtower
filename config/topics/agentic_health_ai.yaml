@@ -1,0 +1,519 @@
+id: agentic_health_ai
+name: Agentic AI & Health
+
+description: >-
+  Veille sur les systèmes d'IA agentiques ou autonomes appliqués à la santé humaine,
+  à la médecine, aux soins, aux systèmes de santé et à la santé publique. La composante
+  agentique est le critère principal : l'article doit décrire explicitement un agent IA,
+  un système agentique, un agent autonome, un système multi-agent, une orchestration
+  d'agents ou un LLM agissant comme agent. La simple présence d'une méthode d'IA,
+  d'un LLM, d'un chatbot médical ou d'une automatisation conventionnelle ne suffit pas.
+  Les travaux de découverte de médicaments, de conception moléculaire, d'omics et de
+  biologie computationnelle sont exclus par défaut pour réserver ces sujets à une veille
+  spécialisée ultérieure, sauf si l'application santé/soins est clairement distincte
+  et constitue le sujet principal. Les applications cliniques, hospitalières,
+  médico-administratives, de recherche médicale et de santé publique sont dans le périmètre.
+
+required_groups:
+  # Broad agent/system labels are secondary signals; specific agentic architectures remain required.
+  agentic_or_autonomous_ai:
+    terms:
+    - agentic ai
+    - agentic artificial intelligence
+    - agentic framework
+    - agentic frameworks
+    - agentic workflow
+    - agentic workflows
+    - autonomous ai agent
+    - autonomous ai agents
+    - autonomous agent
+    - autonomous agents
+    - multi-agent framework
+    - multi-agent frameworks
+    - multi-agent orchestration
+    - multiagent orchestration
+    - llm agent
+    - llm agents
+    - llm-based agent
+    - llm-based agents
+    - llm-powered agent
+    - llm-powered agents
+    - large language model agent
+    - large language model agents
+    - language model agent
+    - language model agents
+    - llm-supported agent
+    - llm-supported agents
+    - llm-powered system
+    - llm-powered systems
+    - tool-using agent
+    - tool-using agents
+    - tool use by llm
+    - agentic reasoning
+    - agent-based reasoning
+    - agent-based ai system
+    - agent-based ai systems
+    - autonomous decision-making agent
+    - autonomous decision making agent
+    - planning and acting agent
+    - ai agentic
+    - agent orchestration
+    - agent orchestration framework
+    - agent collaboration
+    - collaborative agents
+    - cooperating agents
+    - swarm intelligence agents
+    - ai-driven autonomous agent
+    - ai-driven autonomous agents
+    - embodied ai agent
+    - clinical agent
+    - clinical agents
+    - medical agent
+    - medical agents
+  health_or_medicine_domain:
+    terms:
+    - healthcare
+    - health care
+    - healthcare system
+    - healthcare systems
+    - health system
+    - health systems
+    - medicine
+    - medical
+    - clinical
+    - clinician
+    - clinicians
+    - physician
+    - physicians
+    - doctor
+    - doctors
+    - patient
+    - patients
+    - patient care
+    - self-management
+    - self management
+    - disease self-management
+    - disease self management
+    - chronic disease self-management
+    - chronic disease self management
+    - hypertension
+    - high blood pressure
+    - cardiovascular disease
+    - clinical care
+    - medical care
+    - nursing
+    - nurse
+    - nurses
+    - hospital
+    - hospitals
+    - healthcare provider
+    - healthcare providers
+    - care delivery
+    - care pathway
+    - care pathways
+    - clinical workflow
+    - healthcare workflow
+    - health services
+    - health service delivery
+    - medical decision-making
+    - medical decision making
+    - clinical decision support
+    - clinical reasoning
+    - medical reasoning
+    - prognosis
+    - patient monitoring
+    - remote patient monitoring
+    - medical imaging
+    - radiology
+    - pathology
+    - histopathology
+    - laboratory medicine
+    - clinical laboratory
+    - medical records
+    - electronic health record
+    - electronic health records
+    - electronic medical record
+    - electronic medical records
+    - ehr
+    - emr
+    - medical research
+    - clinical research
+    - public health
+    - population health
+    - global health
+    - epidemiology
+    - epidemiological
+    - disease surveillance
+    - outbreak
+    - outbreaks
+    - epidemic
+    - epidemics
+    - pandemic
+    - pandemics
+    - infectious disease
+    - infectious diseases
+    - mental health
+    - behavioral health
+    - behavioural health
+    - rehabilitation
+    - surgery
+    - emergency medicine
+    - emergency department
+    - intensive care
+    - critical care
+    - primary care
+    - primary healthcare
+    - telemedicine
+    - telehealth
+    - digital health
+    - health informatics
+    - medical informatics
+    - healthcare operations
+    - hospital management
+    - healthcare management
+    - medication management
+    - medication safety
+    - pharmacovigilance
+    - drug safety
+    - clinical trial
+    - clinical trials
+    - health policy
+    - health equity
+    - health education
+    - patient education
+    - healthcare administration
+    - health services research
+    - health technology assessment
+    - human health
+    - patient health
+    - clinical diagnosis
+    - medical diagnosis
+    - disease diagnosis
+    - clinical diagnostic
+    - medical diagnostics
+    - diagnostic imaging
+    - medical treatment
+    - clinical treatment
+    - patient treatment
+    - treatment planning
+    - clinical therapy
+    - therapeutic intervention
+    - surgical planning
+    - surgical procedure
+    - surgical care
+secondary_groups:
+  # Broad terms remain searchable but do not independently satisfy a mandatory group.
+  agentic_or_autonomous_ai:
+    terms:
+    - tool calling
+    - tool use
+    - function calling
+    - planning
+    - task decomposition
+    - memory module
+    - reflection
+    - self-reflection
+    - self-correction
+    - environment interaction
+    - observe plan act
+    - plan and execute
+    - multi-step reasoning
+    - autonomous workflow
+    - workflow orchestration
+    - agent communication
+    - agent coordination
+    - agentic framework
+    - agent benchmark
+    - agent evaluation
+    - human-agent collaboration
+    - human in the loop
+    - human-in-the-loop
+    - retrieval-augmented generation
+    - rag
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - foundation model
+    - foundation models
+    - conversational agent
+    - conversational agents
+    - virtual agent
+    - virtual agents
+    - embodied agents
+    - agentic system
+    - agentic systems
+    - agentic ai system
+    - agentic ai systems
+    - agentic artificial intelligence system
+    - agentic artificial intelligence systems
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - intelligent agent
+    - intelligent agents
+    - autonomous ai
+    - autonomous artificial intelligence
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - agent-based system
+    - agent-based systems
+  health_or_medicine_domain:
+    terms:
+    - patient outcome
+    - patient outcomes
+    - self-management
+    - self management
+    - hypertension
+    - high blood pressure
+    - clinical outcome
+    - clinical outcomes
+    - medical question answering
+    - clinical question answering
+    - differential diagnosis
+    - treatment recommendation
+    - treatment planning
+    - care coordination
+    - clinical documentation
+    - medical coding
+    - triage
+    - screening
+    - risk stratification
+    - disease prediction
+    - medical image analysis
+    - clinical notes
+    - electronic patient record
+    - patient safety
+    - clinical safety
+    - healthcare resource allocation
+    - hospital logistics
+    - staff scheduling
+    - clinical decision-making
+    - clinical decision making
+    - public health surveillance
+    - epidemic forecasting
+    - outbreak detection
+    - medical literature
+    - biomedical literature
+    - clinical guideline
+    - clinical guidelines
+    - evidence synthesis
+    - medical education
+    - clinical education
+    - medical training
+    - healthcare chatbot
+    - medical chatbot
+    - clinical chatbot
+    - patient-facing
+    - clinician-facing
+    - biomedical research
+include:
+  any:
+  - agentic framework for health
+  - agentic framework for healthcare
+  - agentic framework for medicine
+  - agentic framework for medical
+  - agentic ai in healthcare
+  - agentic ai in health care
+  - agentic ai in medicine
+  - agentic ai for healthcare
+  - ai agents in healthcare
+  - ai agents in medicine
+  - autonomous agents in healthcare
+  - autonomous agents in medicine
+  - multi-agent systems in healthcare
+  - multi-agent systems in medicine
+  - multi-agent clinical decision support
+  - llm agents for healthcare
+  - llm agents for medicine
+  - agentic clinical decision support
+  - agentic medical reasoning
+  - agentic workflow in healthcare
+  - agentic workflow in medicine
+  - autonomous clinical workflow
+  - autonomous medical workflow
+  - agentic public health
+  - ai agents for public health
+  - ai agents for clinical research
+  - ai agents for medical research
+  - multi-agent healthcare system
+  - multi-agent medical system
+  - clinical ai agent
+  - medical ai agent
+  - healthcare ai agent
+  - autonomous healthcare assistant
+  - autonomous clinical assistant
+  - agentic healthcare assistant
+  - agentic medical assistant
+  - agentic patient care
+  - agentic hospital operations
+  - agentic health system
+  - ai agent for diagnosis
+  - agent for clinical cohort curation
+  - agentic self-management
+  - agentic medical imaging
+  - multi-agent clinical workflow
+  context:
+  - health
+  - healthcare
+  - health care
+  - medicine
+  - medical
+  - clinical
+  - patient
+  - hospital
+  - public health
+  - epidemiology
+  - healthcare system
+  - health system
+  - care delivery
+  - human health
+  - patient health
+  - clinical care
+  - medical care
+priority:
+  high:
+  - agentic ai
+  - agentic artificial intelligence
+  - agentic system
+  - agentic systems
+  - agentic framework
+  - agentic frameworks
+  - agentic ai system
+  - agentic ai systems
+  - ai agent
+  - ai agents
+  - autonomous ai agent
+  - autonomous ai agents
+  - autonomous agent
+  - autonomous agents
+  - multi-agent system
+  - multi-agent systems
+  - multiagent system
+  - multiagent systems
+  - llm agent
+  - llm agents
+  - llm-based agent
+  - llm-based agents
+  - large language model agent
+  - agentic workflow
+  - agentic workflows
+  - multi-agent orchestration
+  - agent orchestration
+  - clinical agent
+  - medical agent
+  - healthcare ai agent
+exclude:
+  any:
+  - non-agentic ai
+  - non agentic ai
+  - non-agentic artificial intelligence
+  - without ai agents
+  - without an ai agent
+  - without autonomous agents
+  - no ai agents
+  - no autonomous agents
+  - conventional machine learning model
+  - conventional machine learning models
+  - conventional deep learning model
+  - conventional deep learning models
+  - standalone machine learning model
+  - standalone deep learning model
+  - traditional machine learning classifier
+  - traditional machine learning classifiers
+  - supervised classification model
+  - supervised classification models
+  - image classification model
+  - image segmentation model
+  - object detection model
+  - predictive machine learning model
+  - predictive machine learning models
+  - risk prediction model
+  - risk prediction models
+  - disease prediction model
+  - disease prediction models
+  - diagnostic classification model
+  - diagnostic classification models
+  - radiomics model
+  - radiomics models
+  - computer-aided diagnosis
+  - computer aided diagnosis
+  - computer-aided detection
+  - computer aided detection
+  - automated image classification
+  - automated image segmentation
+  - deep learning-based diagnosis
+  - machine learning-based diagnosis
+  - machine-learning-based diagnosis
+  - non-agentic chatbot
+  - non-agentic chatbots
+  - rule-based chatbot
+  - rule based chatbot
+  - retrieval-only chatbot
+  - static decision support system
+  - conventional clinical decision support system
+  - conventional clinical decision support systems
+  - conventional decision support system
+  - conventional decision support systems
+  - fixed workflow automation
+  - rule-based automation
+  - rule based automation
+  - robotic process automation
+  - robotic process automation (rpa)
+  - drug discovery
+  - drug-discovery
+  - drug design
+  - de novo drug design
+  - drug repurposing
+  - drug screening
+  - virtual screening of compounds
+  - compound screening
+  - molecular docking
+  - protein structure prediction
+  - protein folding
+  - molecular property prediction
+  - molecular generation
+  - generative chemistry
+  - medicinal chemistry
+  - small molecule design
+  - small-molecule design
+  - drug-target interaction prediction
+  - drug target interaction prediction
+  - pharmacophore modeling
+  - pharmacophore modelling
+  - cheminformatics
+  - computational chemistry
+  - molecular dynamics simulation
+  - genomics
+  - transcriptomics
+  - proteomics
+  - metabolomics
+  - multi-omics
+  - multiomics
+  - single-cell omics
+  - gene expression analysis
+  - genome-wide association study
+  - genome wide association study
+  - computational biology
+  - systems biology
+  - synthetic biology
+  - protein engineering
+  - protein design
+  - biological sequence modeling
+  - biological sequence modelling
+  - construction safety bulletin
+  - industrial fault diagnosis
+  - game development in unity
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6

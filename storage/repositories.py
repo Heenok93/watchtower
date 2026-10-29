@@ -1,7 +1,7 @@
 import json
 
 from models.schemas import Article
-from processing.normalize import normalize_doi
+from processing.normalize import normalize_doi, normalize_pmid
 from storage.database import get_connection
 
 
@@ -94,9 +94,8 @@ def save_article(
     fingerprint: str | None = None,
 ) -> int:
 
-    article.doi = normalize_doi(
-        article.doi
-    )
+    article.doi = normalize_doi(article.doi)
+    article.pmid = normalize_pmid(article.pmid)
 
     publication_date = (
         article.publication_date.isoformat()

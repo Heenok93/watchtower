@@ -1,6 +1,7 @@
 """Filtre deterministe V2.1 : signaux forts et ponts secondaires."""
 import re
 import unicodedata
+from functools import lru_cache
 
 from models.schemas import Article, FilterResult, TopicProfile
 
@@ -15,24 +16,48 @@ def normalize_filter_text(text: str | None) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def article_search_text(article: Article) -> str:
-    return normalize_filter_text(
-        " ".join([article.title, article.abstract or ""])
+# Known journal/platform boilerplate observed at the beginning of abstracts.
+# Applied only when a profile explicitly enables strip_editorial_prefixes.
+_EDITORIAL_PREFIX_PATTERNS = (
+    re.compile(
+        r"^\s*DIGITAL\s+HEALTH,\s*Volume\s+\d+\s*,\s*[^.]{1,100}\.\s*",
+        flags=re.IGNORECASE,
+    ),
+)
+
+
+def article_search_text(
+    article: Article,
+    profile: TopicProfile | None = None,
+) -> str:
+    abstract = article.abstract or ""
+    if profile is not None and profile.strip_editorial_prefixes:
+        for pattern in _EDITORIAL_PREFIX_PATTERNS:
+            abstract = pattern.sub("", abstract, count=1)
+    return normalize_filter_text(" ".join([article.title, abstract]))
+
+
+@lru_cache(maxsize=8192)
+def _compiled_term_pattern(normalized_term: str) -> re.Pattern[str]:
+    return re.compile(
+        r"(?<![a-z0-9])"
+        + re.escape(normalized_term)
+        + r"(?![a-z0-9])"
     )
+
+
+@lru_cache(maxsize=8192)
+def _normalized_term(term: str) -> str:
+    return normalize_filter_text(term)
 
 
 def find_matches(text: str, terms: list[str]) -> list[str]:
     matches = []
     for term in terms:
-        normalized_term = normalize_filter_text(term)
+        normalized_term = _normalized_term(term)
         if not normalized_term:
             continue
-        pattern = (
-            r"(?<![a-z0-9])"
-            + re.escape(normalized_term)
-            + r"(?![a-z0-9])"
-        )
-        if re.search(pattern, text):
+        if _compiled_term_pattern(normalized_term).search(text):
             matches.append(term)
     return matches
 
@@ -98,7 +123,7 @@ def has_secondary_bridge(
 
 
 def filter_article(article: Article, profile: TopicProfile) -> FilterResult:
-    text = article_search_text(article)
+    text = article_search_text(article, profile)
 
     matched_include = find_matches(text, profile.include.any)
     matched_context = find_matches(text, profile.include.context)
@@ -129,7 +154,11 @@ def filter_article(article: Article, profile: TopicProfile) -> FilterResult:
     if matched_exclude:
         decision = "reject"
     elif required_groups_satisfied:
-        decision = "candidate"
+        minimum_score = profile.min_candidate_score_for_candidate
+        if minimum_score is not None and score < minimum_score:
+            decision = profile.low_score_candidate_decision
+        else:
+            decision = "candidate"
     elif secondary_bridge:
         decision = "llm_review"
     else:

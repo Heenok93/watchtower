@@ -2,6 +2,53 @@ from pathlib import Path
 import sqlite3
 
 
+def _ensure_unique_index(
+    conn: sqlite3.Connection,
+    *,
+    index_name: str,
+    column: str,
+) -> None:
+    """Create a partial unique index unless legacy duplicates need review.
+
+    Existing duplicate rows are not deleted or merged automatically because
+    doing so could discard article metadata or topic associations.
+    """
+    allowed_columns = {"doi", "pmid", "source_url", "fingerprint"}
+    if column not in allowed_columns:
+        raise ValueError(f"Unsupported article index column: {column}")
+
+    duplicates = conn.execute(
+        f"""
+        SELECT {column}, COUNT(*) AS n
+        FROM articles
+        WHERE {column} IS NOT NULL AND TRIM({column}) <> ''
+        GROUP BY {column}
+        HAVING COUNT(*) > 1
+        LIMIT 1
+        """
+    ).fetchone()
+
+    conn.execute(f"DROP INDEX IF EXISTS {index_name}")
+    if duplicates:
+        print(
+            f"WARNING: unique index {index_name} was not created: "
+            f"duplicate values already exist in articles.{column}. "
+            "Review and reconcile those records before retrying init_database()."
+        )
+        conn.execute(
+            f"CREATE INDEX {index_name} ON articles({column})"
+        )
+        return
+
+    conn.execute(
+        f"""
+        CREATE UNIQUE INDEX {index_name}
+        ON articles({column})
+        WHERE {column} IS NOT NULL AND TRIM({column}) <> ''
+        """
+    )
+
+
 DB_PATH = Path(__file__).resolve().parent / "watchtower.db"
 
 
@@ -42,34 +89,28 @@ def init_database():
             """
         )
 
-        conn.execute(
-            """
-            CREATE UNIQUE INDEX IF NOT EXISTS idx_articles_doi
-            ON articles(doi)
-            WHERE doi IS NOT NULL
-            """
+        _ensure_unique_index(
+            conn,
+            index_name="idx_articles_doi",
+            column="doi",
         )
 
-        conn.execute(
-            """
-            CREATE UNIQUE INDEX IF NOT EXISTS idx_articles_pmid
-            ON articles(pmid)
-            WHERE pmid IS NOT NULL
-            """
+        _ensure_unique_index(
+            conn,
+            index_name="idx_articles_pmid",
+            column="pmid",
         )
 
-        conn.execute(
-            """
-            CREATE INDEX IF NOT EXISTS idx_articles_source_url
-            ON articles(source_url)
-            """
+        _ensure_unique_index(
+            conn,
+            index_name="idx_articles_source_url",
+            column="source_url",
         )
 
-        conn.execute(
-            """
-            CREATE INDEX IF NOT EXISTS idx_articles_fingerprint
-            ON articles(fingerprint)
-            """
+        _ensure_unique_index(
+            conn,
+            index_name="idx_articles_fingerprint",
+            column="fingerprint",
         )
 
         conn.execute(

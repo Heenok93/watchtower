@@ -1,6 +1,7 @@
+from typing import Any
+
 from models.schemas import Article, TopicProfile
 from models.llm_results import LLMResult
-from providers.ollama_provider import OllamaProvider
 
 SYSTEM_PROMPT = """
 Classify a scientific article against a monitoring topic.
@@ -15,17 +16,32 @@ in the article's actual contribution. Mentioning terms from each
 group separately is not sufficient. Exact keyword matches are
 not necessary when the scientific meaning is clearly equivalent.
 
-If the topic concerns using a technology to perform a workflow,
-the article must describe developing, using, or evaluating that
-technology for that workflow.
-A review ABOUT the technology alone does not qualify.
+SCOPE AND EVIDENCE RULES
+If the topic concerns using a technology to perform a workflow, the
+article must describe developing, using, or evaluating that technology
+for that workflow. A review merely discussing the technology does not
+qualify unless the topic explicitly includes reviews of that kind.
 
-If the topic itself concerns studying or evaluating a technology,
-such studies may qualify.
+For broad health-AI topics, distinguish actual human-health application
+(clinical care, patients, public health, health services, health-system
+operations, patient safety, governance or implementation) from work
+that only mentions health as motivation or uses biomedical data for a
+technical task. A computational biology, omics, drug-discovery or
+molecular-method paper is not automatically in scope just because it
+mentions a disease or medical context; require a clear connection to the
+profile's stated scope.
 
-Return relevant=false when the article is outside the topic or
-the supplied text does not provide enough evidence.
-Distinguish these two situations in the reason.
+Required concept groups must be connected in the article's actual
+contribution. Do not infer that a model was clinically validated,
+deployed, or used with patients unless the supplied text says so.
+Do not treat generic terms such as "AI", "health", "clinical" or
+"decision support" as sufficient evidence by themselves.
+
+Return relevant=false when the article is outside the topic OR when
+the supplied text does not provide enough evidence. Clearly distinguish
+"outside scope" from "insufficient information" in the reason. If the
+title alone gives strong evidence, a missing abstract need not prevent a
+positive decision. Never invent missing methods, applications or results.
 
 A missing abstract does not automatically imply irrelevance:
 use the title if it provides sufficient evidence.
@@ -131,7 +147,7 @@ Return only the requested JSON.
 def classify_article(
     article: Article,
     profile: TopicProfile,
-    provider: OllamaProvider,
+    provider: Any,
 ) -> LLMResult:
     """
     Classify one article against one topic profile using an LLM.

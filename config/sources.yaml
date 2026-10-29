@@ -11,14 +11,174 @@ rss:
     journal: Nature
     enabled: true
 
+  - id: nature_com
+    name: nature_communications
+    url: https://www.nature.com/ncomms.rss
+    content_type: mixed
+    journal: Nature Communications
+    enabled: true
+
+  - id: nature_medicine
+    name: nature_medicine
+    url: https://www.nature.com/nm.rss
+    content_type: mixed
+    journal: Nature Medicine
+    enabled: true
+
+  - id: nature_health
+    name: nature_health
+    url: https://www.nature.com/naturehealth.rss
+    content_type: mixed
+    journal: Nature Health
+    enabled: true
+
   - id: nejm
     name: nejm
     url: https://www.nejm.org/action/showFeed?jc=nejm&type=etoc&feed=rss
     content_type: mixed
     journal: New England Journal of Medicine
-    enabled: false
+    enabled: true
 
+  - id: science
+    name: science
+    url: https://www.science.org/action/showFeed?type=axatoc&feed=rss&jc=science
+    content_type: mixed
+    journal: Science
+    enabled: true
 
+  - id: science_trans
+    name: science_translational_medicine
+    url: https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=stm
+    content_type: mixed
+    journal: Science Translational Medicine
+    enabled: true
+
+  - id: science_advances
+    name: science_advances
+    url: https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv
+    content_type: mixed
+    journal: Science Advances
+    enabled: true
+
+  - id: jama
+    name: jama
+    url: https://jamanetwork.com/rss/site_3/onlineFirst_67.xml
+    content_type: mixed
+    journal: JAMA
+    enabled: true
+
+  - id: jama_netopen
+    name: jama_netopen
+    url: https://jamanetwork.com/rss/site_214/187.xml
+    content_type: mixed
+    journal: JAMA Network Open
+    enabled: true
+
+  - id: the_bmj
+    name: the_bmj
+    url: http://feeds.bmj.com/bmj/recent
+    content_type: mixed
+    journal: the BMJ
+    enabled: true
+
+  - id: bmj_open
+    name: bmj_open
+    url: https://bmjopen.bmj.com/rss/current.xml
+    content_type: mixed
+    journal: BMJ Open
+    enabled: true
+
+  - id: plos_med
+    name: plos_med
+    url: https://journals.plos.org/plosmedicine/feed/atom
+    content_type: mixed
+    journal: PLOS Medicine
+    enabled: true
+
+  - id: plos_one
+    name: plos_one
+    url: http://feeds.plos.org/plosone/PLoSONE
+    content_type: mixed
+    journal: PLOS ONE
+    enabled: true
+
+  - id: cell
+    name: cell
+    url: https://www.cell.com/cell/inpress.rss
+    content_type: mixed
+    journal: Cell
+    enabled: true
+
+  - id: device
+    name: device
+    url: https://www.cell.com/device/inpress.rss
+    content_type: mixed
+    journal: Device
+    enabled: true
+
+  - id: iscience
+    name: iscience
+    url: https://www.cell.com/iscience/inpress.rss
+    content_type: mixed
+    journal: iScience
+    enabled: true
+
+  - id: pnas
+    name: pnas
+    url: https://www.pnas.org/action/showFeed?type=searchTopic&taxonomyCode=type&tagCode=research-article
+    content_type: mixed
+    journal: PNAS
+    enabled: true
+
+  - id: pnas_nexus
+    name: pnas_nexus
+    url: https://academic.oup.com/rss/site_6448/4114.xml
+    content_type: mixed
+    journal: PNAS Nexus
+    enabled: true
+
+  - id: frontiers_medicine
+    name: frontiers_medicine
+    url: https://www.frontiersin.org/journals/medicine/rss
+    content_type: mixed
+    journal: Frontiers in Medicine
+    enabled: true
+
+  - id: eclinicalmedicine
+    name: eclinicalmedicine
+    url: https://rss.sciencedirect.com/publication/science/25895370
+    content_type: mixed
+    journal: eClinicalMedicine
+    enabled: true
+
+  - id: ebiomedicine
+    name: ebiomedicine
+    url: https://rss.sciencedirect.com/publication/science/23523964
+    content_type: mixed
+    journal: eBiomedicine
+    enabled: true
+
+  - id: elife_medicine
+    name: elife_medicine
+    url: https://elifesciences.org/rss/subject/medicine.xml
+    content_type: mixed
+    journal: eLife Medicine
+    enabled: true
+
+  - id: fund_research
+    name: fund_research
+    url: https://rss.sciencedirect.com/publication/science/26673258
+    content_type: mixed
+    journal: Fundamental Research
+    enabled: true
+
+  - id: ACM_communications
+    name: ACM_communications
+    url: https://cacm.acm.org/issue/latest/feed
+    content_type: mixed
+    journal: Communications of the ACM
+    enabled: true
+    
   # ------------------------------------------------------------------
   # AI research labs and industry
   # ------------------------------------------------------------------
@@ -28,7 +188,7 @@ rss:
     url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/
     content_type: blog
     journal: null
-    enabled: false
+    enabled: true
 
   - id: google_research
     name: google_research
@@ -42,22 +202,49 @@ rss:
     url: https://blog.google/innovation-and-ai/technology/health/rss/
     content_type: blog
     journal: null
-    enabled: false
+    enabled: true
 
   - id: nvidia_news
     name: nvidia_news
     url: https://nvidianews.nvidia.com/releases.xml
     content_type: news
     journal: null
-    enabled: false
+    enabled: true
+
+  - id: openai_news
+    name: openai_news
+    url: https://openai.com/news/rss.xml
+    content_type: news
+    journal: null
+    enabled: true
+
+  - id: tldr_ai
+    name: tldr_ai
+    url: https://raw.githubusercontent.com/alan-turing-institute/ai-rss-feeds/refs/heads/main/feeds/tldr-ai.xml
+    content_type: news
+    journal: null
+    enabled: true
 
   - id: allen_ai_news
     name: allen_ai_news
     url: https://raw.githubusercontent.com/alan-turing-institute/ai-rss-feeds/refs/heads/main/feeds/allenai-news.xml
     content_type: news
     journal: null
-    enabled: false
+    enabled: true
 
+  - id: roboflow_news
+    name: roboflow_news
+    url: https://blog.roboflow.com/rss
+    content_type: news
+    journal: null
+    enabled: true
+
+  - id: mit_technologyreview_ai
+    name: mit_technologyreview_ai
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+    content_type: news
+    journal: null
+    enabled: true
 
   # ------------------------------------------------------------------
   # Preprints
@@ -75,19 +262,83 @@ rss:
     url: https://rss.arxiv.org/rss/cs.LG
     content_type: preprint
     journal: arXiv
-    enabled: false
+    enabled: true
 
   - id: biorxiv_epidemiology
     name: biorxiv_epidemiology
     url: https://connect.biorxiv.org/biorxiv_xml.php?subject=epidemiology
     content_type: preprint
-    journal: bioRxiv
+    journal: bioRxiv Epidemiology
     enabled: true
 
+  - id: biorxiv_bioinformatics
+    name: biorxiv_bioinformatics
+    url: https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics
+    content_type: preprint
+    journal: bioRxiv Bioinformatics
+    enabled: true
+
+  - id: gates_open_research
+    name: gates_open_research
+    url: https://gatesopenresearch.org/published/rss
+    content_type: preprint
+    journal: Gates Open Research
+    enabled: true
+
+  - id: wellcome_open_research
+    name: wellcome_open_research
+    url: https://wellcomeopenresearch.org/published/rss
+    content_type: preprint
+    journal: Wellcome Open Research
+    enabled: true
+
+  - id: peerj
+    name: peerj
+    url: https://peerj.com/articles/index.rss2
+    content_type: preprint
+    journal: peerJ
+    enabled: true
+
+  - id: peerj_comp_sci
+    name: peerj_comp_sci
+    url: https://peerj.com/articles/index.atom?subject=9200&journal=cs
+    content_type: preprint
+    journal: peerJ Computer Science
+    enabled: true
 
   # ------------------------------------------------------------------
   # Digital medicine / AI in health
   # ------------------------------------------------------------------
+
+  - id: lancet_dighealth
+    name: lancet_dighealth
+    url: https://rss.sciencedirect.com/publication/science/25897500
+    content_type: mixed
+    journal: Lancet Digital Health
+    enabled: true
+
+
+  - id: bmj_dighealth
+    name: bmj_digital_health
+    url: https://bmjdigitalhealth.bmj.com/rss/current.xml
+    content_type: mixed
+    journal: BMJ Digital Health
+    enabled: true
+
+  - id: plos_comp_biol
+    name: plos_comp_biol
+    url: https://journals.plos.org/ploscompbiol/feed/atom
+    content_type: mixed
+    journal: PLOS Computational Biology
+    enabled: true
+
+  - id: plos_dig_health
+    name: plos_dig_health
+    url: https://journals.plos.org/digitalhealth/feed/atom
+    content_type: mixed
+    journal: PLOS Digital Health
+    enabled: true
+
 
   - id: npj_digital_medicine
     name: npj_digital_medicine
@@ -96,24 +347,115 @@ rss:
     journal: npj Digital Medicine
     enabled: true
 
-  - id: lancet_digital_health
-    name: lancet_digital_health
-    url: https://www.thelancet.com/rssfeed/landig_online.xml
+  - id: npj_digital_public_health
+    name: npj_digital_public_health
+    url: https://www.nature.com/npjdigipubhealth.rss
     content_type: mixed
-    journal: The Lancet Digital Health
-    enabled: false
+    journal: npj Digital Public Health
+    enabled: true
 
-  - id: jmir_ai
-    name: jmir_ai
-    url: https://ai.jmir.org/feed/atom
+  - id: npj_artificial_intelligence
+    name: npj_artificial_intelligence
+    url: https://www.nature.com/npjai.rss
     content_type: mixed
-    journal: JMIR AI
-    enabled: false
+    journal: npj Artificial Intelligence
+    enabled: true
 
+  - id: discover_ai
+    name: discover_ai
+    url: https://link.springer.com/search.rss?facet-journal-id=44163&search-within=Journal&query=
+    content_type: mixed
+    journal: Discover Artificial Intelligence
+    enabled: true
+
+  - id: frontiers_dighealth
+    name: frontiers_dighealth
+    url: https://www.frontiersin.org/journals/digital-health/rss
+    content_type: mixed
+    journal: Frontiers in Digital Health
+    enabled: true
+
+  - id: artif_medicine
+    name: artif_medicine
+    url: https://rss.sciencedirect.com/publication/science/09333657
+    content_type: mixed
+    journal: Artificial Intelligence in Medicine
+    enabled: true 
+
+
+  - id: sage_dig_health
+    name: sage_dig_health
+    url: https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=dhj&type=etoc&feed=rss&_gl=1*ctbmll*_up*MQ..*_ga*Njk1MTI1NjAyLjE3OTI2NzEzNDU.*_ga_60R758KFDG*czE3OTI2NzEzNDQkbzEkZzEkdDE3OTI2NzEzNTkkajQ1JGwxJGgxOTMzNTEwMjQ.
+    content_type: mixed
+    journal: Sage Digital Health
+    enabled: true
+
+  - id: jmir
+    name: jmir
+    url: https://www.jmir.org/feed/atom
+    content_type: mixed
+    journal: Journal of Medical Internet Research
+    enabled: true
+
+  - id: jmir_med_informatics
+    name: jmir_med_informatics
+    url: https://medinform.jmir.org/feed/atom
+    content_type: mixed
+    journal: JMIR Medical Informatics
+    enabled: true
 
   # ------------------------------------------------------------------
   # AI / data science journals
   # ------------------------------------------------------------------
+
+  - id: stats_medicine
+    name: stats_medicine
+    url: https://onlinelibrary.wiley.com/feed/10970258/most-recent
+    content_type: mixed
+    journal: Statistics in Medicine
+    enabled: true 
+
+  - id: computers_biol_med
+    name: computers_biol_med
+    url: https://rss.sciencedirect.com/publication/science/00104825
+    content_type: mixed
+    journal: Computers in Biology and Medicine
+    enabled: true
+
+  - id: computer_methods_programs_biomedicine
+    name: computer_methods_programs_biomedicine
+    url: https://rss.sciencedirect.com/publication/science/01692607
+    content_type: mixed
+    journal: Computer Methods and Programs in Biomedicine
+    enabled: true
+
+  - id: intelligent_medicine
+    name: intelligent_medicine
+    url: https://rss.sciencedirect.com/publication/science/26671026
+    content_type: mixed
+    journal: Intelligent Medicine
+    enabled: true
+
+  - id: nature_comp_sci
+    name: nature_computational_science
+    url: https://www.nature.com/natcomputsci.rss
+    content_type: mixed
+    journal: Nature Computational Science
+    enabled: true
+
+  - id: nature_mach_intel
+    name: nature_machine_intelligence
+    url: https://www.nature.com/natmachintell.rss
+    content_type: mixed
+    journal: Nature Machine Intelligence
+    enabled: true
+
+  - id: intelligent_comp
+    name: intelligent_computing
+    url: https://spj.science.org/action/showFeed?type=etoc&feed=rss&jc=icomputing
+    content_type: mixed
+    journal: Intelligent Computing
+    enabled: true
 
   - id: ai_open
     name: ai_open
@@ -129,28 +471,943 @@ rss:
     journal: Patterns
     enabled: true
 
-
-  # ------------------------------------------------------------------
-  # Epidemiology
-  # ------------------------------------------------------------------
-
-  - id: spatial_temporal_epidemiology
-    name: spatial_temporal_epidemiology
-    url: https://rss.sciencedirect.com/publication/science/18775845
+  - id: IEEE_access
+    name: IEEE_access
+    url: https://ieeexplore.ieee.org/rss/TOC6287639.XML
     content_type: mixed
-    journal: Spatial and Spatio-temporal Epidemiology
-    enabled: false
+    journal: IEEE Access
+    enabled: true
+
+  - id: IEEE_artifint
+    name: IEEE_artifint
+    url: https://ieeexplore.ieee.org/rss/TOC10899809.XML
+    content_type: mixed
+    journal: IEEE Artificial Intelligence
+    enabled: true
+
+  - id: IEEE_transact_AI
+    name: IEEE_transact_AI
+    url: https://ieeexplore.ieee.org/rss/TOC9078688.XML
+    content_type: mixed
+    journal: IEEE Transactions on Artificial Intelligence
+    enabled: true
+
+  - id: big_data_mining
+    name: big_data_mining
+    url: https://ieeexplore.ieee.org/rss/TOC8254253.XML
+    content_type: mixed
+    journal: Big Data Mining and Analytics
+    enabled: true
+
+  - id: IEEE_trans_bigdata
+    name: IEEE_trans_bigdata
+    url: https://ieeexplore.ieee.org/rss/TOC6687317.XML
+    content_type: mixed
+    journal: IEEE Transactions on Big Data
+    enabled: true
+
+  - id: IEEE_trans_machine_learning
+    name: IEEE_trans_machine_learning
+    url: https://ieeexplore.ieee.org/rss/TOC34.XML
+    content_type: mixed
+    journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+    enabled: true
+
+  - id: IEEE_biomedical_health_informatics
+    name: IEEE_biomedical_health_informatics
+    url: https://ieeexplore.ieee.org/rss/TOC6221020.XML
+    content_type: mixed
+    journal: IEEE Journal of Biomedical and Health Informatics
+    enabled: true
+
+  - id: IEEE_eng_health
+    name: IEEE_eng_health
+    url: https://ieeexplore.ieee.org/rss/TOC6221039.XML
+    content_type: mixed
+    journal: IEEE Journal of Translational Engineering in Health and Medicine
+    enabled: true
+
+  - id: IEEE_emerging_topics_computational_intelligence
+    name: IEEE_emerging_topics_computational_intelligence
+    url: https://ieeexplore.ieee.org/rss/TOC7433297.XML
+    content_type: mixed
+    journal: IEEE Transactions on Emerging Topics in Computational Intelligence
+    enabled: true
+
+  - id: jmir_ai
+    name: jmir_ai
+    url: https://ai.jmir.org/feed/atom
+    content_type: mixed
+    journal: JMIR AI
+    enabled: true
+
+  - id: information_fusion
+    name: information_fusion
+    url: https://rss.sciencedirect.com/publication/science/15662535
+    content_type: mixed
+    journal: Information Fusion
+    enabled: true
+
+  - id: ox_bioinformatics
+    name: ox_bioinformatics
+    url: https://academic.oup.com/rss/site_5139/3001.xml
+    content_type: mixed
+    journal: Oxford Bioinformatics
+    enabled: true
+
+  - id: ml_knowledge_extraction
+    name: ml_knowledge_extraction
+    url: https://www.mdpi.com/rss/journal/make
+    content_type: mixed
+    journal: Machine Learning and Knowledge Extraction
+    enabled: true
+
+  - id: frontiers_ai
+    name: frontiers_ai
+    url: https://www.frontiersin.org/journals/artificial-intelligence/rss
+    content_type: mixed
+    journal: Frontiers in Artificial Intelligence
+    enabled: true
+
+  - id: elsevier_ai
+    name: elsevier_ai
+    url: https://rss.sciencedirect.com/publication/science/00043702
+    content_type: mixed
+    journal: Elsevier Artificial Intelligence
+    enabled: true 
+
+  - id: elsevier_ml_app
+    name: elsevier_ml_app
+    url: https://rss.sciencedirect.com/publication/science/26668270
+    content_type: mixed
+    journal: Elsevier Machine Learning and Applications
+    enabled: true 
+
+  - id: found_trends_ml
+    name: found_trends_ml
+    url: https://www.emerald.com/rss/site_1001151/1000573.xml
+    content_type: mixed
+    journal: Foundations and Trends in Machine Learning
+    enabled: true 
+
+  - id: elife_comp_biol
+    name: elife_comp_biol
+    url: https://elifesciences.org/rss/subject/computational-systems-biology.xml
+    content_type: mixed
+    journal: eLife Computational Biology
+    enabled: true
+
+  - id: jmlr
+    name: jmlr
+    url: https://www.jmlr.org/jmlr.xml
+    content_type: mixed
+    journal: Journal of Machine Learning Research
+    enabled: true
+
+  - id: mach_int_res
+    name: mach_int_res
+    url: https://link.springer.com/search.rss?facet-journal-id=11633&search-within=Journal&query=
+    content_type: mixed
+    journal: Machine Intelligence Research
+    enabled: true
+
+
+  - id: big_data_research
+    name: big_data_research
+    url: https://rss.sciencedirect.com/publication/science/22145796
+    content_type: mixed
+    journal: Big Data Research
+    enabled: true
+
+  - id: springer_ml
+    name: springer_ml
+    url: https://link.springer.com/search.rss?facet-journal-id=10994&search-within=Journal&query=
+    content_type: mixed
+    journal: Springer Machine Learning
+    enabled: true
+
+  - id: springer_ml_comput
+    name: springer_ml_comput
+    url: https://link.springer.com/search.rss?facet-journal-id=44379&search-within=Journal&query=
+    content_type: mixed
+    journal: Springer Machine Learning for Computational Science and Engineering
+    enabled: true
+
+
+  - id: mdpi_computation
+    name: mdpi_computation
+    url: https://www.mdpi.com/rss/journal/computation
+    content_type: mixed
+    journal: MDPI Computation
+    enabled: true
+
+  - id: bmj_healthcare_informatics
+    name: bmj_healthcare_informatics
+    url: https://informatics.bmj.com/rss/current.xml
+    content_type: mixed
+    journal: BMJ Health Care and Informatics
+    enabled: true
+
+
+  # ------------------------------------------------------------------
+  # Epidemiology/Public Health
+  # ------------------------------------------------------------------
+
+  - id: elife_epidemiology
+    name: elife_epidemiology
+    url: https://elifesciences.org/rss/subject/epidemiology-global-health.xml
+    content_type: mixed
+    journal: eLife Epidemiology
+    enabled: true
 
   - id: journal_clinical_epidemiology
     name: journal_clinical_epidemiology
     url: https://rss.sciencedirect.com/publication/science/08954356
     content_type: mixed
     journal: Journal of Clinical Epidemiology
-    enabled: false
+    enabled: true
 
   - id: journal_epidemiology_population_health
     name: journal_epidemiology_population_health
     url: https://rss.sciencedirect.com/publication/science/29504333
     content_type: mixed
     journal: Journal of Epidemiology and Population Health
+    enabled: true
+
+  - id: lancet_globhealth
+    name: lancet_globhealth
+    url: https://rss.sciencedirect.com/publication/science/2214109X
+    content_type: mixed
+    journal: Lancet Global Health
+    enabled: true
+
+  - id: lancet_infdisease
+    name: lancet_infdisease
+    url: https://rss.sciencedirect.com/publication/science/14733099
+    content_type: mixed
+    journal: Lancet Infectious Diseases
+    enabled: true
+
+  - id: plos_glopubhealth
+    name: plos_glopubhealth
+    url: https://journals.plos.org/globalpublichealth/feed/atom
+    content_type: mixed
+    journal: PLOS Global Public Health
+    enabled: true
+
+  - id: bmj_globhealth
+    name: bmj_globhealth
+    url: https://gh.bmj.com/rss/current.xml
+    content_type: mixed
+    journal: BMJ Global Health
+    enabled: true
+
+  - id: bmj_infdis
+    name: bmj_infectious_diseases
+    url: https://id.bmj.com/rss/current.xml
+    content_type: mixed
+    journal: BMJ Infectious Diseases
     enabled: false
+
+  - id: frontiers_epi
+    name: frontiers_epi
+    url: https://www.frontiersin.org/journals/epidemiology/rss
+    content_type: mixed
+    journal: Frontiers in Epidemiology
+    enabled: true
+
+  - id: bmc_public_health
+    name: bmc_public_health
+    url: https://link.springer.com/search.rss?facet-journal-id=12889&search-within=Journal&query=
+    content_type: mixed
+    journal: BMC Public Health
+    enabled: true
+
+  - id: bmc_inf_dis 
+    name: bmc_infectious_diseases
+    url: https://link.springer.com/search.rss?facet-journal-id=12879&search-within=Journal&query=
+    content_type: mixed
+    journal: BMC Infectious Diseases
+    enabled: true
+
+  - id: int_journal_epi 
+    name: int_journal_epi
+    url: https://academic.oup.com/rss/site_5299/3165.xml
+    content_type: mixed
+    journal: International Journal of Epidemiology
+    enabled: true
+
+  - id: globalhealth_research
+    name: globalhealth_research
+    url: https://rss.sciencedirect.com/publication/science/23970642
+    content_type: mixed
+    journal: Global Health Research and Policy
+    enabled: true
+
+  - id: camb_epid_infec
+    name: camb_epid_infec
+    url: https://www.cambridge.org/core/rss/product/id/6BD9A1C3FE054EFD604833E60853FD77
+    content_type: mixed
+    journal: Cambridge Epidemiology and Infection
+    enabled: true
+
+  - id: publichealth_jmir
+    name: publichealth_jmir
+    url: https://publichealth.jmir.org/feed/atom
+    content_type: mixed
+    journal: JMIR Public Health and Surveillance
+    enabled: true
+
+  # ------------------------------------------------------------------
+  # Modelling/Forecasting/Simulation
+  # ------------------------------------------------------------------
+
+  - id: health_ds
+    name: health_data_science
+    url: https://spj.science.org/action/showFeed?type=etoc&feed=rss&jc=hds
+    content_type: mixed
+    journal: Health Data Science
+    enabled: true
+
+  - id: epidemics
+    name: epidemics
+    url: https://rss.sciencedirect.com/publication/science/17554365
+    content_type: mixed
+    journal: Epidemics
+    enabled: true
+
+  - id: spatial_temporal_epidemiology
+    name: spatial_temporal_epidemiology
+    url: https://rss.sciencedirect.com/publication/science/18775845
+    content_type: mixed
+    journal: Spatial and Spatio-temporal Epidemiology
+    enabled: true
+
+  - id: ACM_computing_surveys
+    name: ACM_computing_surveys
+    url: https://dl.acm.org/action/showFeed?type=etoc&feed=rss&jc=csur
+    content_type: mixed
+    journal: ACM Computing Surveys
+    enabled: true
+
+  - id: info_health
+    name: info_health
+    url: https://rss.sciencedirect.com/publication/science/29499534
+    content_type: mixed
+    journal: Informatics and Health
+    enabled: true
+
+  - id: glob_health_journal
+    name: glob_health_journal
+    url: https://rss.sciencedirect.com/publication/science/24146447
+    content_type: mixed
+    journal: Global Health Journal
+    enabled: true
+
+  - id: clin_ehealth
+    name: clin_ehealth
+    url: https://rss.sciencedirect.com/publication/science/25889141
+    content_type: mixed
+    journal: Clinical eHealth
+    enabled: true
+
+  - id: infect_disease_modelling
+    name: infect_disease_modelling
+    url: https://rss.sciencedirect.com/publication/science/24680427
+    content_type: mixed
+    journal: Infectious Disease Modelling
+    enabled: true
+
+  - id: data_science_management
+    name: data_science_management
+    url: https://rss.sciencedirect.com/publication/science/26667649
+    content_type: mixed
+    journal: Data Science and Management
+    enabled: true
+
+  - id: statistical_learning_data_science
+    name: statistical_learning_data_science
+    url: https://rss.sciencedirect.com/publication/science/30513901
+    content_type: mixed
+    journal: Statistical Learning and Data Science
+    enabled: true
+
+  - id: mdpi_forecasting
+    name: mdpi_forecasting
+    url: https://www.mdpi.com/rss/journal/forecasting
+    content_type: mixed
+    journal: MDPI Forecasting
+    enabled: true
+
+  - id: int_journ_forecasting
+    name: int_journ_forecasting
+    url: https://rss.sciencedirect.com/publication/science/01692070
+    content_type: mixed
+    journal: International Journal of Forecasting
+    enabled: true
+
+  - id: env_modelling_software
+    name: env_modelling_software
+    url: https://rss.sciencedirect.com/publication/science/13648152
+    content_type: mixed
+    journal: Environmental Modelling & Software
+    enabled: true
+
+  - id: applied_mathematical_modelling
+    name: applied_mathematical_modelling
+    url: https://rss.sciencedirect.com/publication/science/0307904X
+    content_type: mixed
+    journal: Applied Mathematical Modelling
+    enabled: true
+
+  - id: simulation_modelling_practice_and_theory
+    name: simulation_modelling_practice_and_theory
+    url: https://rss.sciencedirect.com/publication/science/1569190X
+    content_type: mixed
+    journal: Simulation Modelling Practice and Theory
+    enabled: true
+
+  - id: journal_of_geovisualization_and_spatial_analysis
+    name: journal_of_geovisualization_and_spatial_analysis
+    url: https://link.springer.com/search.rss?facet-journal-id=41651&search-within=Journal&query=
+    content_type: mixed
+    journal: Journal of Geovisualization and Spatial Analysis
+    enabled: true
+
+  - id: tandfonline_geospatial
+    name: tandfonline_geospatial
+    url: https://www.tandfonline.com/feed/rss/tgsi20
+    content_type: mixed
+    journal: Geo-spatial Information Science
+    enabled: true
+
+  - id: spatial_statistics
+    name: spatial_statistics
+    url: https://rss.sciencedirect.com/publication/science/22116753
+    content_type: mixed
+    journal: Spatial Statistics
+    enabled: true
+
+
+  # ------------------------------------------------------------------
+  # Journals added from the reviewed candidate workbook
+  # RSS URLs supplied in 'liste finale a inclure.xlsx'; verify feeds before production use.
+  # ------------------------------------------------------------------
+
+  - id: environmental_health_perspectives
+    name: environmental_health_perspectives
+    url: "https://pubs.acs.org/rss/evhpaz/asap.xml"
+    content_type: mixed
+    journal: "Environmental Health Perspectives"
+    enabled: true
+
+  - id: proceedings_of_the_ieee
+    name: proceedings_of_the_ieee
+    url: "https://ieeexplore.ieee.org/rss/TOC5.XML"
+    content_type: mixed
+    journal: "Proceedings of the IEEE"
+    enabled: true
+
+  - id: american_journal_of_public_health
+    name: american_journal_of_public_health
+    url: "https://ajph.aphapublications.org/action/showFeed?type=etoc&feed=rss&jc=ajph"
+    content_type: mixed
+    journal: "American Journal of Public Health"
+    enabled: false
+
+  - id: plos_biology
+    name: plos_biology
+    url: "http://feeds.plos.org/plosbiology/NewArticles?format=xml"
+    content_type: mixed
+    journal: "PLOS Biology"
+    enabled: true
+
+  - id: expert_systems_with_applications
+    name: expert_systems_with_applications
+    url: "https://rss.sciencedirect.com/publication/science/09574174"
+    content_type: mixed
+    journal: "Expert Systems with Applications"
+    enabled: true
+
+  - id: american_journal_of_epidemiology
+    name: american_journal_of_epidemiology
+    url: "https://academic.oup.com/rss/site_5257/3123.xml"
+    content_type: mixed
+    journal: "American Journal of Epidemiology"
+    enabled: true
+
+  - id: emerging_infectious_diseases
+    name: emerging_infectious_diseases
+    url: "http://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml"
+    content_type: mixed
+    journal: "Emerging Infectious Diseases"
+    enabled: true
+
+  - id: ieee_transactions_on_neural_networks_and_learning_systems
+    name: ieee_transactions_on_neural_networks_and_learning_systems
+    url: "https://ieeexplore.ieee.org/rss/TOC5962385.XML"
+    content_type: mixed
+    journal: "IEEE Transactions on Neural Networks and Learning Systems"
+    enabled: true
+
+  - id: pattern_recognition
+    name: pattern_recognition
+    url: "https://rss.sciencedirect.com/publication/science/00313203"
+    content_type: mixed
+    journal: "Pattern Recognition"
+    enabled: true
+
+  - id: bmc_bioinformatics
+    name: bmc_bioinformatics
+    url: "https://link.springer.com/search.rss?facet-journal-id=12859&search-within=Journal&query="
+    content_type: mixed
+    journal: "BMC Bioinformatics"
+    enabled: true
+
+  - id: computer_methods_in_applied_mechanics_and_engineering
+    name: computer_methods_in_applied_mechanics_and_engineering
+    url: "https://rss.sciencedirect.com/publication/science/00457825"
+    content_type: mixed
+    journal: "Computer Methods in Applied Mechanics and Engineering"
+    enabled: true
+
+  - id: international_journal_of_environmental_research_and_public_health
+    name: international_journal_of_environmental_research_and_public_health
+    url: "https://www.mdpi.com/rss/journal/ijerph"
+    content_type: mixed
+    journal: "International Journal of Environmental Research and Public Health"
+    enabled: true
+
+  - id: information_sciences
+    name: information_sciences
+    url: "https://rss.sciencedirect.com/publication/science/00200255"
+    content_type: mixed
+    journal: "Information Sciences"
+    enabled: true
+
+  - id: journal_of_the_american_statistical_association
+    name: journal_of_the_american_statistical_association
+    url: "https://www.tandfonline.com/feed/rss/uasa20"
+    content_type: mixed
+    journal: "Journal of the American Statistical Association"
+    enabled: true
+
+  - id: ieee_transactions_on_knowledge_and_data_engineering
+    name: ieee_transactions_on_knowledge_and_data_engineering
+    url: "https://ieeexplore.ieee.org/rss/TOC69.XML"
+    content_type: mixed
+    journal: "IEEE Transactions on Knowledge and Data Engineering"
+    enabled: true
+
+  - id: neurocomputing
+    name: neurocomputing
+    url: "https://rss.sciencedirect.com/publication/science/09252312"
+    content_type: mixed
+    journal: "Neurocomputing"
+    enabled: true
+
+  - id: applied_soft_computing
+    name: applied_soft_computing
+    url: "https://rss.sciencedirect.com/publication/science/15684946"
+    content_type: mixed
+    journal: "Applied Soft Computing"
+    enabled: true
+
+  - id: environmental_research
+    name: environmental_research
+    url: "https://rss.sciencedirect.com/publication/science/00139351"
+    content_type: mixed
+    journal: "Environmental Research"
+    enabled: true
+
+  - id: international_journal_of_climatology
+    name: international_journal_of_climatology
+    url: "https://rmets.onlinelibrary.wiley.com/feed/10970088/most-recent"
+    content_type: mixed
+    journal: "International Journal of Climatology"
+    enabled: true
+
+  - id: journal_of_epidemiology_and_community_health
+    name: journal_of_epidemiology_and_community_health
+    url: "https://jech.bmj.com/rss/current.xml"
+    content_type: mixed
+    journal: "Journal of Epidemiology and Community Health"
+    enabled: true
+
+  - id: computers_and_operations_research
+    name: computers_and_operations_research
+    url: "https://rss.sciencedirect.com/publication/science/03050548"
+    content_type: mixed
+    journal: "Computers and Operations Research"
+    enabled: true
+
+  - id: pattern_recognition_letters
+    name: pattern_recognition_letters
+    url: "https://rss.sciencedirect.com/publication/science/01678655"
+    content_type: mixed
+    journal: "Pattern Recognition Letters"
+    enabled: true
+
+  - id: neural_networks
+    name: neural_networks
+    url: "https://rss.sciencedirect.com/publication/science/08936080"
+    content_type: mixed
+    journal: "Neural Networks"
+    enabled: true
+
+  - id: ecological_modelling
+    name: ecological_modelling
+    url: "https://rss.sciencedirect.com/publication/science/03043800"
+    content_type: mixed
+    journal: "Ecological Modelling"
+    enabled: true
+
+  - id: bmc_medical_research_methodology
+    name: bmc_medical_research_methodology
+    url: "https://link.springer.com/search.rss?facet-journal-id=12874&search-within=Journal&query="
+    content_type: mixed
+    journal: "BMC Medical Research Methodology"
+    enabled: true
+
+  - id: plos_neglected_tropical_diseases
+    name: plos_neglected_tropical_diseases
+    url: "https://journals.plos.org/plosntds/feed/atom"
+    content_type: mixed
+    journal: "PLOS Neglected Tropical Diseases"
+    enabled: true
+
+  - id: engineering_applications_of_artificial_intelligence
+    name: engineering_applications_of_artificial_intelligence
+    url: "https://rss.sciencedirect.com/publication/science/09521976"
+    content_type: mixed
+    journal: "Engineering Applications of Artificial Intelligence"
+    enabled: true
+
+  - id: nature_biomedical_engineering
+    name: nature_biomedical_engineering
+    url: "https://www.nature.com/natbiomedeng.rss"
+    content_type: mixed
+    journal: "Nature Biomedical Engineering"
+    enabled: true
+
+  - id: neural_computing_and_applications
+    name: neural_computing_and_applications
+    url: "https://link.springer.com/search.rss?facet-journal-id=521&search-within=Journal&query="
+    content_type: mixed
+    journal: "Neural Computing and Applications"
+    enabled: true
+
+  - id: journal_of_the_royal_statistical_society_series_b_statistical_methodology
+    name: journal_of_the_royal_statistical_society_series_b_statistical_methodology
+    url: "https://academic.oup.com/rss/site_6513/4147.xml"
+    content_type: mixed
+    journal: "Journal of the Royal Statistical Society. Series B: Statistical Methodology"
+    enabled: true
+
+  - id: computers_and_mathematics_with_applications
+    name: computers_and_mathematics_with_applications
+    url: "https://rss.sciencedirect.com/publication/science/08981221"
+    content_type: mixed
+    journal: "Computers and Mathematics with Applications"
+    enabled: true
+
+  - id: biometrics
+    name: biometrics
+    url: "https://academic.oup.com/rss/site_6590/4177.xml"
+    content_type: mixed
+    journal: "Biometrics"
+    enabled: true
+
+  - id: journal_of_the_acm
+    name: journal_of_the_acm
+    url: "https://dl.acm.org/action/showFeed?type=etoc&feed=rss&jc=jacm"
+    content_type: mixed
+    journal: "Journal of the ACM"
+    enabled: true
+
+  - id: european_journal_of_epidemiology
+    name: european_journal_of_epidemiology
+    url: "https://link.springer.com/search.rss?facet-journal-id=10654&search-within=Journal&query="
+    content_type: mixed
+    journal: "European Journal of Epidemiology"
+    enabled: true
+
+  - id: international_journal_of_medical_informatics
+    name: international_journal_of_medical_informatics
+    url: "https://rss.sciencedirect.com/publication/science/13865056"
+    content_type: mixed
+    journal: "International Journal of Medical Informatics"
+    enabled: true
+
+  - id: journal_of_artificial_intelligence_research
+    name: journal_of_artificial_intelligence_research
+    url: "https://www.jair.org/index.php/jair/gateway/plugin/WebFeedGatewayPlugin/atom"
+    content_type: mixed
+    journal: "Journal of Artificial Intelligence Research"
+    enabled: true
+
+  - id: ieee_transactions_on_human_machine_systems
+    name: ieee_transactions_on_human_machine_systems
+    url: "https://ieeexplore.ieee.org/rss/TOC6221037.XML"
+    content_type: mixed
+    journal: "IEEE Transactions on Human-Machine Systems"
+    enabled: true
+
+  - id: journal_of_biomedical_informatics
+    name: journal_of_biomedical_informatics
+    url: "https://rss.sciencedirect.com/publication/science/15320464"
+    content_type: mixed
+    journal: "Journal of Biomedical Informatics"
+    enabled: true
+
+  - id: computational_statistics_and_data_analysis
+    name: computational_statistics_and_data_analysis
+    url: "https://rss.sciencedirect.com/publication/science/01679473"
+    content_type: mixed
+    journal: "Computational Statistics and Data Analysis"
+    enabled: true
+
+  - id: value_in_health
+    name: value_in_health
+    url: "https://rss.sciencedirect.com/publication/science/10983015"
+    content_type: mixed
+    journal: "Value in Health"
+    enabled: true
+
+  - id: eurosurveillance
+    name: eurosurveillance
+    url: "https://www.eurosurveillance.org/rss/content/eurosurveillance/latestarticles?fmt=rss"
+    content_type: mixed
+    journal: "Eurosurveillance"
+    enabled: true
+
+  - id: biometrika
+    name: biometrika
+    url: "https://academic.oup.com/rss/site_5265/3131.xml"
+    content_type: mixed
+    journal: "Biometrika"
+    enabled: true
+
+  - id: frontiers_in_public_health
+    name: frontiers_in_public_health
+    url: "https://www.frontiersin.org/journals/public-health/rss"
+    content_type: mixed
+    journal: "Frontiers in Public Health"
+    enabled: true
+
+  - id: tropical_medicine_and_international_health
+    name: tropical_medicine_and_international_health
+    url: "https://onlinelibrary.wiley.com/feed/13653156/most-recent"
+    content_type: mixed
+    journal: "Tropical Medicine and International Health"
+    enabled: true
+
+  - id: environmental_health_a_global_access_science_source
+    name: environmental_health_a_global_access_science_source
+    url: "https://link.springer.com/search.rss?facet-journal-id=12940&search-within=Journal&query="
+    content_type: mixed
+    journal: "Environmental Health: A Global Access Science Source"
+    enabled: false
+
+  - id: translational_research
+    name: translational_research
+    url: "https://rss.sciencedirect.com/publication/science/19315244"
+    content_type: mixed
+    journal: "Translational Research"
+    enabled: true
+
+  - id: computational_mechanics
+    name: computational_mechanics
+    url: "https://link.springer.com/search.rss?facet-journal-id=466&search-within=Journal&query="
+    content_type: mixed
+    journal: "Computational Mechanics"
+    enabled: true
+
+  - id: data_mining_and_knowledge_discovery
+    name: data_mining_and_knowledge_discovery
+    url: "https://link.springer.com/search.rss?facet-journal-id=10618&search-within=Journal&query="
+    content_type: mixed
+    journal: "Data Mining and Knowledge Discovery"
+    enabled: true
+
+  - id: journal_of_medical_systems
+    name: journal_of_medical_systems
+    url: "https://link.springer.com/search.rss?facet-journal-id=10916&search-within=Journal&query="
+    content_type: mixed
+    journal: "Journal of Medical Systems"
+    enabled: true
+
+  - id: european_journal_of_public_health
+    name: european_journal_of_public_health
+    url: "https://academic.oup.com/rss/site_5381/3242.xml"
+    content_type: mixed
+    journal: "European Journal of Public Health"
+    enabled: true
+
+  - id: international_journal_of_intelligent_systems
+    name: international_journal_of_intelligent_systems
+    url: "https://onlinelibrary.wiley.com/feed/ijis/most-recent"
+    content_type: mixed
+    journal: "International Journal of Intelligent Systems"
+    enabled: true
+
+  - id: mathematical_biosciences
+    name: mathematical_biosciences
+    url: "https://rss.sciencedirect.com/publication/science/00255564"
+    content_type: mixed
+    journal: "Mathematical Biosciences"
+    enabled: true
+
+  - id: bmc_medical_informatics_and_decision_making
+    name: bmc_medical_informatics_and_decision_making
+    url: "https://link.springer.com/search.rss?facet-journal-id=12911&search-within=Journal&query="
+    content_type: mixed
+    journal: "BMC Medical Informatics and Decision Making"
+    enabled: true
+
+  - id: journal_of_exposure_science_and_environmental_epidemiology
+    name: journal_of_exposure_science_and_environmental_epidemiology
+    url: "https://www.nature.com/jes.rss"
+    content_type: mixed
+    journal: "Journal of Exposure Science and Environmental Epidemiology"
+    enabled: true
+
+  - id: journal_of_mathematical_biology
+    name: journal_of_mathematical_biology
+    url: "https://link.springer.com/search.rss?facet-journal-id=285&search-within=Journal&query="
+    content_type: mixed
+    journal: "Journal of Mathematical Biology"
+    enabled: true
+
+  - id: emerging_microbes_and_infections
+    name: emerging_microbes_and_infections
+    url: "https://www.tandfonline.com/feed/rss/temi20"
+    content_type: mixed
+    journal: "Emerging Microbes and Infections"
+    enabled: true
+
+  - id: maternal_and_child_health_journal
+    name: maternal_and_child_health_journal
+    url: "https://link.springer.com/search.rss?facet-journal-id=10995&search-within=Journal&query="
+    content_type: mixed
+    journal: "Maternal and Child Health Journal"
+    enabled: true
+
+  - id: journal_of_computational_and_graphical_statistics
+    name: journal_of_computational_and_graphical_statistics
+    url: "https://www.tandfonline.com/feed/rss/ucgs20"
+    content_type: mixed
+    journal: "Journal of Computational and Graphical Statistics"
+    enabled: true
+
+  - id: npj_computational_materials
+    name: npj_computational_materials
+    url: "https://www.nature.com/npjcompumats.rss"
+    content_type: mixed
+    journal: "npj Computational Materials"
+    enabled: true
+
+  - id: statistical_methods_in_medical_research
+    name: statistical_methods_in_medical_research
+    url: "https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=smma&type=etoc&feed=rss"
+    content_type: mixed
+    journal: "Statistical Methods in Medical Research"
+    enabled: true
+
+  - id: journal_of_big_data
+    name: journal_of_big_data
+    url: "https://link.springer.com/search.rss?facet-journal-id=40537&search-within=Journal&query="
+    content_type: mixed
+    journal: "Journal of Big Data"
+    enabled: true
+
+  - id: public_health
+    name: public_health
+    url: "https://rss.sciencedirect.com/publication/science/00333506"
+    content_type: mixed
+    journal: "Public Health"
+    enabled: true
+
+  - id: bulletin_of_mathematical_biology
+    name: bulletin_of_mathematical_biology
+    url: "https://link.springer.com/search.rss?facet-journal-id=11538&search-within=Journal&query="
+    content_type: mixed
+    journal: "Bulletin of Mathematical Biology"
+    enabled: true
+
+  - id: mathematics_and_computers_in_simulation
+    name: mathematics_and_computers_in_simulation
+    url: "https://rss.sciencedirect.com/publication/science/03784754"
+    content_type: mixed
+    journal: "Mathematics and Computers in Simulation"
+    enabled: true
+
+  - id: journal_of_the_royal_statistical_society_series_a_statistics_in_society
+    name: journal_of_the_royal_statistical_society_series_a_statistics_in_society
+    url: "https://academic.oup.com/rss/site_6519/4150.xml"
+    content_type: mixed
+    journal: "Journal of the Royal Statistical Society. Series A: Statistics in Society"
+    enabled: true
+
+  - id: biostatistics
+    name: biostatistics
+    url: "https://academic.oup.com/rss/site_5141/3003.xml"
+    content_type: mixed
+    journal: "Biostatistics"
+    enabled: true
+
+  - id: journal_of_epidemiology
+    name: journal_of_epidemiology
+    url: "https://www.jstage.jst.go.jp/AF05S010NewRssDld?btnaction=JT0040&sryCd=jea&rssLang=en"
+    content_type: mixed
+    journal: "Journal of Epidemiology"
+    enabled: true
+
+  - id: engineering_with_computers
+    name: engineering_with_computers
+    url: "https://link.springer.com/search.rss?facet-journal-id=366&search-within=Journal&query="
+    content_type: mixed
+    journal: "Engineering with Computers"
+    enabled: true
+
+  - id: international_journal_of_health_geographics
+    name: international_journal_of_health_geographics
+    url: "https://link.springer.com/search.rss?facet-journal-id=12942&search-within=Journal&query="
+    content_type: mixed
+    journal: "International Journal of Health Geographics"
+    enabled: true
+
+  - id: stochastic_environmental_research_and_risk_assessment
+    name: stochastic_environmental_research_and_risk_assessment
+    url: "https://link.springer.com/search.rss?facet-journal-id=477&search-within=Journal&query="
+    content_type: mixed
+    journal: "Stochastic Environmental Research and Risk Assessment"
+    enabled: true
+
+  - id: globalization_and_health
+    name: globalization_and_health
+    url: "https://link.springer.com/search.rss?facet-journal-id=12992&search-within=Journal&query="
+    content_type: mixed
+    journal: "Globalization and Health"
+    enabled: true
+
+  - id: oxford_bulletin_of_economics_and_statistics
+    name: oxford_bulletin_of_economics_and_statistics
+    url: "https://onlinelibrary.wiley.com/feed/14680084/most-recent"
+    content_type: mixed
+    journal: "Oxford Bulletin of Economics and Statistics"
+    enabled: true
+
+  - id: biometrical_journal
+    name: biometrical_journal
+    url: "https://onlinelibrary.wiley.com/feed/15214036/most-recent"
+    content_type: mixed
+    journal: "Biometrical Journal"
+    enabled: true
+
+  - id: zoonoses_and_public_health
+    name: zoonoses_and_public_health
+    url: "https://onlinelibrary.wiley.com/feed/18632378/most-recent"
+    content_type: mixed
+    journal: "Zoonoses and Public Health"
+    enabled: true
