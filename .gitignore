@@ -109,11 +109,9 @@ temp/
 # =============================================================================
 
 benchmarks/
-mnt/
-config/temp/
 
 # Generated Watchtower outputs
 watchtower_digest.md
 
 outputs/
-storage/backups/
+archives/

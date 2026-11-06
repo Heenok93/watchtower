@@ -1,6 +1,8 @@
 from pathlib import Path
 import sqlite3
 
+from storage.migration_runner import run_migrations
+
 
 def _ensure_unique_index(
     conn: sqlite3.Connection,
@@ -218,4 +220,5 @@ def init_database():
             """
         )
 
+        run_migrations(conn)
         conn.commit()

@@ -1,0 +1,516 @@
+id: epidemics_ai
+name: Epidemics & AI
+description: 'Covers AI applications to population-level epidemiological tasks in human health: disease
+  surveillance, outbreak detection, early warning, epidemic forecasting or nowcasting, incidence monitoring,
+  transmission dynamics, and the geographic or temporal spread of disease. A relevant article must have
+  an explicit population-level epidemiological objective and an AI/ML method materially involved in the
+  task. The presence of an infectious disease, a generic public-health context, a patient-level prediction,
+  or an AI method alone is insufficient. Individual diagnosis, screening, prognosis, medical imaging,
+  therapeutic education, general healthcare services, and drug discovery or development are out of scope
+  unless a distinct population-level surveillance or epidemiological modeling task is also central. Classical
+  mechanistic, compartmental, causal, statistical, or Bayesian models without an explicit AI/ML component
+  are out of scope. Agentic systems may qualify when they perform or support a population-level epidemiological
+  task; agentivity is neither necessary nor sufficient.'
+include:
+  any:
+  - automated disease surveillance
+  - automated epidemic surveillance
+  - automated outbreak surveillance
+  - automated outbreak detection
+  - automated outbreak monitoring
+  - automated outbreak warning
+  - automated epidemic early warning
+  - ai-based outbreak detection
+  - ai-based outbreak forecasting
+  - machine learning for epidemiology
+  - deep learning for epidemiology
+  - artificial intelligence for epidemiology
+  - machine learning for outbreak detection
+  - machine learning for outbreak forecasting
+  - deep learning for outbreak detection
+  - deep learning for outbreak forecasting
+  - machine learning for epidemic forecasting
+  - deep learning for epidemic forecasting
+  - spatiotemporal machine learning
+  - spatio-temporal machine learning
+  - machine learning for disease surveillance
+  - deep learning for disease surveillance
+  - ai-based disease surveillance
+  - ai-based epidemic forecasting
+  - epidemic forecasting with machine learning
+  - outbreak forecasting with machine learning
+  - foundation model for epidemiology
+  - foundation models for epidemiology
+  - agentic infectious disease surveillance
+  - agentic epidemic surveillance
+  - autonomous outbreak detection
+  - multi-agent epidemic simulation
+  context:
+  - outbreak
+  - outbreaks
+  - epidemic
+  - epidemics
+  - pandemic
+  - pandemics
+  - infectious disease
+  - infectious diseases
+  - communicable disease
+  - communicable diseases
+  - disease surveillance
+  - epidemiological surveillance
+  - public health surveillance
+  - epidemic surveillance
+  - outbreak surveillance
+  - disease spread
+  - epidemic spread
+  - transmission dynamics
+  - incidence
+  - case counts
+  - epidemic curve
+  - outbreak trajectory
+  - epidemiology
+  - epidemiological
+  - epidemiologic
+exclude:
+  any:
+  - drug discovery
+  - drug screening
+  - compound screening
+  - protein structure prediction
+  - medical image classification
+  - radiology classification
+  - radiomics
+  - individual-level diagnosis
+  - individual-level prognosis
+  - symptom-based diagnosis
+  - patient-level classification
+  - liquid biopsy
+  context: []
+priority:
+  high:
+  - automated disease surveillance
+  - automated outbreak detection
+  - automated outbreak monitoring
+  - automated epidemic early warning
+  - machine learning for epidemiology
+  - machine learning for outbreak detection
+  - machine learning for epidemic forecasting
+  - machine learning for disease surveillance
+  - deep learning for epidemic forecasting
+  - spatiotemporal epidemic forecasting
+  - spatio-temporal epidemic forecasting
+  - outbreak forecasting
+  - epidemic forecasting
+  - infectious disease forecasting
+  - epidemic early warning
+  - epidemic nowcasting
+  - transmission dynamics
+  - incidence forecasting
+  - case-count forecasting
+  - machine learning
+  - deep learning
+  - artificial intelligence
+  - neural network
+  - neural networks
+  - random forest
+  - xgboost
+  - gradient boosting
+  - support vector machine
+  - long short-term memory
+  - lstm
+  - transformer
+  - graph neural network
+  - foundation model
+  - large language model
+  - generative ai
+required_groups:
+  epidemiological_domain:
+    terms:
+    - disease surveillance
+    - epidemiological surveillance
+    - epidemiologic surveillance
+    - public health surveillance
+    - spatial epidemiology
+    - spatial epidemiological
+    - pandemic forecasting
+    - pandemic prediction
+    - pandemic transmission
+    - infectious disease risk prediction
+    - risk prediction of infectious diseases
+    - infectious disease early warning
+    - malaria admissions
+    - malaria admission forecasting
+    - mpox forecasting
+    - mpox hotspot
+    - monkeypox forecasting
+    - monkeypox hotspot
+    - syndromic surveillance
+    - infectious disease surveillance
+    - epidemic surveillance
+    - outbreak surveillance
+    - outbreak detection
+    - outbreak monitoring
+    - outbreak prediction
+    - outbreak forecasting
+    - outbreak early warning
+    - epidemic detection
+    - epidemic monitoring
+    - epidemic prediction
+    - epidemic forecasting
+    - epidemic early warning
+    - infectious disease forecasting
+    - infectious disease prediction
+    - epidemic spread
+    - disease spread
+    - geographic spread of disease
+    - spatial spread of disease
+    - transmission dynamics
+    - disease transmission
+    - epidemic transmission
+    - population-level transmission
+    - transmission model
+    - transmission modeling
+    - transmission modelling
+    - epidemic model
+    - epidemic modeling
+    - epidemic modelling
+    - reproduction number
+    - effective reproduction number
+    - population-level incidence
+    - population level incidence
+    - incidence trends
+    - incidence forecasting
+    - incidence prediction
+    - case-count forecasting
+    - case count forecasting
+    - case-count prediction
+    - case count prediction
+    - epidemic curve
+    - epidemic trajectory
+    - outbreak trajectory
+    - spatiotemporal epidemiology
+    - spatio-temporal epidemiology
+    - spatial-temporal epidemiology
+    - spatial epidemiology
+    - spatial epidemiological analysis
+    - high notification clusters
+    - notification clusters
+    - infectious disease dynamics
+    - infectious disease modeling
+    - infectious disease modelling
+    - disease outbreak forecasting
+    - epidemic nowcasting
+    - outbreak nowcasting
+    - epidemic risk forecasting
+    - population-level disease forecasting
+    - population level disease forecasting
+    - early warning system for infectious disease
+    - infectious disease early warning
+    - agentic disease surveillance
+    - agentic infectious disease surveillance
+    - agentic epidemic surveillance
+    - agentic outbreak surveillance
+    - agentic outbreak detection
+    - agentic outbreak forecasting
+    - autonomous disease surveillance
+    - autonomous infectious disease surveillance
+    - autonomous epidemic surveillance
+    - autonomous outbreak monitoring
+    - multi-agent epidemic simulation
+    - multi-agent infectious disease simulation
+    - multi-agent outbreak detection
+    - multi-agent outbreak forecasting
+    - agentic epidemiological monitoring
+    - autonomous epidemiological surveillance
+  computational_task:
+    terms:
+    - forecast
+    - forecasts
+    - forecasting
+    - predict
+    - predicts
+    - prediction
+    - predictions
+    - predictive
+    - detection
+    - detect
+    - detects
+    - early detection
+    - early warning
+    - surveillance
+    - nowcasting
+    - nowcast
+    - nowcasts
+    - modeling
+    - modelling
+    - model
+    - models
+    - time series
+    - time-series
+    - spatiotemporal
+    - spatio-temporal
+    - spatial-temporal
+    - anomaly detection
+    - hotspot detection
+    - hot spot detection
+    - risk mapping
+    - risk prediction
+    - incidence estimation
+    - incidence prediction
+    - case-count prediction
+    - case count prediction
+    - trend estimation
+    - trend forecasting
+    - outbreak detection
+    - outbreak forecasting
+    - epidemic forecasting
+    - transmission estimation
+    - transmission forecasting
+    - cluster detection
+    - spatial cluster detection
+    - syndromic detection
+    - infoveillance
+    - event detection
+    - signal detection
+    - malaria admissions
+    - notification clusters
+    - hotspot analysis
+    - agentic disease surveillance
+    - agentic epidemic surveillance
+    - agentic outbreak surveillance
+    - agentic outbreak detection
+    - agentic outbreak forecasting
+    - agentic epidemic forecasting
+    - autonomous disease surveillance
+    - autonomous outbreak detection
+    - multi-agent epidemic simulation
+    - agentic epidemiological surveillance
+    - autonomous epidemic monitoring
+    - multi-agent infectious disease forecasting
+    - multi-agent transmission modelling
+    - multi-agent transmission modeling
+    - agentic epidemic nowcasting
+  ai_method:
+    terms:
+    - artificial intelligence
+    - ai-based
+    - ai based
+    - machine learning
+    - machine-learning
+    - deep learning
+    - deep-learning
+    - supervised learning
+    - unsupervised learning
+    - semi-supervised learning
+    - self-supervised learning
+    - reinforcement learning
+    - neural network
+    - neural networks
+    - deep neural network
+    - deep neural networks
+    - random forest
+    - random forests
+    - xgboost
+    - gradient boosting
+    - support vector machine
+    - support vector machines
+    - svm
+    - long short-term memory
+    - lstm
+    - gated recurrent unit
+    - gru
+    - recurrent neural network
+    - recurrent neural networks
+    - rnn
+    - convolutional neural network
+    - convolutional neural networks
+    - cnn
+    - transformer
+    - transformers
+    - graph neural network
+    - graph neural networks
+    - gnn
+    - attention mechanism
+    - foundation model
+    - foundation models
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - generative artificial intelligence
+    - ensemble learning
+    - ensemble model
+    - ensemble models
+    - gradient-boosted tree
+    - gradient boosted tree
+    - lightgbm
+    - catboost
+    - temporal convolutional network
+    - sequence model
+    - representation learning
+    - transfer learning
+    - bayesian machine learning
+    - probabilistic machine learning
+    - gaussian process
+    - gaussian process regression
+    - gaussian-process regression
+    - machine learning model
+    - machine learning models
+    - deep learning model
+    - deep learning models
+    - artificial neural network
+    - artificial neural networks
+    - agentic ai
+    - agentic artificial intelligence
+    - agentic system
+    - agentic systems
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - autonomous ai
+    - autonomous ai agent
+    - autonomous ai agents
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - llm agent
+    - llm agents
+    - llm-based agent
+    - llm-based agents
+    - agentic workflow
+    - agentic workflows
+    - multi-agent orchestration
+secondary_groups:
+  epidemiological_domain:
+    terms:
+    - disease incidence
+    - infectious disease incidence
+    - incidence of infectious disease
+    - case notifications
+    - disease notifications
+    - surveillance data
+    - syndromic data
+    - outbreak investigation
+    - epidemic dynamics
+    - infectious disease dynamics
+    - disease transmission
+    - transmission dynamics
+    - epidemic curve
+    - outbreak trajectory
+    - epidemic trajectory
+    - disease spread
+    - geographic spread
+    - spatial spread
+    - infectious disease risk
+    - outbreak risk
+    - epidemic risk
+    - public health infoveillance
+    - disease burden trends
+    - incidence trends
+    - case-count trends
+    - case count trends
+    - early warning for infectious disease
+    - infectious disease early warning
+    - outbreak alert
+    - epidemic alert
+    - disease event surveillance
+    - pandemic forecasting
+    - pandemic transmission
+    - spatial epidemiology
+    - infectious disease risk prediction
+    - malaria admissions
+    - mpox forecasting
+    - mpox hotspot
+    - population-level disease
+    - population level disease
+    - epidemiological monitoring
+    - epidemiologic monitoring
+  computational_task:
+    terms:
+    - time series
+    - time-series
+    - temporal trend
+    - spatial-temporal
+    - spatio-temporal
+    - spatiotemporal
+    - incidence trend
+    - case count
+    - case counts
+    - number of cases
+    - epidemic curve
+    - epidemic peak
+    - outbreak peak
+    - peak timing
+    - peak size
+    - epidemic trajectory
+    - outbreak trajectory
+    - geographic spread
+    - spatial spread
+    - disease diffusion
+    - short-term forecast
+    - short term forecast
+    - medium-term forecast
+    - medium term forecast
+    - hotspot
+    - hot spots
+    - spatial cluster
+    - cluster detection
+    - anomaly detection
+    - nowcasting
+    - early warning
+    - trend estimation
+    - infoveillance
+    - event detection
+    - signal detection
+  ai_method:
+    terms:
+    - data-driven
+    - data driven
+    - computational model
+    - algorithmic approach
+    - predictive algorithm
+    - automated detection
+    - automated forecasting
+    - statistical learning
+    - computational intelligence
+    - intelligent system
+    - bayesian method
+    - bayesian methods
+    - bayesian approach
+    - bayesian approaches
+    - bayesian model
+    - bayesian models
+    - bayesian modeling
+    - bayesian modelling
+    - bayesian spatiotemporal model
+    - bayesian spatio-temporal model
+    - bayesian epidemiological model
+    - bayesian epidemiologic model
+    - bayesian hierarchical model
+    - bayesian disease mapping
+    - bayesian spatial model
+    - bayesian transmission model
+    - bayesian inference
+    - bayesian framework
+    - bayesian framework for
+    - compared with bayesian
+    - compared with a bayesian
+    - comparison with bayesian
+    - comparison with a bayesian
+    - bayesian versus machine learning
+    - machine learning versus bayesian
+    - bayesian baseline
+    - bayesian benchmark
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

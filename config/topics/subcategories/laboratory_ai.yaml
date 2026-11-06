@@ -1,0 +1,575 @@
+id: laboratory_ai
+name: Laboratory AI — Clinical Diagnostics and Laboratory Operations (v2)
+description: Covers AI methods directly applied to human clinical laboratory medicine and diagnostic laboratory
+  operations. In scope are clinical pathology and digital pathology, histology and cytology, morphological
+  hematology, diagnostic microbiology, clinical chemistry, in-vitro diagnostics, interpretation and validation
+  of laboratory test results, analytical quality control, specimen or sample processing, and laboratory
+  automation or robotics when AI materially contributes to the task. Agentic and non-agentic systems may
+  qualify; agentivity alone is insufficient. The use of laboratory measurements as predictors in a general
+  clinical study is not enough. General radiology or clinical imaging, patient-level prognosis outside
+  laboratory diagnostics, basic or non-clinical biology, omics research without a direct diagnostic application,
+  molecular biology research, and drug discovery or development are out of scope.
+required_groups:
+  ai_method:
+    terms:
+    - artificial intelligence
+    - machine learning
+    - deep learning
+    - neural network
+    - neural networks
+    - convolutional neural network
+    - recurrent neural network
+    - transformer
+    - transformer-based
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - generative artificial intelligence
+    - foundation model
+    - foundation models
+    - computer vision
+    - natural language processing
+    - image classification
+    - image segmentation
+    - object detection
+    - random forest
+    - gradient boosting
+    - xgboost
+    - support vector machine
+    - support vector machines
+    - neural network classifier
+    - deep neural network
+    - ensemble learning
+    - anomaly detection algorithm
+    - ai-assisted
+    - ai assisted
+    - ai-enabled
+    - ai enabled
+    - ai-based
+    - ai based
+    - machine-learning-based
+    - deep-learning-based
+    - intelligent automation
+    - predictive model
+    - predictive models
+    - classification model
+    - classification algorithm
+    - automated image analysis
+    - algorithmic image analysis
+    - machine vision
+    - clinical decision support algorithm
+    - artificial intelligence model
+    - machine learning model
+    - deep learning model
+    - explainable artificial intelligence
+    - explainable ai
+    - computer-aided diagnosis
+    - computer aided diagnosis
+    - agentic ai
+    - agentic artificial intelligence
+    - agentic system
+    - agentic systems
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - autonomous ai
+    - autonomous ai agent
+    - autonomous ai agents
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - llm agent
+    - llm agents
+    - llm-based agent
+    - llm-based agents
+    - agentic workflow
+    - agentic workflows
+    - multi-agent orchestration
+  clinical_laboratory_context:
+    terms:
+    - clinical laboratory
+    - clinical laboratories
+    - medical laboratory
+    - medical laboratories
+    - laboratory medicine
+    - laboratory diagnostics
+    - diagnostic laboratory
+    - diagnostic laboratories
+    - clinical pathology
+    - laboratory testing
+    - laboratory analysis
+    - laboratory analyses
+    - in vitro diagnostic
+    - in vitro diagnostics
+    - in-vitro diagnostic
+    - in-vitro diagnostics
+    - clinical chemistry
+    - clinical biochemistry
+    - medical microbiology
+    - diagnostic microbiology
+    - bacteriology
+    - clinical virology
+    - diagnostic virology
+    - clinical parasitology
+    - hematology
+    - haematology
+    - hematological
+    - haematological
+    - blood count
+    - complete blood count
+    - full blood count
+    - blood smear
+    - blood smears
+    - peripheral blood smear
+    - cytology
+    - cytological
+    - cytopathology
+    - histopathology
+    - histopathological
+    - histological
+    - anatomical pathology
+    - anatomic pathology
+    - digital pathology
+    - surgical pathology
+    - pathology laboratory
+    - pathology laboratories
+    - transfusion medicine
+    - blood bank
+    - blood banking
+    - coagulation testing
+    - urinalysis
+    - clinical immunology
+    - immunoassay
+    - immunoassays
+    - microbiology laboratory
+    - microbiology laboratories
+    - specimen analysis
+    - sample analysis
+    - clinical specimen
+    - patient specimen
+    - patient samples
+    - laboratory workflow
+    - laboratory workflows
+    - laboratory information system
+    - laboratory information systems
+    - laboratory information management system
+    - laboratory information management systems
+    - clinical diagnostic workflow
+    - whole slide imaging
+    - whole-slide imaging
+    - whole slide image
+    - whole-slide image
+    - histopathological images
+    - histological images
+    - brightfield microscopy
+    - brightfield imaging
+    - blood cell morphology
+    - red blood cell
+    - white blood cell
+    - leukocyte
+    - leukaemia cell
+    - leukemia cell
+    - fine-needle aspiration
+    - fine needle aspiration
+    - raman cytology
+    - cytological features
+    - microscopic cell analysis
+    - laboratory automation
+    - laboratory robotics
+    - automated sample preparation
+    - specimen processing
+    - sample processing
+    - laboratory quality control
+    - analytical quality control
+    - laboratory instrument
+    - laboratory agent
+    - laboratory agents
+    - clinical laboratory agent
+    - clinical laboratory agents
+    - agentic laboratory workflow
+    - agentic laboratory automation
+    - autonomous laboratory workflow
+    - autonomous laboratory automation
+    - multi-agent laboratory workflow
+    - multi-agent laboratory system
+    - laboratory agent orchestration
+    - agentic diagnostic laboratory workflow
+    - autonomous clinical laboratory
+    - autonomous clinical laboratories
+  laboratory_task:
+    terms:
+    - diagnostic interpretation
+    - interpretation of laboratory results
+    - laboratory result interpretation
+    - result interpretation
+    - pathogen identification
+    - microbial identification
+    - bacterial identification
+    - antimicrobial susceptibility testing
+    - antimicrobial resistance detection
+    - antibiotic susceptibility testing
+    - pathogen detection
+    - microorganism detection
+    - blood cell classification
+    - blood cell morphology
+    - cell morphology classification
+    - cell counting
+    - automated cell counting
+    - white blood cell classification
+    - leukocyte classification
+    - haematology analyzer
+    - hematology analyzer
+    - blood smear analysis
+    - digital pathology image analysis
+    - histopathology image analysis
+    - histopathological image analysis
+    - histological image analysis
+    - cytology image analysis
+    - cytological image analysis
+    - slide analysis
+    - whole slide imaging
+    - whole-slide imaging
+    - whole slide image analysis
+    - mitosis detection
+    - collagen architecture quantification
+    - collagen architecture assessment
+    - histological subtype classification
+    - pathological complete response prediction
+    - red blood cell morphometry
+    - red blood cell morphometrics
+    - leukemia cell classification
+    - leukaemia cell classification
+    - acute lymphoblastic leukemia classification
+    - blood cell image classification
+    - microscopic cell analysis
+    - cell detection in blood smear
+    - quality control
+    - quality assurance
+    - quality control in laboratory
+    - laboratory quality control
+    - analytical quality control
+    - laboratory error detection
+    - sample classification
+    - specimen classification
+    - sample triage
+    - specimen triage
+    - sample prioritization
+    - specimen prioritization
+    - test result validation
+    - result validation
+    - laboratory decision support
+    - laboratory result validation
+    - laboratory automation
+    - laboratory workflow automation
+    - automated laboratory
+    - laboratory robotics
+    - robotic laboratory
+    - laboratory robot
+    - laboratory robots
+    - robotic sample handling
+    - automated sample handling
+    - automated specimen handling
+    - sample handling
+    - specimen handling
+    - laboratory instrument control
+    - analyzer control
+    - analyser control
+    - instrument scheduling
+    - laboratory workload prediction
+    - laboratory turnaround time
+    - turnaround time prediction
+    - test utilization
+    - test utilisation
+    - laboratory resource optimization
+    - laboratory resource optimisation
+    - laboratory process optimization
+    - laboratory process optimisation
+    - laboratory workflow optimization
+    - laboratory workflow optimisation
+    - laboratory data interpretation
+    - clinical chemistry analysis
+    - blood cell detection
+    - parasite detection
+    - malaria parasite detection
+    - tuberculosis detection
+    - urine sediment analysis
+    - urinalysis interpretation
+    - coagulation analysis
+    - transfusion compatibility
+    - raman spectral analysis for cytology
+    - cytological feature classification
+    - artifact detection in digital pathology
+    - whole slide image processing
+    - histopathology artifact detection
+    - pathology image artifact robustness
+    - quantitative assessment of collagen architecture
+    - prediction of pathological complete response
+    - raman cytological features
+    - raman spectra
+    - fine-needle aspiration samples
+    - acute lymphoblastic leukemia
+    - acute lymphoblastic leukaemia
+    - leukemia classification
+    - leukaemia classification
+    - classification of leukemia
+    - classification of acute lymphoblastic leukemia
+    - spiking neural network for leukemia
+    - artifact-robust graph-based learning
+    - artifact robust graph based learning
+    - artifacts in whole slide images
+    - whole slide image artifacts
+    - digital pathology artifacts
+    - robust learning in digital pathology
+    - pathology image artifact detection
+    - agentic laboratory workflow
+    - agentic laboratory automation
+    - autonomous laboratory workflow
+    - autonomous laboratory automation
+    - multi-agent laboratory workflow
+    - laboratory agent
+    - laboratory agents
+    - laboratory agent orchestration
+    - agentic diagnostic laboratory workflow
+    - agentic laboratory diagnostics
+    - agentic laboratory workflow automation
+    - autonomous laboratory diagnostics
+    - autonomous laboratory testing
+    - multi-agent laboratory automation
+    - multi-agent laboratory diagnostics
+    - agentic clinical laboratory workflow
+    - autonomous specimen processing
+    - autonomous sample processing
+    - agentic laboratory quality control
+secondary_groups:
+  clinical_laboratory_context:
+    terms:
+    - digital pathology
+    - histopathology
+    - histopathological
+    - histological
+    - cytology
+    - cytological
+    - blood smear
+    - red blood cell
+    - white blood cell
+    - leukocyte
+    - hematology
+    - haematology
+    - clinical laboratory
+    - medical laboratory
+    - laboratory medicine
+    - diagnostic microbiology
+    - whole slide imaging
+    - whole-slide imaging
+    - microscopy
+    - specimen analysis
+    - laboratory automation
+    - laboratory robotics
+    - clinical chemistry
+    - in vitro diagnostics
+    - immunoassay
+    - urinalysis
+  laboratory_task:
+    terms:
+    - mitosis detection
+    - collagen architecture
+    - cell morphometry
+    - red blood cell morphometrics
+    - blood cell classification
+    - blood smear analysis
+    - histopathology image analysis
+    - histological image analysis
+    - cytology image analysis
+    - whole slide image processing
+    - laboratory quality control
+    - antimicrobial susceptibility
+    - pathogen identification
+    - laboratory result interpretation
+    - automated sample handling
+    - laboratory instrument control
+    - cytological features
+    - histological subtype
+    - microscopic cell analysis
+    - quantitative assessment of collagen architecture
+    - prediction of pathological complete response
+    - raman cytological features
+    - raman spectra
+    - acute lymphoblastic leukemia
+    - leukemia classification
+    - artifact-robust graph-based learning
+    - digital pathology artifacts
+include:
+  any:
+  - artificial intelligence in laboratory medicine
+  - artificial intelligence in clinical laboratories
+  - ai in laboratory medicine
+  - ai in clinical laboratories
+  - machine learning in laboratory medicine
+  - deep learning in laboratory medicine
+  - ai-assisted laboratory diagnosis
+  - ai assisted laboratory diagnosis
+  - ai-based laboratory diagnostics
+  - ai based laboratory diagnostics
+  - machine learning for laboratory diagnostics
+  - deep learning for laboratory diagnostics
+  - artificial intelligence for diagnostic microbiology
+  - machine learning for diagnostic microbiology
+  - artificial intelligence in digital pathology
+  - ai-based digital pathology
+  - ai based digital pathology
+  - artificial intelligence in hematology
+  - artificial intelligence in haematology
+  - machine learning in hematology
+  - machine learning in haematology
+  - ai-powered laboratory automation
+  - ai powered laboratory automation
+  - artificial intelligence laboratory automation
+  - ai-enabled laboratory robotics
+  - ai enabled laboratory robotics
+  - machine learning for laboratory quality control
+  - artificial intelligence for laboratory quality control
+  - ai for blood cell classification
+  - deep learning for blood cell classification
+  - ai for pathogen identification
+  - machine learning for pathogen identification
+  - ai-based antimicrobial susceptibility
+  - ai based antimicrobial susceptibility
+  - automated laboratory result interpretation
+  - ai-assisted pathology
+  - ai assisted pathology
+  - machine learning for cytology
+  - machine learning for histopathology
+  - artificial intelligence for clinical chemistry
+  - ai in in vitro diagnostics
+  - agentic laboratory workflow
+  - agentic laboratory automation
+  - autonomous laboratory diagnostics
+  - multi-agent laboratory automation
+  context:
+  - clinical laboratory
+  - medical laboratory
+  - laboratory medicine
+  - laboratory diagnostics
+  - diagnostic laboratory
+  - clinical pathology
+  - diagnostic testing
+  - laboratory testing
+  - clinical chemistry
+  - clinical biochemistry
+  - diagnostic microbiology
+  - microbiology laboratory
+  - hematology
+  - haematology
+  - digital pathology
+  - histopathology
+  - cytology
+  - in vitro diagnostics
+  - laboratory automation
+  - laboratory robotics
+  - laboratory workflow
+  - laboratory quality control
+priority:
+  high:
+  - artificial intelligence in laboratory medicine
+  - ai in laboratory medicine
+  - machine learning in laboratory medicine
+  - ai-assisted laboratory diagnosis
+  - ai assisted laboratory diagnosis
+  - machine learning for laboratory diagnostics
+  - deep learning for laboratory diagnostics
+  - artificial intelligence for diagnostic microbiology
+  - ai-based digital pathology
+  - ai based digital pathology
+  - ai-powered laboratory automation
+  - ai powered laboratory automation
+  - ai-enabled laboratory robotics
+  - ai enabled laboratory robotics
+  - machine learning for laboratory quality control
+  - ai for blood cell classification
+  - ai for pathogen identification
+  - laboratory result interpretation
+  - laboratory quality control
+  - automated laboratory result interpretation
+  - deep learning for histopathology
+  - histopathology image analysis
+  - histopathological image analysis
+  - digital pathology image analysis
+  - red blood cell morphometry
+  - blood smear analysis
+  - mitosis detection
+  - cytology image analysis
+  - laboratory instrument control
+  - ai-based laboratory diagnostics
+  - machine learning for hematology
+  - machine learning for haematology
+exclude:
+  any:
+  - multi-omics
+  - multiomics
+  - genomics
+  - genomic analysis
+  - genome-wide association
+  - transcriptomics
+  - proteomics
+  - metabolomics
+  - epigenomics
+  - metagenomics
+  - lipidomics
+  - glycomics
+  - single-cell sequencing
+  - single cell sequencing
+  - spatial transcriptomics
+  - genome sequencing
+  - whole genome sequencing
+  - whole-genome sequencing
+  - gene expression profiling
+  - molecular biology
+  - molecular biology research
+  - computational biology
+  - systems biology
+  - drug discovery
+  - drug design
+  - compound screening
+  - protein structure prediction
+  - chest radiograph
+  - chest radiography
+  - radiograph triage
+  - mammography
+  - mammogram
+  - screening mammogram
+  - magnetic resonance imaging
+  - brain mri
+  - mri synthesis
+  - electrocardiogram
+  - electrocardiography
+  - ecg embeddings
+  - vestibular tests
+  - vestibular laboratory tests
+  - fish species identification
+  - species identification in fish
+  - electronic health records
+  - electronic health record
+  - clinical prediction model
+  - mortality prediction
+  - cardiac arrest prediction
+  - sepsis prediction
+  - risk stratification
+  - primary care diagnosis
+  - genomics data
+  - genomic modalities
+  - genomic information
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

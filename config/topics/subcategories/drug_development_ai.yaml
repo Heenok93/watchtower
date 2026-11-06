@@ -1,0 +1,290 @@
+id: drug_development_ai
+name: Drug Development & AI
+description: Covers AI applications to the discovery, design, screening, optimization, and development
+  of therapeutic drugs and vaccines. In scope are target identification and validation, hit identification,
+  virtual and high-throughput screening, molecular or biologic design and generation, lead optimization,
+  drug repurposing when it is part of therapeutic development, ADMET and toxicity assessment in the development
+  pipeline, preclinical evaluation, and clinical development or trials evaluating a new drug or vaccine.
+  The AI method must materially contribute to the therapeutic development task. Developing or evaluating
+  an AI model, clinical prediction tool, or healthcare application is not Drug Development merely because
+  it uses medication-related data or mentions a treatment. Routine prescribing, medication adherence,
+  drug utilization, pharmacovigilance, and patient-level treatment-response prediction are out of scope
+  unless they are explicitly part of the development or evaluation of a new therapeutic product. Human-health
+  relevance is required; animal-only veterinary drug development is out of scope. Agentic and non-agentic
+  AI may both qualify, and agentic drug-development papers may also match Agentic AI & Health.
+required_groups:
+  ai_method:
+    terms:
+    - artificial intelligence
+    - machine learning
+    - deep learning
+    - neural network
+    - neural networks
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - foundation model
+    - foundation models
+    - generative model
+    - generative models
+    - reinforcement learning
+    - graph neural network
+    - graph neural networks
+    - transformer model
+    - transformer models
+    - computer-aided drug design
+    - computer aided drug design
+    - molecular machine learning
+    - predictive model
+    - predictive models
+    - deep generative model
+    - deep generative models
+  drug_development_task:
+    terms:
+    - drug discovery
+    - drug design
+    - drug development
+    - therapeutic discovery
+    - therapeutic development
+    - vaccine discovery
+    - vaccine design
+    - vaccine development
+    - target identification
+    - target discovery
+    - target validation
+    - hit identification
+    - hit discovery
+    - virtual screening
+    - compound screening
+    - high-throughput screening
+    - high throughput screening
+    - lead identification
+    - lead optimization
+    - lead optimisation
+    - molecular design
+    - de novo drug design
+    - molecular generation
+    - generative molecular design
+    - structure-based drug design
+    - ligand-based drug design
+    - drug repurposing
+    - drug repositioning
+    - admet prediction
+    - toxicity prediction in drug development
+    - preclinical development
+    - preclinical evaluation
+    - preclinical testing
+    - preclinical study
+    - clinical development
+    - clinical trial
+    - clinical trials
+    - phase i trial
+    - phase ii trial
+    - phase iii trial
+    - phase iv trial
+    - therapeutic antibody discovery
+    - antibody design
+    - biologics development
+    - small molecule discovery
+    - small-molecule discovery
+    - pharmaceutical development
+    - medicinal chemistry
+    - pharmacophore modeling
+    - pharmacophore modelling
+    - clinical trial design
+    - clinical trial optimization
+    - clinical trial optimisation
+    - adaptive trial design
+    - trial recruitment
+    - patient recruitment for clinical trials
+    - clinical trial matching
+    - clinical trial simulation
+    - trial outcome prediction
+    - clinical trial monitoring
+    - dose optimization
+    - dose optimisation
+    - dose selection
+    - pharmacokinetic modeling
+    - pharmacokinetic modelling
+    - pharmacodynamic modeling
+    - pharmacodynamic modelling
+    - pharmacokinetics
+    - pharmacodynamics
+    - drug response modeling
+    - drug response modelling
+  therapeutic_product_context:
+    terms:
+    - drug
+    - drugs
+    - drug candidate
+    - drug candidates
+    - compound
+    - compounds
+    - small molecule
+    - small molecules
+    - therapeutic
+    - therapeutics
+    - medicine
+    - medicines
+    - pharmaceutical
+    - pharmaceuticals
+    - vaccine
+    - vaccines
+    - antiviral
+    - antivirals
+    - antibiotic
+    - antibiotics
+    - biologic
+    - biologics
+    - therapeutic antibody
+    - therapeutic antibodies
+    - active pharmaceutical ingredient
+    - active pharmaceutical ingredients
+    - molecule
+    - molecules
+    - ligand
+    - ligands
+    - active compound
+    - active compounds
+    - bioactive compound
+    - bioactive compounds
+    - small-molecule
+    - biopharmaceutical
+    - biopharmaceuticals
+    - therapeutic candidate
+    - therapeutic candidates
+secondary_groups:
+  drug_development_task:
+    terms:
+    - target identification
+    - target validation
+    - hit identification
+    - virtual screening
+    - compound screening
+    - lead optimization
+    - lead optimisation
+    - molecular design
+    - molecular generation
+    - drug repurposing
+    - admet prediction
+    - preclinical evaluation
+    - preclinical development
+    - clinical development
+    - clinical trial
+    - clinical trials
+    - vaccine design
+    - vaccine development
+    - therapeutic antibody discovery
+    - biologics development
+  therapeutic_product_context:
+    terms:
+    - drug
+    - drug candidate
+    - compound
+    - small molecule
+    - therapeutic
+    - pharmaceutical
+    - vaccine
+    - antiviral
+    - antibiotic
+    - biologic
+    - therapeutic antibody
+include:
+  any:
+  - artificial intelligence for drug discovery
+  - ai for drug discovery
+  - machine learning for drug discovery
+  - deep learning for drug discovery
+  - ai-based drug design
+  - ai based drug design
+  - machine learning for drug design
+  - generative ai for drug discovery
+  - generative models for molecular design
+  - ai-based virtual screening
+  - machine learning for virtual screening
+  - deep learning for molecular generation
+  - ai for lead optimization
+  - ai for lead optimisation
+  - machine learning for admet prediction
+  - ai for preclinical development
+  - artificial intelligence in clinical drug development
+  - ai in clinical trials for drug development
+  - machine learning for vaccine design
+  - ai for vaccine development
+  - artificial intelligence for vaccine discovery
+  - ai-driven therapeutic discovery
+  - ai-driven drug development
+  - computer-aided drug design
+  - computer aided drug design
+  - structure-based drug design with deep learning
+  context:
+  - drug discovery
+  - drug development
+  - drug design
+  - therapeutic development
+  - vaccine development
+  - vaccine design
+  - preclinical development
+  - clinical development
+  - clinical trial
+  - clinical trials
+  - compound screening
+  - virtual screening
+  - lead optimization
+  - lead optimisation
+  - medicinal chemistry
+  - pharmaceutical
+  - therapeutic antibody
+  - biologics development
+priority:
+  high:
+  - ai for drug discovery
+  - artificial intelligence for drug discovery
+  - machine learning for drug discovery
+  - deep learning for drug discovery
+  - ai-based drug design
+  - machine learning for drug design
+  - ai-based virtual screening
+  - generative models for molecular design
+  - ai for lead optimization
+  - ai for lead optimisation
+  - ai for vaccine development
+  - machine learning for vaccine design
+  - ai for preclinical development
+  - ai-driven drug development
+exclude:
+  any:
+  - clinical prediction model
+  - clinical risk prediction
+  - mortality prediction
+  - disease diagnosis
+  - patient-level prognosis
+  - medication adherence
+  - medication compliance
+  - medication management
+  - drug utilization
+  - drug utilisation
+  - prescribing behavior
+  - prescribing behaviour
+  - pharmacovigilance
+  - adverse drug event detection
+  - adverse drug reaction reporting
+  - drug safety surveillance
+  - pharmacy workflow
+  - drug inventory management
+  - veterinary-only
+  - veterinary medicine
+  - animal disease treatment
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review
