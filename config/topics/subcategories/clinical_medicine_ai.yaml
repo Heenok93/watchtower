@@ -1,0 +1,338 @@
+id: clinical_medicine_ai
+name: Clinical Medicine & Precision Medicine AI
+description: Covers AI applications whose central purpose is patient-centered clinical medicine or precision
+  medicine. In scope are individual diagnosis and screening, imaging interpretation, prognosis, individual
+  risk stratification, prediction of treatment response or toxicity, treatment selection, personalized
+  treatment, precision oncology, surgery, and other clinical specialties. Omics, genomic, proteomic, and
+  multimodal data are in scope when they are explicitly used for a clinical purpose such as diagnosis,
+  prognosis, patient characterization, or treatment selection or adaptation; their mere use as biological
+  predictors in general research is insufficient. Population-level epidemiology and outbreak surveillance,
+  healthcare operations and infrastructure, and clinical laboratory operations belong to their respective
+  subcategories unless a substantial patient-level clinical application is also central. Agentic and non-agentic
+  systems can both qualify; agentivity is neither necessary nor sufficient.
+required_groups:
+  ai_method:
+    terms:
+    - artificial intelligence
+    - machine learning
+    - deep learning
+    - neural network
+    - neural networks
+    - convolutional neural network
+    - recurrent neural network
+    - transformer
+    - transformer-based
+    - graph neural network
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - generative artificial intelligence
+    - foundation model
+    - foundation models
+    - computer vision
+    - natural language processing
+    - reinforcement learning
+    - random forest
+    - gradient boosting
+    - xgboost
+    - support vector machine
+    - ensemble learning
+    - deep neural network
+    - multimodal model
+    - multimodal models
+    - radiomics
+    - explainable artificial intelligence
+    - explainable ai
+    - ai-assisted
+    - ai assisted
+    - ai-enabled
+    - ai enabled
+    - ai-based
+    - ai based
+    - machine-learning-based
+    - deep-learning-based
+    - predictive model
+    - predictive models
+    - classification model
+    - prediction model
+    - clinical decision support algorithm
+    - agentic ai
+    - agentic artificial intelligence
+    - agentic system
+    - agentic systems
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - autonomous ai
+    - autonomous ai agent
+    - autonomous ai agents
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - llm agent
+    - llm agents
+    - llm-based agent
+    - llm-based agents
+    - agentic workflow
+    - agentic workflows
+    - multi-agent orchestration
+    - language model agent
+    - language model agents
+    - chatbot
+    - chatbots
+    - conversational ai
+    - ai chatbot
+    - ai chatbots
+    - llm chatbot
+    - llm chatbots
+    - llm-based chatbot
+    - llm-based chatbots
+  patient_level_clinical_context:
+    terms:
+    - clinical
+    - clinical medicine
+    - patient
+    - patients
+    - individual patient
+    - patient-level
+    - patient specific
+    - patient-specific
+    - personalized medicine
+    - personalised medicine
+    - precision medicine
+    - precision oncology
+    - clinical diagnosis
+    - medical diagnosis
+    - disease diagnosis
+    - clinical decision
+    - treatment decision
+    - therapeutic decision
+    - medical imaging
+    - diagnostic imaging
+    - radiology
+    - oncology
+    - cardiology
+    - neurology
+    - surgery
+    - intensive care
+    - critical care
+    - emergency medicine
+    - primary care
+    - pathology
+    - ophthalmology
+    - dermatology
+    - psychiatry
+    - obstetrics
+    - gynecology
+    - gynaecology
+    - pediatrics
+    - paediatrics
+    - infectious disease
+    - chronic disease
+    - cancer
+    - tumor
+    - tumour
+    - medical opinion
+    - medical opinions
+    - second medical opinion
+    - second medical opinions
+    - clinical agent
+    - clinical agents
+    - clinical chatbot
+    - clinical chatbots
+    - hereditary cancer counseling
+    - hereditary cancer counselling
+    - diabetic retinopathy
+  clinical_task:
+    terms:
+    - diagnosis
+    - diagnostic
+    - disease detection
+    - screening
+    - early diagnosis
+    - differential diagnosis
+    - classification of disease
+    - disease classification
+    - prognosis
+    - prognostic
+    - risk prediction
+    - patient risk stratification
+    - outcome prediction
+    - clinical outcome
+    - treatment response
+    - therapy response
+    - treatment selection
+    - treatment recommendation
+    - therapy selection
+    - therapeutic planning
+    - treatment planning
+    - dose prediction
+    - dose optimization
+    - dose optimisation
+    - adverse event prediction
+    - toxicity prediction
+    - recurrence prediction
+    - survival prediction
+    - survival analysis
+    - disease progression
+    - disease monitoring
+    - clinical decision support
+    - personalized treatment
+    - personalised treatment
+    - precision treatment
+    - patient stratification
+    - phenotyping
+    - patient phenotyping
+    - medical image analysis
+    - image-based diagnosis
+    - radiological assessment
+    - pathology image analysis
+    - clinical note analysis
+    - clinical reasoning
+    - agentic diagnosis
+    - agentic clinical diagnosis
+    - agentic clinical reasoning
+    - agentic clinical decision support
+    - autonomous clinical decision support
+    - agentic treatment planning
+    - agentic treatment recommendation
+    - clinical agent
+    - clinical agents
+    - autonomous clinical agent
+    - autonomous clinical agents
+    - second medical opinion
+    - second medical opinions
+    - medical second opinion
+    - medical second opinions
+    - second opinion generation
+    - clinical opinion generation
+    - evidence-based second opinion
+    - evidence based second opinion
+    - hereditary cancer counseling
+    - hereditary cancer counselling
+    - cancer counseling pathway
+    - cancer counselling pathway
+    - clinical cohort eligibility assessment
+secondary_groups:
+  patient_level_clinical_context:
+    terms:
+    - electronic health record
+    - electronic medical record
+    - clinical data
+    - patient data
+    - medical records
+    - medical images
+    - radiological images
+    - histopathology
+    - genomic data
+    - genetic variant
+    - molecular profile
+    - biomarker
+    - biomarkers
+    - multi-omics
+    - multiomics
+    - genomics
+    - proteomics
+    - transcriptomics
+    - metabolomics
+    - wearable data
+    - physiological signals
+  clinical_task:
+    terms:
+    - clinical validation
+    - external validation
+    - prospective validation
+    - clinical utility
+    - clinical workflow
+    - decision support
+    - personalized risk
+    - personalised risk
+    - treatment benefit
+    - therapeutic response
+    - diagnostic accuracy
+    - sensitivity
+    - specificity
+    - area under the curve
+    - auc
+    - calibration
+    - risk score
+    - clinical prediction model
+    - medical image segmentation
+    - lesion detection
+    - tumor segmentation
+    - tumour segmentation
+include:
+  any:
+  - artificial intelligence in clinical medicine
+  - ai in clinical medicine
+  - artificial intelligence for clinical diagnosis
+  - machine learning for clinical diagnosis
+  - deep learning for clinical diagnosis
+  - ai-based diagnosis
+  - ai-assisted diagnosis
+  - machine learning for disease diagnosis
+  - deep learning for disease detection
+  - artificial intelligence in medical imaging
+  - ai in radiology
+  - machine learning in radiology
+  - deep learning in radiology
+  - artificial intelligence in oncology
+  - ai in precision oncology
+  - machine learning for treatment response prediction
+  - ai-based treatment selection
+  - machine learning for prognosis
+  - deep learning for prognosis
+  - clinical prediction model
+  - ai-based risk stratification
+  - artificial intelligence in precision medicine
+  - machine learning in precision medicine
+  - multimodal clinical prediction
+  - ai for personalized medicine
+  - ai for personalised medicine
+  - agentic disease diagnosis
+  - agentic clinical diagnosis
+  - agentic second medical opinion
+  - autonomous diabetic retinopathy screening
+  - ai chatbot for hereditary cancer counseling
+  - ai chatbot for hereditary cancer counselling
+  - clinical cohort eligibility assessment agent
+  context:
+  - clinical
+  - patient
+  - medical
+  - diagnosis
+  - treatment
+  - prognosis
+  - disease
+  - cancer
+  - imaging
+  - precision medicine
+exclude:
+  any:
+  - veterinary medicine
+  - veterinary diagnosis
+  - animal disease diagnosis
+  - plant disease
+  - crop disease
+  - population-level epidemic surveillance
+  - epidemic forecasting
+  - outbreak detection
+  - hospital staff scheduling
+  - hospital logistics
+  - bed management
+  - operating room scheduling
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

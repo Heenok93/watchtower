@@ -1,21 +1,16 @@
 id: agentic_health_ai
 name: Agentic AI & Health
-
-description: >-
-  Veille sur les systèmes d'IA agentiques ou autonomes appliqués à la santé humaine,
-  à la médecine, aux soins, aux systèmes de santé et à la santé publique. La composante
-  agentique est le critère principal : l'article doit décrire explicitement un agent IA,
-  un système agentique, un agent autonome, un système multi-agent, une orchestration
-  d'agents ou un LLM agissant comme agent. La simple présence d'une méthode d'IA,
-  d'un LLM, d'un chatbot médical ou d'une automatisation conventionnelle ne suffit pas.
-  Les travaux de découverte de médicaments, de conception moléculaire, d'omics et de
-  biologie computationnelle sont exclus par défaut pour réserver ces sujets à une veille
-  spécialisée ultérieure, sauf si l'application santé/soins est clairement distincte
-  et constitue le sujet principal. Les applications cliniques, hospitalières,
-  médico-administratives, de recherche médicale et de santé publique sont dans le périmètre.
-
+description: 'Detects agentic or autonomous AI systems applied to human health. The defining requirement
+  is genuine agentic behavior: explicit planning, autonomous multi-step execution, tool use, action selection,
+  delegation, or orchestration of AI agents with limited human intervention. Relevant systems include
+  AI agents, LLM-based agents, multi-agent systems, and autonomous clinical, laboratory, public-health,
+  or drug-development workflows. A conventional predictive model, classifier, chatbot, LLM interface,
+  clinical decision-support system, or fixed rule-based automation is not agentic by itself. The health
+  application must be direct and identifiable in human medicine, patient care, clinical research, laboratory
+  diagnostics, drug or vaccine development, healthcare systems, epidemiology, or public health. Animal-only/veterinary
+  applications and basic biological or computational research without a direct human-health application
+  are out of scope. Agentic applications in drug development may also match the Drug Development subcategory.'
 required_groups:
-  # Broad agent/system labels are secondary signals; specific agentic architectures remain required.
   agentic_or_autonomous_ai:
     terms:
     - agentic ai
@@ -50,9 +45,6 @@ required_groups:
     - tool-using agents
     - tool use by llm
     - agentic reasoning
-    - agent-based reasoning
-    - agent-based ai system
-    - agent-based ai systems
     - autonomous decision-making agent
     - autonomous decision making agent
     - planning and acting agent
@@ -62,7 +54,6 @@ required_groups:
     - agent collaboration
     - collaborative agents
     - cooperating agents
-    - swarm intelligence agents
     - ai-driven autonomous agent
     - ai-driven autonomous agents
     - embodied ai agent
@@ -70,6 +61,67 @@ required_groups:
     - clinical agents
     - medical agent
     - medical agents
+    - autonomous ai system
+    - autonomous ai systems
+    - multi-agent reasoning
+    - multi agent reasoning
+    - multi-agent clinical reasoning
+    - multi-agent medical reasoning
+    - agentic rag
+    - agentic retrieval augmented generation
+    - agentic retrieval-augmented generation
+    - clinical task agent
+    - clinical workflow agent
+    - medical reasoning agent
+    - clinical reasoning agent
+    - medical image agent
+    - medical imaging agent
+    - diagnostic ai agent
+    - diagnostic agent
+    - healthcare agent
+    - health care agent
+    - health agent
+    - healthcare ai agent
+    - llm-based clinical agent
+    - llm-based medical agent
+    - tool-augmented agent
+    - tool-using llm
+    - agent-based clinical reasoning
+    - agent-based medical reasoning
+    - agentic clinical workflow
+    - agentic medical workflow
+    - agentic decision support
+    - multi-agent clinical system
+    - multi-agent medical system
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - agentic system
+    - agentic systems
+    - agentic ai system
+    - agentic ai systems
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - conversational ai agent
+    - conversational ai agents
+    - retrieval-augmented ai agent
+    - retrieval augmented ai agent
+    - ai-powered agent
+    - ai-powered agents
+    - ai-driven agent
+    - ai-driven agents
+    - autonomous multi-step agent
+    - autonomous multi-step agents
+    - planning-and-execution agent
+    - tool-calling agent
+    - tool-calling agents
+    - multi-step tool-using agent
+    - multi-step tool-using agents
+    - agentic workflow orchestration
+    - autonomous task execution agent
   health_or_medicine_domain:
     terms:
     - healthcare
@@ -201,8 +253,135 @@ required_groups:
     - surgical planning
     - surgical procedure
     - surgical care
+    - cancer
+    - cancers
+    - tumor
+    - tumour
+    - carcinoma
+    - neoplasm
+    - oncology
+    - oncological
+    - breast cancer
+    - lung cancer
+    - skin cancer
+    - colorectal cancer
+    - prostate cancer
+    - leukemia
+    - leukaemia
+    - lymphoma
+    - melanoma
+    - brain tumor
+    - brain tumour
+    - alzheimer
+    - alzheimer's disease
+    - parkinson
+    - parkinson's disease
+    - epilepsy
+    - epileptic
+    - seizure
+    - seizures
+    - stroke
+    - cerebrovascular
+    - dementia
+    - multiple sclerosis
+    - neurology
+    - neurological
+    - neurosurgery
+    - cardiology
+    - cardiovascular
+    - electrocardiogram
+    - ecg
+    - ekg
+    - electroencephalogram
+    - electroencephalography
+    - eeg
+    - diabetes
+    - diabetic
+    - renal disease
+    - kidney disease
+    - chronic kidney disease
+    - respiratory disease
+    - pneumonia
+    - tuberculosis
+    - malaria
+    - brucellosis
+    - dengue
+    - influenza
+    - pathogen
+    - pathogens
+    - sepsis
+    - dermatology
+    - dermatological
+    - dermoscopy
+    - ophthalmology
+    - ophthalmic
+    - retinal
+    - retina
+    - retinopathy
+    - optical coherence tomography
+    - oct imaging
+    - radiological
+    - radiography
+    - mri
+    - magnetic resonance imaging
+    - computed tomography
+    - ct scan
+    - ultrasound imaging
+    - mammography
+    - positron emission tomography
+    - pet imaging
+    - medical image
+    - medical images
+    - histology
+    - histological
+    - cytology
+    - cytological
+    - pathological
+    - clinical chemistry
+    - clinical microbiology
+    - hematology
+    - haematology
+    - laboratory test
+    - laboratory testing
+    - diagnostic test
+    - diagnostic testing
+    - in vitro diagnostic
+    - in vitro diagnostics
+    - ivd
+    - randomized controlled trial
+    - randomised controlled trial
+    - trial recruitment
+    - trial matching
+    - drug development
+    - therapeutic development
+    - pharmaceutical development
+    - epidemic forecasting
+    - epidemic prediction
+    - outbreak prediction
+    - outbreak detection
+    - wastewater surveillance
+    - pathogen surveillance
+    - population-based study
+    - field epidemiology
+    - public health surveillance
+    - wearable device
+    - wearable devices
+    - wearable sensor
+    - wearable sensors
+    - medical device
+    - medical devices
+    - implantable device
+    - robotic surgery
+    - surgical robotics
+    - precision medicine
+    - personalized medicine
+    - personalised medicine
+    - precision oncology
+    - pharmacogenetics
+    - psychiatry
+    - psychology
+    - physical therapy
 secondary_groups:
-  # Broad terms remain searchable but do not independently satisfy a mandatory group.
   agentic_or_autonomous_ai:
     terms:
     - tool calling
@@ -262,6 +441,18 @@ secondary_groups:
     - multiagent systems
     - agent-based system
     - agent-based systems
+    - agentic rag
+    - agentic retrieval-augmented generation
+    - multi-agent reasoning
+    - multi agent reasoning
+    - clinical task agent
+    - clinical workflow agent
+    - medical reasoning agent
+    - medical image agent
+    - autonomous ai system
+    - autonomous clinical system
+    - agent-based clinical reasoning
+    - tool-augmented agent
   health_or_medicine_domain:
     terms:
     - patient outcome
@@ -311,6 +502,23 @@ secondary_groups:
     - patient-facing
     - clinician-facing
     - biomedical research
+    - cancer diagnosis
+    - oncology
+    - neurology
+    - radiology
+    - medical imaging
+    - diagnostic testing
+    - clinical laboratory
+    - clinical trial recruitment
+    - drug development
+    - pharmacovigilance
+    - wastewater surveillance
+    - wearable sensor
+    - medical device
+    - precision medicine
+    - retinal imaging
+    - electroencephalography
+    - electrocardiogram
 include:
   any:
   - agentic framework for health
@@ -357,6 +565,50 @@ include:
   - agentic self-management
   - agentic medical imaging
   - multi-agent clinical workflow
+  - agentic rag for healthcare
+  - agentic rag for medicine
+  - agentic retrieval augmented generation in healthcare
+  - multi-agent reasoning for clinical diagnosis
+  - multi-agent reasoning in healthcare
+  - multi-agent reasoning in medicine
+  - multi-agent clinical reasoning
+  - multi-agent medical reasoning
+  - clinical task agent
+  - clinical workflow agent
+  - medical reasoning agent
+  - clinical reasoning agent
+  - medical image agent
+  - medical imaging agent
+  - autonomous ai system for healthcare
+  - autonomous ai in medicine
+  - autonomous clinical system
+  - autonomous medical system
+  - ai agents for medical imaging
+  - ai agents for radiology
+  - ai agents for laboratory medicine
+  - ai agents for diagnostic testing
+  - ai agents for clinical trials
+  - ai agents for drug development
+  - ai agents for epidemiology
+  - ai agents for disease surveillance
+  - agentic hospital management
+  - agentic healthcare operations
+  - agentic clinical research
+  - agentic clinical trial
+  - agentic drug development
+  - agentic diagnostic system
+  - agentic medical diagnosis
+  - agentic cancer diagnosis
+  - agentic precision medicine
+  - agentic patient monitoring
+  - artificial intelligence agents in healthcare
+  - artificial intelligence agents in medicine
+  - ai agents in clinical care
+  - ai agents in medical imaging
+  - ai agents for diagnosis
+  - retrieval-augmented ai agent for healthcare
+  - multi-agent system for healthcare
+  - multi-agent system for medicine
   context:
   - health
   - healthcare
@@ -375,6 +627,20 @@ include:
   - patient health
   - clinical care
   - medical care
+  - oncology
+  - cancer
+  - radiology
+  - medical imaging
+  - diagnostic testing
+  - laboratory medicine
+  - clinical trial
+  - drug development
+  - disease surveillance
+  - wearable device
+  - medical device
+  - precision medicine
+  - neurology
+  - surgery
 priority:
   high:
   - agentic ai
@@ -407,6 +673,19 @@ priority:
   - clinical agent
   - medical agent
   - healthcare ai agent
+  - agentic rag
+  - multi-agent reasoning
+  - multi-agent clinical reasoning
+  - clinical task agent
+  - clinical workflow agent
+  - medical reasoning agent
+  - clinical reasoning agent
+  - medical image agent
+  - autonomous ai system
+  - autonomous clinical system
+  - agentic retrieval augmented generation
+  - artificial intelligence agent
+  - artificial intelligence agents
 exclude:
   any:
   - non-agentic ai
@@ -464,47 +743,6 @@ exclude:
   - rule based automation
   - robotic process automation
   - robotic process automation (rpa)
-  - drug discovery
-  - drug-discovery
-  - drug design
-  - de novo drug design
-  - drug repurposing
-  - drug screening
-  - virtual screening of compounds
-  - compound screening
-  - molecular docking
-  - protein structure prediction
-  - protein folding
-  - molecular property prediction
-  - molecular generation
-  - generative chemistry
-  - medicinal chemistry
-  - small molecule design
-  - small-molecule design
-  - drug-target interaction prediction
-  - drug target interaction prediction
-  - pharmacophore modeling
-  - pharmacophore modelling
-  - cheminformatics
-  - computational chemistry
-  - molecular dynamics simulation
-  - genomics
-  - transcriptomics
-  - proteomics
-  - metabolomics
-  - multi-omics
-  - multiomics
-  - single-cell omics
-  - gene expression analysis
-  - genome-wide association study
-  - genome wide association study
-  - computational biology
-  - systems biology
-  - synthetic biology
-  - protein engineering
-  - protein design
-  - biological sequence modeling
-  - biological sequence modelling
   - construction safety bulletin
   - industrial fault diagnosis
   - game development in unity
@@ -517,3 +755,5 @@ scoring:
 thresholds:
   reject_below: 2
   llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

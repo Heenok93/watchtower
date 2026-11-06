@@ -122,15 +122,122 @@ def has_secondary_bridge(
     return bool(secondary_matches.get(missing_groups[0], []))
 
 
-def filter_article(article: Article, profile: TopicProfile) -> FilterResult:
-    text = article_search_text(article, profile)
+class ProfileTermMatcher:
+    """Aho-Corasick matcher for all terms in one profile.
 
-    matched_include = find_matches(text, profile.include.any)
-    matched_context = find_matches(text, profile.include.context)
-    matched_priority = find_matches(text, profile.priority.high)
-    matched_exclude = find_matches(text, profile.exclude.any)
-    matched_required_groups = match_required_groups(text, profile)
-    matched_secondary_groups = match_secondary_groups(text, profile)
+    It scans normalized article text once instead of running one regex search
+    per dictionary term. Word-boundary semantics match find_matches(): a match
+    cannot be adjacent to an ASCII letter or digit.
+    """
+
+    def __init__(self, profile: TopicProfile):
+        self.groups: dict[str, list[tuple[str, str]]] = {}
+        patterns: set[str] = set()
+
+        def add_group(key: str, terms: list[str]) -> None:
+            entries: list[tuple[str, str]] = []
+            for original in terms:
+                normalized = _normalized_term(original)
+                if normalized:
+                    entries.append((original, normalized))
+                    patterns.add(normalized)
+            self.groups[key] = entries
+
+        add_group("include.any", profile.include.any)
+        add_group("include.context", profile.include.context)
+        add_group("priority.high", profile.priority.high)
+        add_group("exclude.any", profile.exclude.any)
+        for name, group in profile.required_groups.items():
+            add_group(f"required.{name}", group.terms)
+        for name, group in profile.secondary_groups.items():
+            add_group(f"secondary.{name}", group.terms)
+
+        # Trie nodes are dictionaries char -> node index.
+        self.goto: list[dict[str, int]] = [{}]
+        self.fail: list[int] = [0]
+        self.output: list[list[str]] = [[]]
+        for pattern in patterns:
+            state = 0
+            for char in pattern:
+                nxt = self.goto[state].get(char)
+                if nxt is None:
+                    nxt = len(self.goto)
+                    self.goto[state][char] = nxt
+                    self.goto.append({})
+                    self.fail.append(0)
+                    self.output.append([])
+                state = nxt
+            self.output[state].append(pattern)
+
+        from collections import deque
+        queue = deque()
+        for state in self.goto[0].values():
+            queue.append(state)
+        while queue:
+            state = queue.popleft()
+            for char, nxt in self.goto[state].items():
+                queue.append(nxt)
+                fallback = self.fail[state]
+                while fallback and char not in self.goto[fallback]:
+                    fallback = self.fail[fallback]
+                self.fail[nxt] = self.goto[fallback].get(char, 0)
+                inherited = self.output[self.fail[nxt]]
+                if inherited:
+                    self.output[nxt].extend(inherited)
+
+    def match(self, text: str) -> set[str]:
+        found: set[str] = set()
+        state = 0
+        text_len = len(text)
+        for index, char in enumerate(text):
+            while state and char not in self.goto[state]:
+                state = self.fail[state]
+            state = self.goto[state].get(char, 0)
+            if not self.output[state]:
+                continue
+            for pattern in self.output[state]:
+                start = index - len(pattern) + 1
+                left_ok = start == 0 or not (text[start - 1].isascii() and text[start - 1].isalnum())
+                end = index + 1
+                right_ok = end == text_len or not (text[end].isascii() and text[end].isalnum())
+                if left_ok and right_ok:
+                    found.add(pattern)
+        return found
+
+    def matches_for(self, key: str, found: set[str]) -> list[str]:
+        # Preserve YAML term order to keep audit output deterministic and
+        # equivalent to the previous regex-based implementation.
+        return [original for original, normalized in self.groups.get(key, []) if normalized in found]
+
+
+def compile_profile_matcher(profile: TopicProfile) -> ProfileTermMatcher:
+    """Compile and cache the term matcher for a profile instance."""
+    return ProfileTermMatcher(profile)
+
+
+def filter_article(
+    article: Article,
+    profile: TopicProfile,
+    *,
+    matcher: ProfileTermMatcher | None = None,
+    normalized_text: str | None = None,
+) -> FilterResult:
+    text = normalized_text if normalized_text is not None else article_search_text(article, profile)
+    term_matcher = matcher if matcher is not None else compile_profile_matcher(profile)
+    found = term_matcher.match(text)
+
+    matched_include = term_matcher.matches_for("include.any", found)
+    matched_context = term_matcher.matches_for("include.context", found)
+    matched_priority = term_matcher.matches_for("priority.high", found)
+    matched_exclude = term_matcher.matches_for("exclude.any", found)
+    matched_required_groups = {
+        name: term_matcher.matches_for(f"required.{name}", found)
+        for name in profile.required_groups
+    }
+    matched_secondary_groups = {
+        name: term_matcher.matches_for(f"secondary.{name}", found)
+        for name in profile.secondary_groups
+    }
 
     required_groups_satisfied = all_required_groups_satisfied(
         matched_required_groups

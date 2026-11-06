@@ -1,0 +1,739 @@
+id: non_agentic_ai_health_systems
+name: Non-Agentic AI & Health
+description: Detects non-agentic applications of artificial intelligence to human health. The article
+  must substantively study, develop, evaluate, validate, implement, regulate, or apply an AI method or
+  system to a clearly identifiable human-health problem. This broad profile covers digital health and
+  healthcare systems, patient-centered clinical medicine, laboratory diagnostics, human epidemiology and
+  public health, and drug or vaccine development. Conventional machine-learning and deep-learning models,
+  predictors, classifiers, decision-support systems, and non-agentic LLM applications are in scope; explicit
+  agentic systems are handled by the Agentic AI & Health profile and should not be classified as non-agentic.
+  A mere mention of AI, routine statistical analysis, agent-based simulation without AI, basic biology,
+  omics or molecular research without a direct human-health application, and animal-only/veterinary work
+  are out of scope. Secondary subcategories may overlap when more than one application domain is substantively
+  central.
+required_groups:
+  ai_method:
+    terms:
+    - artificial intelligence
+    - artificial intelligence (ai)
+    - ai-based
+    - ai based
+    - machine learning
+    - machine-learning
+    - deep learning
+    - deep-learning
+    - neural network
+    - neural networks
+    - artificial neural network
+    - convolutional neural network
+    - cnn
+    - transformer model
+    - transformer models
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - foundation model
+    - foundation models
+    - generative model
+    - generative models
+    - natural language processing
+    - nlp
+    - computer vision
+    - image segmentation
+    - reinforcement learning
+    - representation learning
+    - self-supervised learning
+    - semi-supervised learning
+    - supervised learning
+    - unsupervised learning
+    - federated learning
+    - graph neural network
+    - expert system
+    - AI algorithm
+    - AI algorithms
+    - AI model
+    - AI models
+    - random forest
+    - random forests
+    - support vector machine
+    - support vector machines
+    - gradient boosting
+    - extreme gradient boosting
+    - xgboost
+    - lightgbm
+    - k-nearest neighbors
+    - k-nearest neighbour
+    - k nearest neighbors
+    - k nearest neighbour
+    - naive bayes
+    - bayesian network
+    - bayesian networks
+    - hidden markov model
+    - hidden markov models
+    - ensemble learning
+    - ensemble model
+    - ensemble models
+    - boosted tree
+    - boosted trees
+    - multilayer perceptron
+    - perceptron
+    - deep neural network
+    - deep neural networks
+    - convolutional neural networks
+    - recurrent neural network
+    - recurrent neural networks
+    - long short-term memory
+    - long short term memory
+    - lstm
+    - gated recurrent unit
+    - gated recurrent units
+    - gru
+    - graph convolutional network
+    - graph convolutional networks
+    - vision transformer
+    - vision transformers
+    - generative adversarial network
+    - generative adversarial networks
+    - variational autoencoder
+    - variational autoencoders
+    - autoencoder
+    - autoencoders
+    - diffusion model
+    - diffusion models
+    - large multimodal model
+    - large multimodal models
+    - vision-language model
+    - vision language model
+    - multimodal learning
+    - transfer learning
+    - explainable ai
+    - explainable artificial intelligence
+    - explainable machine learning
+    - xai
+    - text mining
+    - clinical language model
+    - retrieval-augmented generation
+    - retrieval augmented generation
+    - statistical machine learning
+    - gradient-boosted trees
+    - gradient boosted trees
+  health_or_medicine_domain:
+    terms:
+    - healthcare
+    - health care
+    - healthcare system
+    - healthcare systems
+    - health system
+    - health systems
+    - medicine
+    - medical
+    - clinical
+    - clinician
+    - clinicians
+    - physician
+    - physicians
+    - doctor
+    - doctors
+    - patient
+    - patients
+    - patient care
+    - self-management
+    - self management
+    - disease self-management
+    - disease self management
+    - chronic disease self-management
+    - chronic disease self management
+    - hypertension
+    - high blood pressure
+    - cardiovascular disease
+    - clinical care
+    - medical care
+    - nursing
+    - nurse
+    - nurses
+    - hospital
+    - hospitals
+    - healthcare provider
+    - healthcare providers
+    - care delivery
+    - care pathway
+    - care pathways
+    - clinical workflow
+    - healthcare workflow
+    - health services
+    - health service delivery
+    - medical decision-making
+    - medical decision making
+    - clinical decision support
+    - clinical reasoning
+    - medical reasoning
+    - prognosis
+    - patient monitoring
+    - remote patient monitoring
+    - medical imaging
+    - radiology
+    - pathology
+    - histopathology
+    - laboratory medicine
+    - clinical laboratory
+    - medical records
+    - electronic health record
+    - electronic health records
+    - electronic medical record
+    - electronic medical records
+    - ehr
+    - emr
+    - medical research
+    - clinical research
+    - public health
+    - population health
+    - global health
+    - epidemiology
+    - epidemiological
+    - disease surveillance
+    - outbreak
+    - outbreaks
+    - epidemic
+    - epidemics
+    - pandemic
+    - pandemics
+    - infectious disease
+    - infectious diseases
+    - mental health
+    - behavioral health
+    - behavioural health
+    - rehabilitation
+    - surgery
+    - emergency medicine
+    - emergency department
+    - intensive care
+    - critical care
+    - primary care
+    - primary healthcare
+    - telemedicine
+    - telehealth
+    - digital health
+    - health informatics
+    - medical informatics
+    - healthcare operations
+    - hospital management
+    - healthcare management
+    - medication management
+    - medication safety
+    - pharmacovigilance
+    - drug safety
+    - clinical trial
+    - clinical trials
+    - health policy
+    - health equity
+    - health education
+    - patient education
+    - healthcare administration
+    - health services research
+    - health technology assessment
+    - human health
+    - patient health
+    - clinical diagnosis
+    - medical diagnosis
+    - disease diagnosis
+    - clinical diagnostic
+    - medical diagnostics
+    - diagnostic imaging
+    - medical treatment
+    - clinical treatment
+    - patient treatment
+    - treatment planning
+    - clinical therapy
+    - therapeutic intervention
+    - surgical planning
+    - surgical procedure
+    - surgical care
+    - field epidemiology
+    - health surveillance
+    - drug development
+    - therapeutic development
+    - drug testing
+    - diagnostic test
+    - diagnostic tests
+    - medical laboratory
+    - cytology
+    - microbiology
+    - hematology
+    - haematology
+    - radiotherapy
+    - surgical
+    - precision medicine
+    - personalized medicine
+    - personalised medicine
+    - wearable
+    - wearables
+    - wearable device
+    - wearable devices
+    - medical device
+    - medical devices
+    - hospital operations
+    - remote monitoring
+    - patient outcome
+    - clinical outcome
+    - healthcare worker
+    - healthcare workers
+    - cancer
+    - cancers
+    - tumor
+    - tumour
+    - carcinoma
+    - neoplasm
+    - oncology
+    - oncological
+    - breast cancer
+    - lung cancer
+    - skin cancer
+    - colorectal cancer
+    - prostate cancer
+    - leukemia
+    - leukaemia
+    - lymphoma
+    - melanoma
+    - brain tumor
+    - brain tumour
+    - alzheimer
+    - alzheimer's disease
+    - parkinson
+    - parkinson's disease
+    - epilepsy
+    - epileptic
+    - seizure
+    - seizures
+    - stroke
+    - cerebrovascular
+    - dementia
+    - multiple sclerosis
+    - neurology
+    - neurological
+    - neurosurgery
+    - cardiology
+    - cardiovascular
+    - electrocardiogram
+    - ecg
+    - ekg
+    - electroencephalogram
+    - electroencephalography
+    - eeg
+    - diabetes
+    - diabetic
+    - renal disease
+    - kidney disease
+    - chronic kidney disease
+    - respiratory disease
+    - pneumonia
+    - tuberculosis
+    - malaria
+    - brucellosis
+    - dengue
+    - influenza
+    - pathogen
+    - pathogens
+    - sepsis
+    - dermatology
+    - dermatological
+    - dermoscopy
+    - ophthalmology
+    - ophthalmic
+    - retinal
+    - retina
+    - retinopathy
+    - optical coherence tomography
+    - oct imaging
+    - radiological
+    - radiography
+    - mri
+    - magnetic resonance imaging
+    - computed tomography
+    - ct scan
+    - ultrasound imaging
+    - mammography
+    - positron emission tomography
+    - pet imaging
+    - medical image
+    - medical images
+    - histology
+    - histological
+    - cytological
+    - pathological
+    - clinical chemistry
+    - clinical microbiology
+    - laboratory test
+    - laboratory testing
+    - diagnostic testing
+    - in vitro diagnostic
+    - in vitro diagnostics
+    - ivd
+    - randomized controlled trial
+    - randomised controlled trial
+    - trial recruitment
+    - trial matching
+    - clinical trial recruitment
+    - pharmaceutical development
+    - epidemic forecasting
+    - epidemic prediction
+    - outbreak prediction
+    - outbreak detection
+    - wastewater surveillance
+    - pathogen surveillance
+    - population-based study
+    - public health surveillance
+    - seroprevalence
+    - disease burden
+    - disease incidence
+    - disease prevalence
+    - transmission dynamics
+    - wearable sensor
+    - wearable sensors
+    - implantable device
+    - robotic surgery
+    - surgical robotics
+    - precision oncology
+    - pharmacogenetics
+    - psychiatry
+secondary_groups:
+  ai_method:
+    terms:
+    - algorithm
+    - algorithms
+    - automated
+    - automation
+    - artificial intelligence
+    - machine learning
+    - deep learning
+    - neural network
+    - large language model
+    - generative ai
+    - natural language processing
+    - computer vision
+    - predictive analytics
+    - data mining
+    - decision support
+    - pattern recognition
+    - reinforcement learning
+    - federated learning
+    - explainable ai
+    - explainable artificial intelligence
+    - clinical ai
+    - medical ai
+    - deep neural network
+    - convolutional neural network
+    - recurrent neural network
+    - lstm
+    - gru
+    - vision transformer
+    - graph neural network
+    - generative adversarial network
+    - variational autoencoder
+    - diffusion model
+    - vision-language model
+    - multimodal learning
+    - transfer learning
+    - xai
+    - retrieval-augmented generation
+    - random forest
+    - support vector machine
+    - xgboost
+    - lightgbm
+    - naive bayes
+    - hidden markov model
+  health_or_medicine_domain:
+    terms:
+    - patient outcome
+    - clinical outcome
+    - risk stratification
+    - differential diagnosis
+    - treatment recommendation
+    - triage
+    - screening
+    - medical image analysis
+    - clinical notes
+    - electronic patient record
+    - patient safety
+    - healthcare resource allocation
+    - hospital logistics
+    - staff scheduling
+    - public health surveillance
+    - epidemic forecasting
+    - outbreak detection
+    - clinical guideline
+    - evidence synthesis
+    - medical education
+    - healthcare chatbot
+    - patient-facing
+    - clinician-facing
+    - drug development
+    - clinical trial recruitment
+    - trial matching
+    - laboratory quality control
+    - diagnostic accuracy
+    - wearable sensor
+    - remote patient monitoring
+    - surgical planning
+    - precision oncology
+    - oncology
+    - cancer diagnosis
+    - radiology
+    - medical imaging
+    - neurology
+    - electroencephalography
+    - electrocardiogram
+    - retinal imaging
+    - diagnostic testing
+    - clinical laboratory
+    - pharmacovigilance
+    - wastewater surveillance
+    - field epidemiology
+    - medical device
+    - precision medicine
+    - surgical robotics
+    - hospital operations
+include:
+  any:
+  - artificial intelligence in healthcare
+  - artificial intelligence in health care
+  - artificial intelligence in medicine
+  - ai in healthcare
+  - ai in health care
+  - ai in medicine
+  - machine learning in healthcare
+  - machine learning in medicine
+  - deep learning in healthcare
+  - deep learning in medicine
+  - artificial intelligence for public health
+  - machine learning for public health
+  - ai for epidemiology
+  - machine learning for epidemiology
+  - ai-based disease surveillance
+  - machine learning epidemic forecasting
+  - artificial intelligence for clinical diagnosis
+  - artificial intelligence for medical imaging
+  - deep learning for radiology
+  - ai-assisted surgery
+  - artificial intelligence in pathology
+  - ai in laboratory medicine
+  - machine learning for diagnostic testing
+  - artificial intelligence in clinical trials
+  - machine learning for clinical trial
+  - ai-driven drug development
+  - artificial intelligence in drug development
+  - ai for hospital management
+  - artificial intelligence in hospital operations
+  - ai-enabled wearable
+  - ai-enabled wearables
+  - ai-enabled medical device
+  - artificial intelligence in digital health
+  - machine learning in digital health
+  - clinical decision support using machine learning
+  - predictive analytics in healthcare
+  - precision medicine and machine learning
+  - personalized medicine using artificial intelligence
+  - large language models in healthcare
+  - generative ai in medicine
+  - natural language processing in clinical
+  - computer vision in medical imaging
+  - artificial intelligence for cancer diagnosis
+  - machine learning for cancer diagnosis
+  - deep learning for cancer detection
+  - artificial intelligence in oncology
+  - machine learning in oncology
+  - deep learning for medical imaging
+  - machine learning for radiology
+  - artificial intelligence in radiology
+  - deep learning for retinal imaging
+  - machine learning for electroencephalography
+  - machine learning for electrocardiography
+  - deep learning for seizure detection
+  - artificial intelligence for alzheimer diagnosis
+  - machine learning for parkinson disease
+  - artificial intelligence for clinical laboratory
+  - machine learning for laboratory testing
+  - deep learning for pathology
+  - artificial intelligence for diagnostic testing
+  - machine learning for tuberculosis diagnosis
+  - machine learning for malaria diagnosis
+  - artificial intelligence for epidemic forecasting
+  - machine learning for outbreak detection
+  - machine learning for wastewater surveillance
+  - artificial intelligence for field epidemiology
+  - machine learning for population health surveillance
+  - machine learning for clinical trial recruitment
+  - artificial intelligence for drug development
+  - machine learning for drug development
+  - artificial intelligence for pharmacovigilance
+  - artificial intelligence in wearable devices
+  - machine learning for wearable sensors
+  - artificial intelligence in medical devices
+  - machine learning for remote patient monitoring
+  - artificial intelligence in surgical robotics
+  - machine learning for precision medicine
+  - artificial intelligence in precision oncology
+  - machine learning for hospital operations
+  - artificial intelligence in healthcare management
+  context:
+  - health
+  - healthcare
+  - health care
+  - medicine
+  - medical
+  - clinical
+  - patient
+  - hospital
+  - public health
+  - epidemiology
+  - health system
+  - healthcare system
+  - care delivery
+  - human health
+  - clinical care
+  - medical care
+  - clinical research
+  - clinical trial
+  - laboratory
+  - diagnostic
+  - epidemic
+  - outbreak
+  - radiology
+  - surgery
+  - oncology
+  - cancer
+  - medical imaging
+  - retinal
+  - electroencephalography
+  - electrocardiogram
+  - neurology
+  - diagnostic testing
+  - clinical laboratory
+  - histopathology
+  - clinical trial recruitment
+  - drug development
+  - pharmacovigilance
+  - epidemic forecasting
+  - wastewater surveillance
+  - field epidemiology
+  - population health surveillance
+  - wearable device
+  - medical device
+  - precision medicine
+  - surgical robotics
+  - hospital operations
+  - tuberculosis
+  - malaria
+  - brucellosis
+  - seizure detection
+priority:
+  high:
+  - artificial intelligence in healthcare
+  - ai in healthcare
+  - machine learning in healthcare
+  - deep learning in healthcare
+  - artificial intelligence in medicine
+  - ai in medicine
+  - machine learning in medicine
+  - clinical artificial intelligence
+  - medical artificial intelligence
+  - ai for public health
+  - ai for epidemiology
+  - artificial intelligence in clinical trials
+  - artificial intelligence in medical imaging
+  - ai in radiology
+  - ai in laboratory medicine
+  - ai-driven drug development
+  - artificial intelligence in digital health
+  - artificial intelligence for cancer diagnosis
+  - machine learning for cancer diagnosis
+  - deep learning for medical imaging
+  - artificial intelligence in radiology
+  - machine learning for laboratory testing
+  - artificial intelligence for diagnostic testing
+  - artificial intelligence for epidemic forecasting
+  - machine learning for outbreak detection
+  - artificial intelligence for drug development
+  - artificial intelligence in wearable devices
+  - machine learning for precision medicine
+  - artificial intelligence in surgical robotics
+exclude:
+  any:
+  - gene expression profiling
+  - genome-wide association study
+  - genome wide association study
+  - molecular docking
+  - molecular dynamics simulation
+  - molecular dynamics
+  - de novo molecular design
+  - small molecule design
+  - protein structure prediction
+  - protein folding
+  - protein engineering
+  - protein design
+  - molecular generation
+  - generative chemistry
+  - cheminformatics
+  - computational chemistry
+  - pharmacophore modeling
+  - pharmacophore modelling
+  - biological sequence modeling
+  - biological sequence modelling
+  - synthetic biology
+  - systems biology
+  - computational biology
+  - molecular biology
+  - single-cell sequencing
+  - single cell sequencing
+  - rna sequencing
+  - whole genome sequencing
+  - whole-exome sequencing
+  - whole exome sequencing
+  - plant disease
+  - crop disease
+  - industrial fault diagnosis
+  - construction safety bulletin
+  - game development in unity
+  - multi-omics integration
+  - multiomics integration
+  - single-cell rna sequencing
+  - single cell rna sequencing
+  - whole-genome sequencing
+  - transcriptomic profiling
+  - proteomic profiling
+  - metabolomic profiling
+  - veterinary-only study
+  - veterinary clinical practice
+  - agentic ai
+  - agentic artificial intelligence
+  - agentic system
+  - agentic systems
+  - agentic workflow
+  - agentic workflows
+  - ai agent
+  - ai agents
+  - artificial intelligence agent
+  - artificial intelligence agents
+  - autonomous ai agent
+  - autonomous ai agents
+  - llm agent
+  - llm agents
+  - llm-based agent
+  - llm-based agents
+  - large language model agent
+  - large language model agents
+  - multi-agent orchestration
+  - multi-agent ai system
+  - multi-agent ai systems
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

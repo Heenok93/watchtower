@@ -1,0 +1,523 @@
+id: digital_health_ai
+name: Digital Health & AI
+description: Covers AI applications whose central object is digital health infrastructure, healthcare
+  information systems, connected devices, or the organization and delivery of digitally enabled care.
+  In scope are electronic health records, clinical documentation and ambient AI, clinical notes, telehealth
+  and remote monitoring, wearables and medical devices, health information systems, interoperability,
+  clinical and administrative workflows, healthcare operations, implementation, adoption, usability, safety,
+  governance, and organizational impact. The article must substantively address an AI-enabled digital
+  tool, system, workflow, or its implementation; merely using EHR data as a dataset does not make a study
+  Digital Health. Patient-level diagnosis, prognosis, imaging, or treatment belongs primarily to Clinical
+  Medicine when the clinical task is central, but overlap is appropriate when the digital system itself
+  is also a central object. Agentic and non-agentic systems may qualify; agentivity alone is insufficient.
+required_groups:
+  healthcare_context:
+    terms:
+    - healthcare
+    - health care
+    - healthcare system
+    - healthcare systems
+    - health system
+    - health systems
+    - hospital
+    - hospitals
+    - hospital-based
+    - clinical workflow
+    - clinical workflows
+    - care delivery
+    - healthcare delivery
+    - health services
+    - health service delivery
+    - healthcare organization
+    - healthcare organisations
+    - healthcare organizations
+    - health service organization
+    - health service organisations
+    - health service organizations
+    - clinical
+    - clinical care
+    - clinical practice
+    - clinical setting
+    - clinical settings
+  digital_health_system_or_tool:
+    terms:
+    - clinical information system
+    - clinical information systems
+    - hospital information system
+    - hospital information systems
+    - health information technology
+    - health information system
+    - health information systems
+    - clinical documentation
+    - clinical note
+    - clinical notes
+    - medical coding
+    - clinical data extraction
+    - interoperability
+    - digital health
+    - digital healthcare
+    - telehealth
+    - telemedicine
+    - remote patient monitoring
+    - remote monitoring
+    - wearable
+    - wearables
+    - wearable device
+    - wearable devices
+    - connected health
+    - mobile health
+    - mhealth
+    - health app
+    - health apps
+    - digital therapeutics
+    - medical sensor
+    - medical sensors
+    - internet of medical things
+    - internet of things in healthcare
+    - surgical robot
+    - surgical robots
+    - robotic surgery
+    - surgical robotics
+    - medical robot
+    - medical robots
+    - healthcare robotics
+    - robotic assistance
+    - clinical automation
+    - healthcare automation
+    - hospital operations
+    - hospital logistics
+    - patient flow
+    - patient flows
+    - bed management
+    - operating room scheduling
+    - operating theatre scheduling
+    - operating room planning
+    - staff scheduling
+    - workforce scheduling
+    - resource allocation
+    - hospital resource management
+    - patient scheduling
+    - hospital capacity management
+    - operating room management
+    - operating theatre management
+    - clinical agent
+    - clinical agents
+    - healthcare agent
+    - healthcare agents
+    - clinical cohort curation
+    - clinical cohort curation agent
+    - cohort curation agent
+    - clinical chatbot
+    - clinical chatbots
+    - healthcare chatbot
+    - healthcare chatbots
+    - conversational agent
+    - conversational agents
+    - patient-facing agent
+    - patient-facing agents
+    - agentic clinical workflow
+    - agentic healthcare workflow
+    - agentic health system
+    - agentic health systems
+    - clinical agent platform
+    - clinical agent system
+    - clinical agent systems
+    - electronic health record implementation
+    - electronic health record integration
+    - electronic health record workflow
+    - electronic health record usability
+    - electronic health record adoption
+    - electronic health record interoperability
+    - ehr implementation
+    - ehr integration
+    - ehr workflow
+    - ehr usability
+    - ehr adoption
+    - ehr interoperability
+    - electronic medical record implementation
+    - electronic medical record integration
+    - ambient ai
+    - ambient clinical intelligence
+    - ambient clinical documentation
+    - automated clinical note generation
+    - clinical note generation system
+    - clinical documentation system
+    - clinical documentation platform
+    - clinical decision support system implementation
+    - clinical decision support integration
+    - clinical workflow integration
+    - health information exchange
+    - health data interoperability
+  ai_or_digital_health_method:
+    terms:
+    - artificial intelligence
+    - ai-enabled
+    - ai enabled
+    - ai-based
+    - ai based
+    - machine learning
+    - deep learning
+    - natural language processing
+    - large language model
+    - large language models
+    - llm
+    - llms
+    - generative ai
+    - generative artificial intelligence
+    - foundation model
+    - foundation models
+    - neural network
+    - neural networks
+    - computer vision
+    - multimodal model
+    - multimodal models
+    - predictive model
+    - predictive models
+    - intelligent automation
+    - decision support algorithm
+    - decision support algorithms
+    - surgical robot
+    - surgical robots
+    - algorithmic decision support
+    - agentic ai
+    - agentic artificial intelligence
+    - agentic system
+    - agentic systems
+    - ai agent
+    - ai agents
+    - artificial intelligence agent
+    - artificial intelligence agents
+    - autonomous ai
+    - autonomous ai agent
+    - autonomous ai agents
+    - multi-agent system
+    - multi-agent systems
+    - multiagent system
+    - multiagent systems
+    - llm agent
+    - llm agents
+    - llm-based agent
+    - llm-based agents
+    - agentic workflow
+    - agentic workflows
+    - multi-agent orchestration
+    - language model agent
+    - language model agents
+    - conversational ai
+    - ai chatbot
+    - ai chatbots
+    - llm chatbot
+    - llm chatbots
+    - llm-based chatbot
+    - llm-based chatbots
+    - large language model chatbot
+    - large language model chatbots
+    - ambient ai
+    - ambient clinical intelligence
+    - ambient clinical documentation
+    - ai-powered wearable
+    - ai-enabled wearable
+    - ai-enabled medical device
+  application_or_implementation:
+    terms:
+    - clinical documentation
+    - automated documentation
+    - note generation
+    - clinical note generation
+    - information extraction
+    - information extraction from electronic health records
+    - medical coding
+    - clinical coding
+    - data entry
+    - data integration
+    - data interoperability
+    - decision support
+    - clinical decision support
+    - patient flow
+    - patient flow prediction
+    - bed management
+    - resource allocation
+    - resource optimization
+    - resource optimisation
+    - staff scheduling
+    - workforce scheduling
+    - operating room scheduling
+    - operating theatre scheduling
+    - surgical workflow
+    - remote monitoring
+    - patient monitoring
+    - vital signs monitoring
+    - wearable monitoring
+    - workflow automation
+    - process automation
+    - care coordination
+    - care pathway optimization
+    - care pathway optimisation
+    - adoption
+    - acceptability
+    - acceptance
+    - usability
+    - user experience
+    - user-centered
+    - user centred
+    - human factors
+    - trust
+    - clinician trust
+    - patient trust
+    - implementation
+    - implementation science
+    - implementation outcome
+    - implementation outcomes
+    - deployment
+    - real-world evaluation
+    - real world evaluation
+    - workflow integration
+    - workflow efficiency
+    - clinical workflow
+    - organizational impact
+    - organisational impact
+    - organizational change
+    - organisational change
+    - operational efficiency
+    - patient safety
+    - clinical safety
+    - safety evaluation
+    - risk management
+    - privacy
+    - data protection
+    - cybersecurity
+    - cyber security
+    - bias
+    - fairness
+    - equity
+    - cost-effectiveness
+    - cost effectiveness
+    - health technology assessment
+    - workload
+    - staff workload
+    - clinician workload
+    - patient experience
+    - quality of care
+    - quality improvement
+    - resource utilization
+    - resource utilisation
+    - length of stay
+    - length-of-stay
+    - patient throughput
+    - care coordination
+    - clinical outcomes
+    - operational outcomes
+    - agentic workflow
+    - agentic workflows
+    - clinical agent
+    - clinical agents
+    - autonomous clinical agent
+    - autonomous clinical agents
+    - healthcare agent
+    - healthcare agents
+    - clinical agent orchestration
+    - agent orchestration in healthcare
+    - clinical cohort curation
+    - cohort curation agent
+    - clinical agent deployment
+    - healthcare agent orchestration
+    - agentic clinical workflow
+    - agentic healthcare workflow
+    - chatbot implementation
+    - chatbot deployment
+    - hereditary cancer counseling chatbot
+    - hereditary cancer counselling chatbot
+secondary_groups:
+  healthcare_context:
+    terms:
+    - medicine
+    - medical
+    - clinician
+    - clinicians
+    - physician
+    - physicians
+    - nurse
+    - nurses
+    - nursing
+    - patient
+    - patients
+    - care pathway
+    - care pathways
+    - healthcare professional
+    - healthcare professionals
+    - health professional
+    - health professionals
+  digital_health_system_or_tool:
+    terms:
+    - digital transformation
+    - digital platform
+    - digital platforms
+    - information system
+    - information systems
+    - decision support
+    - electronic prescribing
+    - e-prescribing
+    - telemonitoring
+    - virtual care
+    - remote care
+    - smart hospital
+    - smart hospitals
+    - connected device
+    - connected devices
+    - medical device
+    - medical devices
+    - workflow automation
+    - process automation
+    - hospital management
+    - health management
+    - care management
+  ai_or_digital_health_method:
+    terms:
+    - algorithm
+    - algorithms
+    - automated
+    - automation
+    - intelligent system
+    - intelligent systems
+    - language model
+    - language models
+    - transformer
+    - transformers
+    - random forest
+    - gradient boosting
+    - xgboost
+    - support vector machine
+    - reinforcement learning
+    - computer-assisted
+    - computer assisted
+  application_or_implementation:
+    terms:
+    - survey
+    - questionnaire
+    - qualitative study
+    - qualitative research
+    - interview
+    - interviews
+    - mixed methods
+    - mixed-methods
+    - evaluation
+    - assessment
+    - barriers
+    - facilitators
+    - perceptions
+    - attitudes
+    - satisfaction
+    - usability testing
+    - usability study
+    - acceptability study
+    - feasibility
+    - adoption intention
+    - intention to use
+    - organizational readiness
+    - organisational readiness
+    - technology acceptance
+    - user acceptance
+    - safety concerns
+    - unintended consequences
+include:
+  any:
+  - ai in healthcare
+  - artificial intelligence in healthcare
+  - artificial intelligence in health care
+  - ai in hospitals
+  - artificial intelligence in hospitals
+  - ai-enabled healthcare
+  - ai-enabled health care
+  - ai-enabled hospital
+  - ai-enabled hospitals
+  - machine learning in healthcare
+  - machine learning in health care
+  - artificial intelligence adoption
+  - ai adoption in healthcare
+  - adoption of artificial intelligence in healthcare
+  - acceptance of artificial intelligence in healthcare
+  - usability of artificial intelligence in healthcare
+  - safety of artificial intelligence in healthcare
+  - ai clinical documentation
+  - ai-assisted clinical documentation
+  - automated clinical documentation
+  - ai-powered ehr
+  - ai-powered electronic health record
+  - ai-based hospital management
+  - ai hospital operations
+  - artificial intelligence hospital operations
+  - ai for hospital logistics
+  - artificial intelligence for hospital logistics
+  - ai patient flow
+  - machine learning patient flow
+  - ai remote patient monitoring
+  - ai wearable
+  - ai wearables
+  - artificial intelligence in robotic surgery
+  - ai surgical robotics
+  - ai-assisted surgery
+  - machine learning in surgical workflow
+  - agentic ai in healthcare
+  - agentic ai in health care
+  - agentic clinical workflow
+  - clinical cohort curation agent
+  - language model agents for clinical cohort curation
+  - clinical agents in hereditary cancer counseling
+  - clinical agents in hereditary cancer counselling
+  context:
+  - healthcare
+  - health care
+  - hospital
+  - hospitals
+  - clinical
+  - patient care
+  - health system
+  - health systems
+  - health service
+  - health services
+  - medical
+  - care delivery
+priority:
+  high:
+  - electronic health record
+  - electronic health records
+  - electronic medical record
+  - electronic medical records
+  - ehr
+  - remote patient monitoring
+  - wearable
+  - wearables
+  - surgical robot
+  - surgical robotics
+  - robotic surgery
+  - hospital logistics
+  - patient flow
+  - bed management
+  - hospital operations
+  - clinical documentation
+  - clinical decision support
+  - adoption of artificial intelligence
+  - ai adoption
+  - technology acceptance
+  - usability
+  - patient safety
+  - workflow integration
+  - workflow efficiency
+  - health technology assessment
+exclude:
+  any:
+  - ehr data only
+  - electronic health record data only
+  - electronic medical record data only
+  - retrospective ehr data analysis
+  context: []
+scoring:
+  include_match: 2
+  context_match: 2
+  priority_match: 3
+  exclude_match: -10
+thresholds:
+  reject_below: 2
+  llm_review_below: 6
+min_candidate_score_for_candidate: 2
+low_score_candidate_decision: llm_review

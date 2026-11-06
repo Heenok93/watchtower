@@ -53,6 +53,7 @@ class ThresholdConfig(BaseModel):
 
 class TopicProfile(BaseModel):
     id: str
+    version: str = "1.0.0"
     name: str
     description: str
 
