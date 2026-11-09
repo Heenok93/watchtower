@@ -1,8 +1,0 @@
-{
-  "articles": 18,
-  "agentic": 8,
-  "drug_development": 10,
-  "sqlite_access": "none by runner",
-  "prompt_version": "lfm25_multilabel_review_v2_2026-11-06",
-  "model_default": "tomng/lfm2.5-instruct:latest"
-}
