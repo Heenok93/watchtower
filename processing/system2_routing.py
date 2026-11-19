@@ -12,7 +12,7 @@ SCENARIO = "high_recall_15pct"
 # For equal cutoffs, the dimension is decided automatically by System 1.
 # For a band, [low, high) is routed to System 2; >= high is positive.
 CUTOFFS: dict[str, dict[str, float]] = {
-    "ai_relevant": {"low": 0.422, "high": 0.422},
+    "ai_relevant": {"low": 0.35, "high": 0.35},
     "health_relevant": {"low": 0.543, "high": 0.543},
     "agentic_ai_health": {"low": 0.500, "high": 0.560},
     "digital_health_ai": {"low": 0.540, "high": 0.665},

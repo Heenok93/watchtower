@@ -119,6 +119,22 @@ required_groups:
     - statistical machine learning
     - gradient-boosted trees
     - gradient boosted trees
+    # Added after full-run false-negative audit (2026-11-18).
+    # These are explicit AI-system formulations that were not reliably
+    # captured by the original strong ai_method vocabulary.
+    - ai-assisted
+    - ai assisted
+    - ai-powered
+    - ai powered
+    - chatgpt
+    - chatgpt-4
+    - chatgpt 4
+    - digital twin
+    - digital twins
+    - machine-assisted
+    - machine assisted
+    - vision-language models
+    - vision language models
   health_or_medicine_domain:
     terms:
     - healthcare
